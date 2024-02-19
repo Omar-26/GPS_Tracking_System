@@ -150,6 +150,8 @@ For any inquiries or support, please contact:
             <sub style="font-size:14px"><b>Ahmed Helmy</b></sub>
         </a>
     </td>
+</tr>
+<tr>
   <!-- Mohamed Atta -->
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=>
