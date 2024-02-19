@@ -42,7 +42,8 @@ The trajectory of the distance traveled must satisfy the following criteria:
 1. The total distance between the start and end points should be greater than **100 meters**.
 2. The path from the start point to the endpoint should form a **non-straight line** similar to the provided baseline path.
 
-The system calculates the distance between the starting point and the endpoint and compares it with the distance obtained from Google Maps. The error margin should be less than or equal to **5%**.
+> [!note]  
+> The system calculates the distance between the starting point and the endpoint and compares it with the distance obtained from Google Maps. The error margin should be less than or equal to **5%**.
 
 ## Installation
 
@@ -69,9 +70,9 @@ To use the GPS Distance Tracking System, follow these steps:
 3. Walk or travel to the destination point.
 
 4. The system will provide visual feedback through the built-in LEDs as follows:
-   - `Green` LED | Target destination is reached.
-   - `Yellow` LED | Target destination about to be reached (less than 5 meters away).
-   - `Red` LED | Target destination is far away (more than 5 meters).
+   - ${\textsf{\color{green}Green}}$‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎‎| Target destination is reached.
+   - ${\textsf{\color{yellow}Yellow}}$ ‏‏‎ | Target destination about to be reached (less than 5 meters away).
+   - ${\textsf{\color{red}Red}}$ ‏‏‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎ ‎‎‎| Target destination is far away (more than 5 meters).
 
 5. Ensure that the calculated distance is within an error margin of 5% compared to Google Maps.
 
