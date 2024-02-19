@@ -47,7 +47,7 @@ The trajectory of the distance traveled must satisfy the following criteria:
 
 ## Installation
 
-To use the GPS Distance Tracking System, follow these steps:
+To install the GPS Tracking System, follow these steps:
 
 1. Clone the repository to your local machine:
 
@@ -61,7 +61,7 @@ To use the GPS Distance Tracking System, follow these steps:
 
 ## Usage
 
-To use the GPS Distance Tracking System, follow these steps:
+To use the GPS Tracking System, follow these steps:
 
 1. Power on the GPS Distance Tracking System.
 
@@ -78,10 +78,15 @@ To use the GPS Distance Tracking System, follow these steps:
 
 ## Requirements
 
-To successfully run the GPS Distance Tracking System, you will need the following:
+To successfully run the GPS Tracking System, you will need the following:
 
-- TM4C123G LaunchPad
-- GPS Module
+### Hardware
+
+- Tiva™ C Series TM4C123GXL (ARM Cortex M4F Based) LaunchPad
+- Ublox NEO-6m GPS Module
+
+### Software
+
 - Code Composer Studio (CCS) or CMake for building
 - UART configuration for GPS module communication
 
@@ -99,7 +104,7 @@ Contributions to the GPS Distance Tracking System project are welcome. To contri
 
 ## License
 
-This project is licensed under the GNU AGPLv3 LICENSE.
+This project is licensed under the GNU AGPLv3 License.
 
 ## Credits
 
