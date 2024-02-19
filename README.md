@@ -166,6 +166,30 @@ For any inquiries or support, please contact:
             <sub style="font-size:14px"><b>Kareem Mostafa</b></sub>
         </a>
     </td>
+  <!-- Khalid Doma -->
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Khalid Doma/>
+            <br />
+            <sub style="font-size:14px"><b>Khalid Doma</b></sub>
+        </a>
+    </td>
+  <!-- Blank Space -->
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Blank Space/>
+            <br />
+            <sub style="font-size:14px"><b>Blank Space</b></sub>
+        </a>
+    </td>
+  <!-- Blank Space -->
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Blank Space/>
+            <br />
+            <sub style="font-size:14px"><b>Blank Space</b></sub>
+        </a>
+    </td>
 
 </tr>
 </table>
