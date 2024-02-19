@@ -51,7 +51,7 @@ To use the GPS Distance Tracking System, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   https://github.com/Mahmoud-Abdelraouf/GPS-Tracking-System.git
+   https://github.com/Omar-26/GPS_Tracking_System.git
    ```
 
 2. Connect the TM4C123G LaunchPad to a GPS module and configure it to receive GPS coordinates.
