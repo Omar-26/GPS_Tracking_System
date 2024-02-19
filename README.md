@@ -55,7 +55,7 @@ To install the GPS Tracking System, follow these steps:
    https://github.com/Omar-26/GPS_Tracking_System.git
    ```
 
-2. Connect the TM4C123G LaunchPad to a GPS module and configure it to receive GPS coordinates.
+2. Connect the TM4C123GXL LaunchPad to the GPS module and configure it to receive GPS coordinates.
 
 3. Open the project in Code Composer Studio (CMake is also required for building).
 
@@ -70,9 +70,9 @@ To use the GPS Tracking System, follow these steps:
 3. Walk or travel to the destination point.
 
 4. The system will provide visual feedback through the built-in LEDs as follows:
-   - ${\textsf{\color{green}Green}}$‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎‎| Target destination is reached.
-   - ${\textsf{\color{yellow}Yellow}}$ ‏‏‎ | Target destination about to be reached (less than 5 meters away).
-   - ${\textsf{\color{red}Red}}$ ‏‏‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎ ‎‎‎| Target destination is far away (more than 5 meters).
+   - ${\textsf{\color[RGB]{3,140,90}Green}}$‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎‎| Target destination is reached.
+   - ${\textsf{\color[RGB]{242,183,5}Yellow}}$ ‏‏‎ | Target destination about to be reached (less than 5 meters away).
+   - ${\textsf{\color[RGB]{166,3,17}Red}}$ ‏‏‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎ ‎‎‎| Target destination is far away (more than 5 meters).
 
 5. Ensure that the calculated distance is within an error margin of 5% compared to Google Maps.
 
@@ -92,15 +92,15 @@ To successfully run the GPS Tracking System, you will need the following:
 
 ## Contributing
 
-Contributions to the GPS Distance Tracking System project are welcome. To contribute, follow these steps:
+Contributions to the GPS Distance Tracking System project are welcome. To contribute, follow these instructions:
 
 1. Fork the repository.
 
-2. Create a new branch for your feature or bug fix.
+2. Create a new branch for the feature or bug fix you want to add.
 
-3. Make your changes and commit them with a detailed description.
+3. Make your changes and commit them with a detailed description of what you did.
 
-4. Push to the branch and create a pull request on GitHub.
+4. Push the changes to the branch and create a pull request on GitHub.
 
 ## License
 
@@ -108,7 +108,7 @@ This project is licensed under the GNU AGPLv3 License.
 
 ## Credits
 
-This project was developed by Team Work as part of Introduction to Embedded Systems Course. Special thanks to the faculty staff at the CSE Department for their support and guidance throughout the project.
+This project was developed by Team Work as part of Introduction to Embedded Systems Course. Special thanks to the faculty staff at the CSE Department for their support and guidance throughout the course and the project.
 
 ## Contact
 
