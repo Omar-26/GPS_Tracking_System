@@ -113,7 +113,7 @@ For any inquiries or support, please contact:
   <!-- Omar Ashraf -->
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=>
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Omar Ashraf/>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Omar Ashraf/>
             <br />
             <sub style="font-size:14px"><b>Omar Ashraf</b></sub>
         </a>
@@ -121,7 +121,7 @@ For any inquiries or support, please contact:
   <!-- Ahmed Sallam -->
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=>
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Ahmed Sallam/>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Ahmed Sallam/>
             <br />
             <sub style="font-size:14px"><b>Ahmed Sallam</b></sub>
         </a>
@@ -129,7 +129,7 @@ For any inquiries or support, please contact:
   <!-- Abdelrahman Ezz -->
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=>
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdelrahman Ezz/>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdelrahman Ezz/>
             <br />
             <sub style="font-size:14px"><b>Abdelrahman Ezz</b></sub>
         </a>
@@ -137,7 +137,7 @@ For any inquiries or support, please contact:
   <!-- Abdulrahman Ahmed -->
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=>
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdulrahman Aaeed/>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdulrahman Aaeed/>
             <br />
             <sub style="font-size:14px"><b>Abdulrahman Ahmed</b></sub>
         </a>
@@ -145,7 +145,7 @@ For any inquiries or support, please contact:
   <!-- Ahmed Helmy -->
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=>
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Ahmed Helmy/>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Ahmed Helmy/>
             <br />
             <sub style="font-size:14px"><b>Ahmed Helmy</b></sub>
         </a>
@@ -153,7 +153,7 @@ For any inquiries or support, please contact:
   <!-- Mohamed Atta -->
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=>
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Mohamed Atta/>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Mohamed Atta/>
             <br />
             <sub style="font-size:14px"><b>Mohamed Atta</b></sub>
         </a>
@@ -161,7 +161,7 @@ For any inquiries or support, please contact:
   <!-- Kareem Mostafa -->
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=>
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Kareem Mostafa/>
+            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="80;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Kareem Mostafa/>
             <br />
             <sub style="font-size:14px"><b>Kareem Mostafa</b></sub>
         </a>
