@@ -84,11 +84,12 @@ To successfully run the GPS Tracking System, you will need the following:
 
 - Tiva™ C Series TM4C123GXL (ARM Cortex M4F Based) LaunchPad
 - Ublox NEO-6m GPS Module
+- Connecting cables (USB, serial, etc.)
 
 ### Software
 
-- Code Composer Studio (CCS) or CMake for building
-- UART configuration for GPS module communication
+- Code Composer Studio (CCS)
+- mapping API as a data visualization
 
 ## Contributing
 
@@ -118,15 +119,15 @@ For any inquiries or support, please contact:
 <tr>
   <!-- Omar Ashraf -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Omar Ashraf/>
+        <a href= https://github.com/Omar-26>
+            <img src=https://avatars.githubusercontent.com/u/110625103?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Omar Ashraf/>
             <br />
             <sub style="font-size:14px"><b>Omar Ashraf</b></sub>
         </a>
     </td>
   <!-- Ahmed Sallam -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Ahmed Sallam/>
             <br />
             <sub style="font-size:14px"><b>Ahmed Sallam</b></sub>
@@ -134,7 +135,7 @@ For any inquiries or support, please contact:
     </td>
   <!-- Abdelrahman Ezz -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdelrahman Ezz/>
             <br />
             <sub style="font-size:14px"><b>Abdelrahman Ezz</b></sub>
@@ -142,7 +143,7 @@ For any inquiries or support, please contact:
     </td>
   <!-- Abdulrahman Ahmed -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdulrahman Aaeed/>
             <br />
             <sub style="font-size:14px"><b>Abdulrahman Ahmed</b></sub>
@@ -150,7 +151,7 @@ For any inquiries or support, please contact:
     </td>
   <!-- Ahmed Helmy -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Ahmed Helmy/>
             <br />
             <sub style="font-size:14px"><b>Ahmed Helmy</b></sub>
@@ -160,7 +161,7 @@ For any inquiries or support, please contact:
 <tr>
   <!-- Mohamed Atta -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Mohamed Atta/>
             <br />
             <sub style="font-size:14px"><b>Mohamed Atta</b></sub>
@@ -168,7 +169,7 @@ For any inquiries or support, please contact:
     </td>
   <!-- Kareem Mostafa -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= https://github.com/KareemMostafa1 >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Kareem Mostafa/>
             <br />
             <sub style="font-size:14px"><b>Kareem Mostafa</b></sub>
@@ -176,7 +177,7 @@ For any inquiries or support, please contact:
     </td>
   <!-- Khalid Doma -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Khalid Doma/>
             <br />
             <sub style="font-size:14px"><b>Khalid Doma</b></sub>
@@ -184,7 +185,7 @@ For any inquiries or support, please contact:
     </td>
   <!-- Blank Space -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Blank Space/>
             <br />
             <sub style="font-size:14px"><b>Blank Space</b></sub>
@@ -192,7 +193,7 @@ For any inquiries or support, please contact:
     </td>
   <!-- Blank Space -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href=>
+        <a href= >
             <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Blank Space/>
             <br />
             <sub style="font-size:14px"><b>Blank Space</b></sub>
