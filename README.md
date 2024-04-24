@@ -20,11 +20,11 @@ LCD_Write("GPS Tracking System Project");
 | 08     | [Credits](#credits)                       |
 | 09     | [Contact](#contact)                       |
 | 10     | [Video Demo](#video-demo)                 |
-| 11     | [Baseline Path](#baseline-path)           |
+<!-- | 11     | [Baseline Path](#baseline-path)           |  -->
 
 ## Description
 
-The GPS Distance Tracking System is a project developed as part of the CSE-211s course at CSE Department, Faculty of Engineering, Ain Shams University. The main objective of this project is to create an embedded system that accurately tracks the distance a user travels between two points using GPS coordinates. The system is implemented Using the Texas Insteruments TM4C123G LaunchPad and provides real-time visual feedback to the user through LEDs.
+The GPS Distance Tracking System is a project developed as part of the CSE-211s course at CSE Department, Faculty of Engineering, Ain Shams University. The main objective of this project is to create an embedded system that accurately tracks the distance a user travels between two points using GPS coordinates. The system is implemented Using the Texas Instruments TM4C123G LaunchPad and provides real-time visual feedback to the user through LEDs.
 
 ## Features
 
@@ -135,24 +135,24 @@ For any inquiries or support, please contact:
     </td>
   <!-- Abdelrahman Ezz -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href= >
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdelrahman Ezz/>
+        <a href= https://github.com/abdoezz1 >
+            <img src=https://avatars.githubusercontent.com/u/133367786?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdelrahman Ezz/>
             <br />
             <sub style="font-size:14px"><b>Abdelrahman Ezz</b></sub>
         </a>
     </td>
   <!-- Abdulrahman Ahmed -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href= >
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdulrahman Aaeed/>
+        <a href= https://github.com/Abdulrahmana-4 >
+            <img src=https://avatars.githubusercontent.com/u/137663805?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Abdulrahman Saeed/>
             <br />
             <sub style="font-size:14px"><b>Abdulrahman Ahmed</b></sub>
         </a>
     </td>
   <!-- Ahmed Helmy -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href= >
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Ahmed Helmy/>
+        <a href= https://github.com/Ahmed-7elmy >
+            <img src= https://avatars.githubusercontent.com/u/135165946?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Ahmed Helmy/>
             <br />
             <sub style="font-size:14px"><b>Ahmed Helmy</b></sub>
         </a>
@@ -161,8 +161,8 @@ For any inquiries or support, please contact:
 <tr>
   <!-- Mohamed Atta -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href= >
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Mohamed Atta/>
+        <a href= https://github.com/MohamedAtta22 >
+            <img src=https://avatars.githubusercontent.com/u/109322691?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Mohamed Atta/>
             <br />
             <sub style="font-size:14px"><b>Mohamed Atta</b></sub>
         </a>
@@ -170,33 +170,25 @@ For any inquiries or support, please contact:
   <!-- Kareem Mostafa -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
         <a href= https://github.com/KareemMostafa1 >
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Kareem Mostafa/>
+            <img src=https://avatars.githubusercontent.com/u/167640929?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Kareem Mostafa/>
             <br />
             <sub style="font-size:14px"><b>Kareem Mostafa</b></sub>
         </a>
     </td>
   <!-- Khalid Doma -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href= >
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Khalid Doma/>
+        <a href= https://github.com/KHALIDDOMA >
+            <img src=https://avatars.githubusercontent.com/u/77086956?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Khalid Doma/>
             <br />
             <sub style="font-size:14px"><b>Khalid Doma</b></sub>
         </a>
     </td>
-  <!-- Blank Space -->
+  <!-- Shourok Amr -->
     <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href= >
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Blank Space/>
+        <a href= https://github.com/shorouk25 >
+            <img src=https://avatars.githubusercontent.com/u/133603360?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Blank Space/>
             <br />
-            <sub style="font-size:14px"><b>Blank Space</b></sub>
-        </a>
-    </td>
-  <!-- Blank Space -->
-    <td align="center" style="word-wrap: break-word; width: 170.0; height: 170.0">
-        <a href= >
-            <img src=https://avatars.githubusercontent.com/u/59094800?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt= Blank Space/>
-            <br />
-            <sub style="font-size:14px"><b>Blank Space</b></sub>
+            <sub style="font-size:14px"><b>Shourok Amr</b></sub>
         </a>
     </td>
 
