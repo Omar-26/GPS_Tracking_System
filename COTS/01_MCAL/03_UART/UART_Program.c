@@ -529,7 +529,6 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         break;
     }
 }
-
 void UART_voidSendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
 {
     /**< Enable FIFOs */
@@ -628,8 +627,9 @@ void UART_voidSendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
         break;
     }
 }
-void UART_voidReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer) // PORT A
+void UART_voidReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer)
 {
+    // you can use null terminator
     switch (copy_u8UARTNo)
     {
     case UART0:
