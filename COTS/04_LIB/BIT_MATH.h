@@ -15,7 +15,7 @@
  * @param[in,out] REG The register in which to set the bit.
  * @param[in] BIT_NUMBER The position of the bit to set (0 to 31).
  */
-#define SET_BIT(REG, BIT_NUMBER) REG |= (1 << BIT_NUMBER)
+#define SET_BIT(REG, BIT_NUMBER) (REG |= (1 << BIT_NUMBER))
 
 /**
  * @brief Clear a specific bit in a register.
