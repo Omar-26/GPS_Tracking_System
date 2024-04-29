@@ -34,17 +34,19 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         /**< Set Port Control */
         SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA0_U0RX);
         SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA1_U0TX);
-        /**< Set Bin Direction */
+        /**< Set pin Direction */
         CLR_BIT(GPIO_PORTA_DIR_R, GPIO_PA0_U0RX); // RX (Input)
         SET_BIT(GPIO_PORTA_DIR_R, GPIO_PA1_U0TX); // TX (Output)
         /**< Set Digital Enable */
         SET_BIT(GPIO_PORTA_DEN_R, GPIO_PA0_U0RX);
         SET_BIT(GPIO_PORTA_DEN_R, GPIO_PA1_U0TX);
+        /**< Enable FIFOs */
+        SET_BIT(UART0_LCRH_R, UART_LCRH_FEN); // TODO: Add to other UARTs
         /**< Disable MCAL_UART */
         CLR_BIT(UART0_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART0_IBRD_R = (u32)Local_f32Divisor;
-        UART0_FBRD_R = (u32)Local_f32Fraction;
+        UART0_IBRD_R |= (u32)Local_f32Divisor;
+        UART0_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity = UART_PARITY_NONE)
         {
@@ -106,8 +108,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         /**< Disable MCAL_UART */
         CLR_BIT(UART1_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART1_IBRD_R = (u32)Local_f32Divisor;
-        UART1_FBRD_R = (u32)Local_f32Fraction;
+        UART1_IBRD_R |= (u32)Local_f32Divisor;
+        UART1_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity = UART_PARITY_NONE)
         {
@@ -169,8 +171,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         /**< Disable MCAL_UART */
         CLR_BIT(UART2_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART2_IBRD_R = (u32)Local_f32Divisor;
-        UART2_FBRD_R = (u32)Local_f32Fraction;
+        UART2_IBRD_R |= (u32)Local_f32Divisor;
+        UART2_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity = UART_PARITY_NONE)
         {
@@ -232,8 +234,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         /**< Disable MCAL_UART */
         CLR_BIT(UART3_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART3_IBRD_R = (u32)Local_f32Divisor;
-        UART3_FBRD_R = (u32)Local_f32Fraction;
+        UART3_IBRD_R |= (u32)Local_f32Divisor;
+        UART3_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity = UART_PARITY_NONE)
         {
@@ -295,8 +297,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         /**< Disable MCAL_UART */
         CLR_BIT(UART4_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART4_IBRD_R = (u32)Local_f32Divisor;
-        UART4_FBRD_R = (u32)Local_f32Fraction;
+        UART4_IBRD_R |= (u32)Local_f32Divisor;
+        UART4_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity = UART_PARITY_NONE)
         {
@@ -358,8 +360,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         /**< Disable MCAL_UART */
         CLR_BIT(UART5_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART5_IBRD_R = (u32)Local_f32Divisor;
-        UART5_FBRD_R = (u32)Local_f32Fraction;
+        UART5_IBRD_R |= (u32)Local_f32Divisor;
+        UART5_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity = UART_PARITY_NONE)
         {
@@ -421,8 +423,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         /**< Disable MCAL_UART */
         CLR_BIT(UART6_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART6_IBRD_R = (u32)Local_f32Divisor;
-        UART6_FBRD_R = (u32)Local_f32Fraction;
+        UART6_IBRD_R |= (u32)Local_f32Divisor;
+        UART6_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity = UART_PARITY_NONE)
         {
@@ -484,8 +486,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         /**< Disable MCAL_UART */
         CLR_BIT(UART7_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART7_IBRD_R = (u32)Local_f32Divisor;
-        UART7_FBRD_R = (u32)Local_f32Fraction;
+        UART7_IBRD_R |= (u32)Local_f32Divisor;
+        UART7_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity = UART_PARITY_NONE)
         {
@@ -531,8 +533,6 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
 }
 void UART_voidSendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
 {
-    /**< Enable FIFOs */
-    SET_BIT(UART0_LCRH_R, UART_LCRH_FEN);
     switch (copy_u8UARTNo)
     {
     case UART0:
