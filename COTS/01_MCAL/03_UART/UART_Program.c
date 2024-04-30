@@ -13,6 +13,7 @@
 #include "UART_interface.h"
 #include "UART_config.h"
 /******************************************< UART_FUNCTIONS_IMPLEMENTATION ******************************************/
+/******************************************< INIT_FUNCTION_IMPLEMENTATION *******************************************/
 void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
 {
     Std_ReturnType Local_ErrorStatus = E_OK;
@@ -32,18 +33,17 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(GPIO_PORTA_AFSEL_R, GPIO_PA0_U0RX);
         SET_BIT(GPIO_PORTA_AFSEL_R, GPIO_PA1_U0TX);
         /**< Set Port Control */
-        SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA0_U0RX);
-        SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA1_U0TX);
+        SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA0_U0RX); // !Error : Must Replace Address with Value
+        SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA1_U0TX); // !Error : Must Replace Address with Value
         /**< Set pin Direction */
         CLR_BIT(GPIO_PORTA_DIR_R, GPIO_PA0_U0RX); // RX (Input)
         SET_BIT(GPIO_PORTA_DIR_R, GPIO_PA1_U0TX); // TX (Output)
         /**< Set Digital Enable */
         SET_BIT(GPIO_PORTA_DEN_R, GPIO_PA0_U0RX);
         SET_BIT(GPIO_PORTA_DEN_R, GPIO_PA1_U0TX);
-        /**< Enable FIFOs */
-        SET_BIT(UART0_LCRH_R, UART_LCRH_FEN); // TODO: Add to other UARTs
         /**< Disable MCAL_UART */
         CLR_BIT(UART0_CTL_R, UART_CTL_UARTEN);
+        // TODO: FR Reg for Checking
         /**< Configure Baud Rate */
         UART0_IBRD_R |= (u32)Local_f32Divisor;
         UART0_FBRD_R |= (u32)Local_f32Fraction;
@@ -79,8 +79,13 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         }
         else
             Local_ErrorStatus = E_NOT_OK;
+        /**< Enable FIFOs */
+        SET_BIT(UART0_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART0_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+        // TODO Enable RXE and TXE
+        /**< Enable RXEs and TXEs */
+
         /**< Enable MCAL_UART */
         SET_BIT(UART0_CTL_R, UART_CTL_UARTEN);
         break;
@@ -142,6 +147,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         }
         else
             Local_ErrorStatus = E_NOT_OK;
+        /**< Enable FIFOs */
+        SET_BIT(UART1_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART1_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
         /**< Enable MCAL_UART */
@@ -205,6 +212,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         }
         else
             Local_ErrorStatus = E_NOT_OK;
+        /**< Enable FIFOs */
+        SET_BIT(UART2_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART2_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
         /**< Enable MCAL_UART */
@@ -268,6 +277,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         }
         else
             Local_ErrorStatus = E_NOT_OK;
+        /**< Enable FIFOs */
+        SET_BIT(UART3_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART3_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
         /**< Enable MCAL_UART */
@@ -331,6 +342,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         }
         else
             Local_ErrorStatus = E_NOT_OK;
+        /**< Enable FIFOs */
+        SET_BIT(UART4_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART4_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
         /**< Enable MCAL_UART */
@@ -394,6 +407,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         }
         else
             Local_ErrorStatus = E_NOT_OK;
+        /**< Enable FIFOs */
+        SET_BIT(UART5_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART5_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
         /**< Enable MCAL_UART */
@@ -457,6 +472,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         }
         else
             Local_ErrorStatus = E_NOT_OK;
+        /**< Enable FIFOs */
+        SET_BIT(UART6_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART6_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
         /**< Enable MCAL_UART */
@@ -520,6 +537,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         }
         else
             Local_ErrorStatus = E_NOT_OK;
+        /**< Enable FIFOs */
+        SET_BIT(UART7_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART7_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
         /**< Enable MCAL_UART */
@@ -531,6 +550,7 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         break;
     }
 }
+/****************************************< SEND_BYTE_FUNCTION_IMPLEMENTATION ****************************************/
 void UART_voidSendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
 {
     switch (copy_u8UARTNo)
@@ -555,16 +575,20 @@ void UART_voidSendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
         break;
     }
 }
+/***************************************< Receive_BYTE_FUNCTION_IMPLEMENTATION **************************************/
 void UART_voidReceiveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData)
 {
     switch (copy_u8UARTNo)
     {
+        // We May Use Busy Waiting but If Condition is more time friendly
+        // We May Use Return
     case UART0:
         if (!GET_BIT(UART0_FR_R, UART_FR_RXFE))
             *copy_pu8ReceivedData = UART0_DR_R;
         break;
     }
 }
+/****************************************< SEND_STRING_FUNCTION_IMPLEMENTATION **************************************/
 void UART_voidSendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
 {
     switch (copy_u8UARTNo)
@@ -627,6 +651,7 @@ void UART_voidSendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
         break;
     }
 }
+/**************************************< Receive_STRING_FUNCTION_IMPLEMENTATION *************************************/
 void UART_voidReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer)
 {
     // you can use null terminator

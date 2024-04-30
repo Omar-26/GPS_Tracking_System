@@ -39,6 +39,8 @@
 #define UART_PORTE 4
 
 #define UART_CTL_UARTEN   0
+#define UART_CTL_TXE      8
+#define UART_CTL_RXE      9
 
 #define UART_LCRH_PEN     1
 #define UART_LCRH_EPS     2
