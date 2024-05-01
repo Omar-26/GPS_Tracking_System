@@ -14,7 +14,7 @@
 #include "UART_config.h"
 /******************************************< UART_FUNCTIONS_IMPLEMENTATION ******************************************/
 /******************************************< INIT_FUNCTION_IMPLEMENTATION *******************************************/
-void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
+Std_ReturnType UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
 {
     Std_ReturnType Local_ErrorStatus = E_OK;
     switch (copy_u8UARTNo)
@@ -33,8 +33,8 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(GPIO_PORTA_AFSEL_R, GPIO_PA0_U0RX);
         SET_BIT(GPIO_PORTA_AFSEL_R, GPIO_PA1_U0TX);
         /**< Set Port Control */
-        SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA0_U0RX); // !Error : Must Replace Address with Value
-        SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA1_U0TX); // !Error : Must Replace Address with Value
+        SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA0_U0RX);
+        SET_BIT(GPIO_PORTA_PCTL_R, GPIO_PCTL_PA1_U0TX);
         /**< Set pin Direction */
         CLR_BIT(GPIO_PORTA_DIR_R, GPIO_PA0_U0RX); // RX (Input)
         SET_BIT(GPIO_PORTA_DIR_R, GPIO_PA1_U0TX); // TX (Output)
@@ -43,24 +43,23 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(GPIO_PORTA_DEN_R, GPIO_PA1_U0TX);
         /**< Disable MCAL_UART */
         CLR_BIT(UART0_CTL_R, UART_CTL_UARTEN);
-        // TODO: FR Reg for Checking
         /**< Configure Baud Rate */
         UART0_IBRD_R |= (u32)Local_f32Divisor;
         UART0_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
-        if (copy_u8Parity = UART_PARITY_NONE)
+        if (copy_u8Parity == UART_PARITY_NONE)
         {
             CLR_BIT(UART0_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART0_LCRH_R, UART_LCRH_EPS);
             CLR_BIT(UART0_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_EVEN)
+        else if (copy_u8Parity == UART_PARITY_EVEN)
         {
             SET_BIT(UART0_LCRH_R, UART_LCRH_PEN);
             SET_BIT(UART0_LCRH_R, UART_LCRH_EPS);
             SET_BIT(UART0_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_ODD)
+        else if (copy_u8Parity == UART_PARITY_ODD)
         {
             SET_BIT(UART0_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART0_LCRH_R, UART_LCRH_EPS);
@@ -69,11 +68,11 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         else
             Local_ErrorStatus = E_NOT_OK;
         /**< Configure Stop Bits */
-        if (copy_u8StopBits = UART_STOP_BIT_1)
+        if (copy_u8StopBits == UART_STOP_BIT_1)
         {
             CLR_BIT(UART0_LCRH_R, UART_LCRH_STP2);
         }
-        else if (copy_u8StopBits = UART_STOP_BIT_2)
+        else if (copy_u8StopBits == UART_STOP_BIT_2)
         {
             SET_BIT(UART0_LCRH_R, UART_LCRH_STP2);
         }
@@ -83,9 +82,9 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(UART0_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART0_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
-        // TODO Enable RXE and TXE
         /**< Enable RXEs and TXEs */
-
+        SET_BIT(UART0_CTL_R,UART_CTL_TXE);
+        SET_BIT(UART0_CTL_R,UART_CTL_RXE);
         /**< Enable MCAL_UART */
         SET_BIT(UART0_CTL_R, UART_CTL_UARTEN);
         break;
@@ -116,19 +115,19 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         UART1_IBRD_R |= (u32)Local_f32Divisor;
         UART1_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
-        if (copy_u8Parity = UART_PARITY_NONE)
+        if (copy_u8Parity == UART_PARITY_NONE)
         {
             CLR_BIT(UART1_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART1_LCRH_R, UART_LCRH_EPS);
             CLR_BIT(UART1_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_EVEN)
+        else if (copy_u8Parity == UART_PARITY_EVEN)
         {
             SET_BIT(UART1_LCRH_R, UART_LCRH_PEN);
             SET_BIT(UART1_LCRH_R, UART_LCRH_EPS);
             SET_BIT(UART1_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_ODD)
+        else if (copy_u8Parity == UART_PARITY_ODD)
         {
             SET_BIT(UART1_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART1_LCRH_R, UART_LCRH_EPS);
@@ -137,11 +136,11 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         else
             Local_ErrorStatus = E_NOT_OK;
         /**< Configure Stop Bits */
-        if (copy_u8StopBits = UART_STOP_BIT_1)
+        if (copy_u8StopBits == UART_STOP_BIT_1)
         {
             CLR_BIT(UART1_LCRH_R, UART_LCRH_STP2);
         }
-        else if (copy_u8StopBits = UART_STOP_BIT_2)
+        else if (copy_u8StopBits == UART_STOP_BIT_2)
         {
             SET_BIT(UART1_LCRH_R, UART_LCRH_STP2);
         }
@@ -151,6 +150,9 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(UART1_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART1_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+        /**< Enable RXEs and TXEs */
+        SET_BIT(UART1_CTL_R,UART_CTL_TXE);
+        SET_BIT(UART1_CTL_R,UART_CTL_RXE);
         /**< Enable MCAL_UART */
         SET_BIT(UART1_CTL_R, UART_CTL_UARTEN);
         break;
@@ -181,19 +183,19 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         UART2_IBRD_R |= (u32)Local_f32Divisor;
         UART2_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
-        if (copy_u8Parity = UART_PARITY_NONE)
+        if (copy_u8Parity == UART_PARITY_NONE)
         {
             CLR_BIT(UART2_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART2_LCRH_R, UART_LCRH_EPS);
             CLR_BIT(UART2_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_EVEN)
+        else if (copy_u8Parity == UART_PARITY_EVEN)
         {
             SET_BIT(UART2_LCRH_R, UART_LCRH_PEN);
             SET_BIT(UART2_LCRH_R, UART_LCRH_EPS);
             SET_BIT(UART2_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_ODD)
+        else if (copy_u8Parity == UART_PARITY_ODD)
         {
             SET_BIT(UART2_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART2_LCRH_R, UART_LCRH_EPS);
@@ -202,11 +204,11 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         else
             Local_ErrorStatus = E_NOT_OK;
         /**< Configure Stop Bits */
-        if (copy_u8StopBits = UART_STOP_BIT_1)
+        if (copy_u8StopBits == UART_STOP_BIT_1)
         {
             CLR_BIT(UART2_LCRH_R, UART_LCRH_STP2);
         }
-        else if (copy_u8StopBits = UART_STOP_BIT_2)
+        else if (copy_u8StopBits == UART_STOP_BIT_2)
         {
             SET_BIT(UART2_LCRH_R, UART_LCRH_STP2);
         }
@@ -216,6 +218,9 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(UART2_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART2_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+        /**< Enable RXEs and TXEs */
+        SET_BIT(UART2_CTL_R,UART_CTL_TXE);
+        SET_BIT(UART2_CTL_R,UART_CTL_RXE);
         /**< Enable MCAL_UART */
         SET_BIT(UART2_CTL_R, UART_CTL_UARTEN);
         break;
@@ -246,19 +251,19 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         UART3_IBRD_R |= (u32)Local_f32Divisor;
         UART3_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
-        if (copy_u8Parity = UART_PARITY_NONE)
+        if (copy_u8Parity == UART_PARITY_NONE)
         {
             CLR_BIT(UART3_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART3_LCRH_R, UART_LCRH_EPS);
             CLR_BIT(UART3_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_EVEN)
+        else if (copy_u8Parity == UART_PARITY_EVEN)
         {
             SET_BIT(UART3_LCRH_R, UART_LCRH_PEN);
             SET_BIT(UART3_LCRH_R, UART_LCRH_EPS);
             SET_BIT(UART3_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_ODD)
+        else if (copy_u8Parity == UART_PARITY_ODD)
         {
             SET_BIT(UART3_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART3_LCRH_R, UART_LCRH_EPS);
@@ -267,11 +272,11 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         else
             Local_ErrorStatus = E_NOT_OK;
         /**< Configure Stop Bits */
-        if (copy_u8StopBits = UART_STOP_BIT_1)
+        if (copy_u8StopBits == UART_STOP_BIT_1)
         {
             CLR_BIT(UART3_LCRH_R, UART_LCRH_STP2);
         }
-        else if (copy_u8StopBits = UART_STOP_BIT_2)
+        else if (copy_u8StopBits == UART_STOP_BIT_2)
         {
             SET_BIT(UART3_LCRH_R, UART_LCRH_STP2);
         }
@@ -281,6 +286,9 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(UART3_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART3_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+        /**< Enable RXEs and TXEs */
+        SET_BIT(UART3_CTL_R,UART_CTL_TXE);
+        SET_BIT(UART3_CTL_R,UART_CTL_RXE);
         /**< Enable MCAL_UART */
         SET_BIT(UART3_CTL_R, UART_CTL_UARTEN);
         break;
@@ -311,19 +319,19 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         UART4_IBRD_R |= (u32)Local_f32Divisor;
         UART4_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
-        if (copy_u8Parity = UART_PARITY_NONE)
+        if (copy_u8Parity == UART_PARITY_NONE)
         {
             CLR_BIT(UART4_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART4_LCRH_R, UART_LCRH_EPS);
             CLR_BIT(UART4_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_EVEN)
+        else if (copy_u8Parity == UART_PARITY_EVEN)
         {
             SET_BIT(UART4_LCRH_R, UART_LCRH_PEN);
             SET_BIT(UART4_LCRH_R, UART_LCRH_EPS);
             SET_BIT(UART4_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_ODD)
+        else if (copy_u8Parity == UART_PARITY_ODD)
         {
             SET_BIT(UART4_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART4_LCRH_R, UART_LCRH_EPS);
@@ -332,11 +340,11 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         else
             Local_ErrorStatus = E_NOT_OK;
         /**< Configure Stop Bits */
-        if (copy_u8StopBits = UART_STOP_BIT_1)
+        if (copy_u8StopBits == UART_STOP_BIT_1)
         {
             CLR_BIT(UART4_LCRH_R, UART_LCRH_STP2);
         }
-        else if (copy_u8StopBits = UART_STOP_BIT_2)
+        else if (copy_u8StopBits == UART_STOP_BIT_2)
         {
             SET_BIT(UART4_LCRH_R, UART_LCRH_STP2);
         }
@@ -346,6 +354,9 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(UART4_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART4_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+        /**< Enable RXEs and TXEs */
+        SET_BIT(UART4_CTL_R,UART_CTL_TXE);
+        SET_BIT(UART4_CTL_R,UART_CTL_RXE);
         /**< Enable MCAL_UART */
         SET_BIT(UART4_CTL_R, UART_CTL_UARTEN);
         break;
@@ -376,19 +387,19 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         UART5_IBRD_R |= (u32)Local_f32Divisor;
         UART5_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
-        if (copy_u8Parity = UART_PARITY_NONE)
+        if (copy_u8Parity == UART_PARITY_NONE)
         {
             CLR_BIT(UART5_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART5_LCRH_R, UART_LCRH_EPS);
             CLR_BIT(UART5_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_EVEN)
+        else if (copy_u8Parity == UART_PARITY_EVEN)
         {
             SET_BIT(UART5_LCRH_R, UART_LCRH_PEN);
             SET_BIT(UART5_LCRH_R, UART_LCRH_EPS);
             SET_BIT(UART5_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_ODD)
+        else if (copy_u8Parity == UART_PARITY_ODD)
         {
             SET_BIT(UART5_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART5_LCRH_R, UART_LCRH_EPS);
@@ -397,11 +408,11 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         else
             Local_ErrorStatus = E_NOT_OK;
         /**< Configure Stop Bits */
-        if (copy_u8StopBits = UART_STOP_BIT_1)
+        if (copy_u8StopBits == UART_STOP_BIT_1)
         {
             CLR_BIT(UART5_LCRH_R, UART_LCRH_STP2);
         }
-        else if (copy_u8StopBits = UART_STOP_BIT_2)
+        else if (copy_u8StopBits == UART_STOP_BIT_2)
         {
             SET_BIT(UART5_LCRH_R, UART_LCRH_STP2);
         }
@@ -411,6 +422,9 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(UART5_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART5_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+        /**< Enable RXEs and TXEs */
+        SET_BIT(UART5_CTL_R,UART_CTL_TXE);
+        SET_BIT(UART6_CTL_R,UART_CTL_RXE);
         /**< Enable MCAL_UART */
         SET_BIT(UART5_CTL_R, UART_CTL_UARTEN);
         break;
@@ -441,19 +455,19 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         UART6_IBRD_R |= (u32)Local_f32Divisor;
         UART6_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
-        if (copy_u8Parity = UART_PARITY_NONE)
+        if (copy_u8Parity == UART_PARITY_NONE)
         {
             CLR_BIT(UART6_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART6_LCRH_R, UART_LCRH_EPS);
             CLR_BIT(UART6_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_EVEN)
+        else if (copy_u8Parity == UART_PARITY_EVEN)
         {
             SET_BIT(UART6_LCRH_R, UART_LCRH_PEN);
             SET_BIT(UART6_LCRH_R, UART_LCRH_EPS);
             SET_BIT(UART6_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_ODD)
+        else if (copy_u8Parity == UART_PARITY_ODD)
         {
             SET_BIT(UART6_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART6_LCRH_R, UART_LCRH_EPS);
@@ -462,11 +476,11 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         else
             Local_ErrorStatus = E_NOT_OK;
         /**< Configure Stop Bits */
-        if (copy_u8StopBits = UART_STOP_BIT_1)
+        if (copy_u8StopBits == UART_STOP_BIT_1)
         {
             CLR_BIT(UART6_LCRH_R, UART_LCRH_STP2);
         }
-        else if (copy_u8StopBits = UART_STOP_BIT_2)
+        else if (copy_u8StopBits == UART_STOP_BIT_2)
         {
             SET_BIT(UART6_LCRH_R, UART_LCRH_STP2);
         }
@@ -476,6 +490,9 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(UART6_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART6_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+        /**< Enable RXEs and TXEs */
+        SET_BIT(UART6_CTL_R,UART_CTL_TXE);
+        SET_BIT(UART6_CTL_R,UART_CTL_RXE);
         /**< Enable MCAL_UART */
         SET_BIT(UART6_CTL_R, UART_CTL_UARTEN);
         break;
@@ -506,19 +523,19 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         UART7_IBRD_R |= (u32)Local_f32Divisor;
         UART7_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
-        if (copy_u8Parity = UART_PARITY_NONE)
+        if (copy_u8Parity == UART_PARITY_NONE)
         {
             CLR_BIT(UART7_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART7_LCRH_R, UART_LCRH_EPS);
             CLR_BIT(UART7_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_EVEN)
+        else if (copy_u8Parity == UART_PARITY_EVEN)
         {
             SET_BIT(UART7_LCRH_R, UART_LCRH_PEN);
             SET_BIT(UART7_LCRH_R, UART_LCRH_EPS);
             SET_BIT(UART7_LCRH_R, UART_LCRH_SPS);
         }
-        else if (copy_u8Parity = UART_PARITY_ODD)
+        else if (copy_u8Parity == UART_PARITY_ODD)
         {
             SET_BIT(UART7_LCRH_R, UART_LCRH_PEN);
             CLR_BIT(UART7_LCRH_R, UART_LCRH_EPS);
@@ -527,11 +544,11 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         else
             Local_ErrorStatus = E_NOT_OK;
         /**< Configure Stop Bits */
-        if (copy_u8StopBits = UART_STOP_BIT_1)
+        if (copy_u8StopBits == UART_STOP_BIT_1)
         {
             CLR_BIT(UART7_LCRH_R, UART_LCRH_STP2);
         }
-        else if (copy_u8StopBits = UART_STOP_BIT_2)
+        else if (copy_u8StopBits == UART_STOP_BIT_2)
         {
             SET_BIT(UART7_LCRH_R, UART_LCRH_STP2);
         }
@@ -541,6 +558,9 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         SET_BIT(UART7_LCRH_R, UART_LCRH_FEN);
         /**< Configure Word Length */
         UART7_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+        /**< Enable RXEs and TXEs */
+        SET_BIT(UART7_CTL_R,UART_CTL_TXE);
+        SET_BIT(UART7_CTL_R,UART_CTL_RXE);
         /**< Enable MCAL_UART */
         SET_BIT(UART7_CTL_R, UART_CTL_UARTEN);
         break;
@@ -549,10 +569,12 @@ void UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength,
         Local_ErrorStatus = E_NOT_OK;
         break;
     }
+    return Local_ErrorStatus;
 }
 /****************************************< SEND_BYTE_FUNCTION_IMPLEMENTATION ****************************************/
-void UART_voidSendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
+Std_ReturnType UART_u8SendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
 {
+	Std_ReturnType Local_u8ErrorState=E_OK;
     switch (copy_u8UARTNo)
     {
     case UART0:
@@ -567,151 +589,238 @@ void UART_voidSendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
         if (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
             UART2_DR_R = copy_u8Data;
         break;
-    case UART3:
-        if (!GET_BIT(UART3_FR_R, UART_FR_TXFF))
-            UART3_DR_R = copy_u8Data;
+    case UART6:
+        if (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+            UART6_DR_R = copy_u8Data;
         break;
+    case UART7:
+        if (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+            UART7_DR_R = copy_u8Data;
+        break;
+
     default:
+    	Local_u8ErrorState=E_NOT_OK;
         break;
     }
+    return Local_u8ErrorState;
 }
 /***************************************< Receive_BYTE_FUNCTION_IMPLEMENTATION **************************************/
-void UART_voidReceiveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData)
+Std_ReturnType UART_u8RecieveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData)
+{
+	// We May Use Busy Waiting but If Condition is more time friendly
+	Std_ReturnType Local_u8ErrorStatus = E_OK;
+    switch (copy_u8UARTNo)
+    {
+    case UART0:
+    	if( !GET_BIT(UART0_RSR_R,UART_RSR_OE) && !GET_BIT(UART0_RSR_R,UART_RSR_BE) && !GET_BIT(UART0_RSR_R,UART_RSR_FE)){
+    		if (!GET_BIT(UART0_FR_R, UART_FR_RXFE))
+    			*copy_pu8ReceivedData = UART0_DR_R;
+    	}
+    	else{
+    		Local_u8ErrorStatus=E_NOT_OK;
+    	}
+    	break;
+
+    case UART1:
+    	if( !GET_BIT(UART1_RSR_R,UART_RSR_OE) && !GET_BIT(UART1_RSR_R,UART_RSR_BE) && !GET_BIT(UART1_RSR_R,UART_RSR_FE)){
+            if (!GET_BIT(UART1_FR_R, UART_FR_RXFE))
+                *copy_pu8ReceivedData = UART1_DR_R;
+    	}
+    	else{
+    		Local_u8ErrorStatus=E_NOT_OK;
+    	}
+            break;
+    case UART2:
+    	if( !GET_BIT(UART2_RSR_R,UART_RSR_OE) && !GET_BIT(UART2_RSR_R,UART_RSR_BE) && !GET_BIT(UART2_RSR_R,UART_RSR_FE)){
+            if (!GET_BIT(UART2_FR_R, UART_FR_RXFE))
+                *copy_pu8ReceivedData = UART2_DR_R;
+    	}
+    	else{
+    		Local_u8ErrorStatus=E_NOT_OK;
+    	}
+            break;
+    case UART3:
+    	if( !GET_BIT(UART3_RSR_R,UART_RSR_OE) && !GET_BIT(UART3_RSR_R,UART_RSR_BE) && !GET_BIT(UART3_RSR_R,UART_RSR_FE)){
+                if (!GET_BIT(UART3_FR_R, UART_FR_RXFE))
+                    *copy_pu8ReceivedData = UART3_DR_R;
+    	}
+    	else{
+    		Local_u8ErrorStatus=E_NOT_OK;
+    	}
+                break;
+    case UART4:
+    	if( !GET_BIT(UART4_RSR_R,UART_RSR_OE) && !GET_BIT(UART4_RSR_R,UART_RSR_BE) && !GET_BIT(UART4_RSR_R,UART_RSR_FE)){
+                if (!GET_BIT(UART4_FR_R, UART_FR_RXFE))
+                    *copy_pu8ReceivedData = UART4_DR_R;
+    	}
+    	else{
+    		Local_u8ErrorStatus=E_NOT_OK;
+    	}
+                break;
+    case UART5:
+    	if( !GET_BIT(UART5_RSR_R,UART_RSR_OE) && !GET_BIT(UART5_RSR_R,UART_RSR_BE) && !GET_BIT(UART5_RSR_R,UART_RSR_FE)){
+                if (!GET_BIT(UART5_FR_R, UART_FR_RXFE))
+                    *copy_pu8ReceivedData = UART5_DR_R;
+    	}
+    	else{
+    		Local_u8ErrorStatus=E_NOT_OK;
+    	}
+                break;
+    case UART6:
+    	if( !GET_BIT(UART6_RSR_R,UART_RSR_OE) && !GET_BIT(UART6_RSR_R,UART_RSR_BE) && !GET_BIT(UART6_RSR_R,UART_RSR_FE)){
+            if (!GET_BIT(UART6_FR_R, UART_FR_RXFE))
+                *copy_pu8ReceivedData = UART6_DR_R;
+    	}
+    	else{
+    		Local_u8ErrorStatus=E_NOT_OK;
+    	}
+            break;
+    case UART7:
+    	if( !GET_BIT(UART7_RSR_R,UART_RSR_OE) && !GET_BIT(UART7_RSR_R,UART_RSR_BE) && !GET_BIT(UART7_RSR_R,UART_RSR_FE)){
+            if (!GET_BIT(UART7_FR_R, UART_FR_RXFE))
+                *copy_pu8ReceivedData = UART7_DR_R;
+    	}
+    	else{
+    		Local_u8ErrorStatus=E_NOT_OK;
+    	}
+            break;
+    default:
+    	Local_u8ErrorStatus=E_NOT_OK;
+    }
+    return Local_u8ErrorStatus;
+}
+/****************************************< SEND_STRING_FUNCTION_IMPLEMENTATION **************************************/
+Std_ReturnType UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
 {
     switch (copy_u8UARTNo)
     {
-        // We May Use Busy Waiting but If Condition is more time friendly
-        // We May Use Return
+    Std_ReturnType Local_u8ErrorStatus = E_OK;
     case UART0:
-        if (!GET_BIT(UART0_FR_R, UART_FR_RXFE))
-            *copy_pu8ReceivedData = UART0_DR_R;
-        break;
-    }
-}
-/****************************************< SEND_STRING_FUNCTION_IMPLEMENTATION **************************************/
-void UART_voidSendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
-{
-    switch (copy_u8UARTNo)
-    { /// you can use null terminator
-    case UART0:
-        while (!GET_BIT(UART0_FR_R, UART_FR_TXFF))
+        while (!GET_BIT(UART0_FR_R, UART_FR_TXFF) && *copy_puString!='\0')
         {
-            UART_voidSendByte(copy_u8UARTNo, *copy_pu8String);
+            UART_u8SendByte(copy_u8UARTNo, *copy_pu8String);
             copy_pu8String++;
         }
         break;
     case UART1:
-        while (!GET_BIT(UART1_FR_R, UART_FR_TXFF))
+        while (!GET_BIT(UART1_FR_R, UART_FR_TXFF) && *copy_puString!='\0')
         {
-            UART_voidSendByte(copy_u8UARTNo, *copy_pu8String);
+            UART_u8SendByte(copy_u8UARTNo, *copy_pu8String);
             copy_pu8String++;
         }
         break;
     case UART2:
-        while (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
+        while (!GET_BIT(UART2_FR_R, UART_FR_TXFF) && *copy_puString!='\0')
         {
-            UART_voidSendByte(copy_u8UARTNo, *copy_pu8String);
+            UART_u8SendByte(copy_u8UARTNo, *copy_pu8String);
             copy_pu8String++;
         }
         break;
     case UART3:
-        while (!GET_BIT(UART3_FR_R, UART_FR_TXFF))
+        while (!GET_BIT(UART3_FR_R, UART_FR_TXFF) && *copy_puString!='\0')
         {
-            UART_voidSendByte(copy_u8UARTNo, *copy_pu8String);
+            UART_u8SendByte(copy_u8UARTNo, *copy_pu8String);
             copy_pu8String++;
         }
         break;
     case UART4:
-        while (!GET_BIT(UART4_FR_R, UART_FR_TXFF))
+        while (!GET_BIT(UART4_FR_R, UART_FR_TXFF) && *copy_puString!='\0')
         {
-            UART_voidSendByte(copy_u8UARTNo, *copy_pu8String);
+            UART_u8SendByte(copy_u8UARTNo, *copy_pu8String);
             copy_pu8String++;
         }
         break;
     case UART5:
-        while (!GET_BIT(UART5_FR_R, UART_FR_TXFF))
+        while (!GET_BIT(UART5_FR_R, UART_FR_TXFF) && *copy_puString!='\0')
         {
-            UART_voidSendByte(copy_u8UARTNo, *copy_pu8String);
+            UART_u8SendByte(copy_u8UARTNo, *copy_pu8String);
             copy_pu8String++;
         }
         break;
     case UART6:
-        while (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+        while (!GET_BIT(UART6_FR_R, UART_FR_TXFF) && *copy_puString!='\0')
         {
-            UART_voidSendByte(copy_u8UARTNo, *copy_pu8String);
+            UART_u8SendByte(copy_u8UARTNo, *copy_pu8String);
             copy_pu8String++;
         }
         break;
     case UART7:
-        while (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+        while (!GET_BIT(UART7_FR_R, UART_FR_TXFF) && *copy_puString!='\0')
         {
-            UART_voidSendByte(copy_u8UARTNo, *copy_pu8String);
+            UART_u8SendByte(copy_u8UARTNo, *copy_pu8String);
             copy_pu8String++;
         }
         break;
+    default:
+    	Local_u8ErrorStatus=E_NOT_OK;
     }
+    return Local_u8ErrorStatus;
 }
 /**************************************< Receive_STRING_FUNCTION_IMPLEMENTATION *************************************/
-void UART_voidReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer)
+Std_ReturnType UART_u8ReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer)
 {
     // you can use null terminator
+	Std_ReturnType Local_u8ErrorStatus = E_OK;
     switch (copy_u8UARTNo)
     {
     case UART0:
         while (!GET_BIT(UART0_FR_R, UART_FR_RXFE))
         {
-            *copy_pu8StringBuffer = UART0_DR_R;
+        	UART_u8RecieveByte(UART0,copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART1:
         while (!GET_BIT(UART1_FR_R, UART_FR_RXFE))
         {
-            *copy_pu8StringBuffer = UART1_DR_R;
+        	UART_u8RecieveByte(UART1,copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART2:
         while (!GET_BIT(UART2_FR_R, UART_FR_RXFE))
         {
-            *copy_pu8StringBuffer = UART2_DR_R;
+        	UART_u8RecieveByte(UART2,copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART3:
         while (!GET_BIT(UART3_FR_R, UART_FR_RXFE))
         {
-            *copy_pu8StringBuffer = UART3_DR_R;
+        	UART_u8RecieveByte(UART3,copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART4:
         while (!GET_BIT(UART4_FR_R, UART_FR_RXFE))
         {
-            *copy_pu8StringBuffer = UART4_DR_R;
+        	UART_u8RecieveByte(UART4,copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART5:
         while (!GET_BIT(UART5_FR_R, UART_FR_RXFE))
         {
-            *copy_pu8StringBuffer = UART5_DR_R;
+        	UART_u8RecieveByte(UART5,copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART6:
         while (!GET_BIT(UART6_FR_R, UART_FR_RXFE))
         {
-            *copy_pu8StringBuffer = UART6_DR_R;
+        	UART_u8RecieveByte(UART6,copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART7:
         while (!GET_BIT(UART7_FR_R, UART_FR_RXFE))
         {
-            *copy_pu8StringBuffer = UART7_DR_R;
+        	UART_u8RecieveByte(UART7,copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
+    default:
+    	Local_u8ErrorStatus=E_NOT_OK;
     }
+    return Local_u8ErrorStatus;
 }
