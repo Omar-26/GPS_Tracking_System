@@ -2496,24 +2496,24 @@
 //
 //*****************************************************************************
 #define GPIO_PCTL_PC7_M         0xF0000000  // PC7 mask
-#define GPIO_PCTL_PC7_U3TX      0x00000000  // U3TX on PC7		//updated
+#define GPIO_PCTL_PC7_U3TX      28		    // U3TX on PC7		//updated
 #define GPIO_PCTL_PC7_WT1CCP1   0x70000000  // WT1CCP1 on PC7
 #define GPIO_PCTL_PC7_USB0PFLT  0x80000000  // USB0PFLT on PC7
 #define GPIO_PCTL_PC6_M         0x0F000000  // PC6 mask
-#define GPIO_PCTL_PC6_U3RX      0x00000000  // U3RX on PC6		//updated
+#define GPIO_PCTL_PC6_U3RX      24		    // U3RX on PC6		//updated
 #define GPIO_PCTL_PC6_PHB1      0x06000000  // PHB1 on PC6
 #define GPIO_PCTL_PC6_WT1CCP0   0x07000000  // WT1CCP0 on PC6
 #define GPIO_PCTL_PC6_USB0EPEN  0x08000000  // USB0EPEN on PC6
 #define GPIO_PCTL_PC5_M         0x00F00000  // PC5 mask
-#define GPIO_PCTL_PC5_U4TX      0x00000000  // U4TX on PC5		//updated
-#define GPIO_PCTL_PC5_U1TX      0x00000001  // U1TX on PC5		//updated
+#define GPIO_PCTL_PC5_U4TX      20		    // U4TX on PC5		//updated
+#define GPIO_PCTL_PC5_U1TX      21		    // U1TX on PC5		//updated
 #define GPIO_PCTL_PC5_M0PWM7    0x00400000  // M0PWM7 on PC5
 #define GPIO_PCTL_PC5_PHA1      0x00600000  // PHA1 on PC5
 #define GPIO_PCTL_PC5_WT0CCP1   0x00700000  // WT0CCP1 on PC5
 #define GPIO_PCTL_PC5_U1CTS     0x00800000  // U1CTS on PC5
-#define GPIO_PCTL_PC4_M         0x000F0000  // PC4 mask
-#define GPIO_PCTL_PC4_U4RX      0x00000000  // U4RX on PC4  	 //updated
-#define GPIO_PCTL_PC4_U1RX      0x00000001  // U1RX on PC4 		 //updated
+#define GPIO_PCTL_PC4_M         0x000F0000  // PC4 mask 
+#define GPIO_PCTL_PC4_U4RX      16		    // U4RX on PC4  	 //updated
+#define GPIO_PCTL_PC4_U1RX      17		    // U1RX on PC4 		 //updated
 #define GPIO_PCTL_PC4_M0PWM6    0x00040000  // M0PWM6 on PC4 
 #define GPIO_PCTL_PC4_IDX1      0x00060000  // IDX1 on PC4
 #define GPIO_PCTL_PC4_WT0CCP0   0x00070000  // WT0CCP0 on PC4
@@ -2538,22 +2538,22 @@
 //
 //*****************************************************************************
 #define GPIO_PCTL_PD7_M         0xF0000000  // PD7 mask
-#define GPIO_PCTL_PD7_U2TX      0x00000000  // U2TX on PD7		//updated
+#define GPIO_PCTL_PD7_U2TX      28		    // U2TX on PD7		//updated
 #define GPIO_PCTL_PD7_PHB0      0x60000000  // PHB0 on PD7
 #define GPIO_PCTL_PD7_WT5CCP1   0x70000000  // WT5CCP1 on PD7
 #define GPIO_PCTL_PD7_NMI       0x80000000  // NMI on PD7
 #define GPIO_PCTL_PD6_M         0x0F000000  // PD6 mask
-#define GPIO_PCTL_PD6_U2RX      0x00000000  // U2RX on PD6		//updated
+#define GPIO_PCTL_PD6_U2RX      24		    // U2RX on PD6		//updated
 #define GPIO_PCTL_PD6_M0FAULT0  0x04000000  // M0FAULT0 on PD6
 #define GPIO_PCTL_PD6_PHA0      0x06000000  // PHA0 on PD6
 #define GPIO_PCTL_PD6_WT5CCP0   0x07000000  // WT5CCP0 on PD6
 #define GPIO_PCTL_PD5_M         0x00F00000  // PD5 mask
 #define GPIO_PCTL_PD5_USB0DP    0x00000000  // USB0DP on PD5
-#define GPIO_PCTL_PD5_U6TX      0x00000000  // U6TX on PD5		//updated
+#define GPIO_PCTL_PD5_U6TX      20		    // U6TX on PD5		//updated
 #define GPIO_PCTL_PD5_WT4CCP1   0x00700000  // WT4CCP1 on PD5
 #define GPIO_PCTL_PD4_M         0x000F0000  // PD4 mask
 #define GPIO_PCTL_PD4_USB0DM    0x00000000  // USB0DM on PD4
-#define GPIO_PCTL_PD4_U6RX      0x00000000  // U6RX on PD4		//updated
+#define GPIO_PCTL_PD4_U6RX      16		    // U6RX on PD4		//updated
 #define GPIO_PCTL_PD4_WT4CCP0   0x00070000  // WT4CCP0 on PD4
 #define GPIO_PCTL_PD3_M         0x0000F000  // PD3 mask
 #define GPIO_PCTL_PD3_AIN4      0x00000000  // AIN4 on PD3
@@ -2594,14 +2594,14 @@
 //*****************************************************************************
 #define GPIO_PCTL_PE5_M         0x00F00000  // PE5 mask
 #define GPIO_PCTL_PE5_AIN8      0x00000000  // AIN8 on PE5
-#define GPIO_PCTL_PE5_U5TX      0x00000000  // U5TX on PE5		//updated
+#define GPIO_PCTL_PE5_U5TX      20		    // U5TX on PE5		//updated
 #define GPIO_PCTL_PE5_I2C2SDA   0x00300000  // I2C2SDA on PE5
 #define GPIO_PCTL_PE5_M0PWM5    0x00400000  // M0PWM5 on PE5
 #define GPIO_PCTL_PE5_M1PWM3    0x00500000  // M1PWM3 on PE5
 #define GPIO_PCTL_PE5_CAN0TX    0x00800000  // CAN0TX on PE5
 #define GPIO_PCTL_PE4_M         0x000F0000  // PE4 mask
 #define GPIO_PCTL_PE4_AIN9      0x00000000  // AIN9 on PE4
-#define GPIO_PCTL_PE4_U5RX      0x00000000  // U5RX on PE4		//updated
+#define GPIO_PCTL_PE4_U5RX      16		    // U5RX on PE4		//updated
 #define GPIO_PCTL_PE4_I2C2SCL   0x00030000  // I2C2SCL on PE4
 #define GPIO_PCTL_PE4_M0PWM4    0x00040000  // M0PWM4 on PE4
 #define GPIO_PCTL_PE4_M1PWM2    0x00050000  // M1PWM2 on PE4
@@ -2612,10 +2612,10 @@
 #define GPIO_PCTL_PE2_AIN1      0x00000000  // AIN1 on PE2
 #define GPIO_PCTL_PE1_M         0x000000F0  // PE1 mask
 #define GPIO_PCTL_PE1_AIN2      0x00000000  // AIN2 on PE1
-#define GPIO_PCTL_PE1_U7TX      0x00000000  // U7TX on PE1		//updated
+#define GPIO_PCTL_PE1_U7TX      4		    // U7TX on PE1		//updated
 #define GPIO_PCTL_PE0_M         0x0000000F  // PE0 mask
 #define GPIO_PCTL_PE0_AIN3      0x00000000  // AIN3 on PE0
-#define GPIO_PCTL_PE0_U7RX      0x00000000  // U7RX on PE0		//updated
+#define GPIO_PCTL_PE0_U7RX      0		    // U7RX on PE0		//updated
 
 //*****************************************************************************
 //
