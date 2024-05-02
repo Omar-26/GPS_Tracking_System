@@ -1,0 +1,38 @@
+Component: Arm Compiler for Embedded 6.21 Tool: armlink [5ec1fa00]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(.text.main) refers to gpio_program.o(.text.init_port_f) for init_port_f
+    main.o(.text.main) refers to gpio_program.o(.text.RGB_LED) for RGB_LED
+    main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.init_port_f) refers to gpio_program.o(.text.init_port_f) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.init_port_A) refers to gpio_program.o(.text.init_port_A) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.Get_Switch) refers to gpio_program.o(.text.Get_Switch) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.Led_controlled) refers to gpio_program.o(.text.Led_controlled) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.RGB_LED) refers to gpio_program.o(.text.RGB_LED) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.Set_Pin_value) refers to gpio_program.o(.text.Set_Pin_value) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.Toggle_pin) refers to gpio_program.o(.text.Toggle_pin) for [Anonymous Symbol]
+    gpio_program.o(.ARM.exidx.text.Get_Pin_Value) refers to gpio_program.o(.text.Get_Pin_Value) for [Anonymous Symbol]
+    uart_program.o(.ARM.exidx.text.UART_voidInit) refers to uart_program.o(.text.UART_voidInit) for [Anonymous Symbol]
+    uart_program.o(.ARM.exidx.text.UART_u8SendByte) refers to uart_program.o(.text.UART_u8SendByte) for [Anonymous Symbol]
+    uart_program.o(.ARM.exidx.text.UART_u8RecieveByte) refers to uart_program.o(.text.UART_u8RecieveByte) for [Anonymous Symbol]
+    uart_program.o(.text.UART_u8SendString) refers to uart_program.o(.text.UART_u8SendByte) for UART_u8SendByte
+    uart_program.o(.ARM.exidx.text.UART_u8SendString) refers to uart_program.o(.text.UART_u8SendString) for [Anonymous Symbol]
+    uart_program.o(.text.UART_u8ReceiveString) refers to uart_program.o(.text.UART_u8RecieveByte) for UART_u8RecieveByte
+    uart_program.o(.ARM.exidx.text.UART_u8ReceiveString) refers to uart_program.o(.text.UART_u8ReceiveString) for [Anonymous Symbol]
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+

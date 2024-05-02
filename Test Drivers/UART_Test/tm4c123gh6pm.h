@@ -2832,7 +2832,8 @@
 //*****************************************************************************
 #define UART_FR_TXFE 0x00000080 // UART Transmit FIFO Empty
 #define UART_FR_RXFF 0x00000040 // UART Receive FIFO Full
-#define UART_FR_TXFF 0x00000020 // UART Transmit FIFO Full
+// #define UART_FR_TXFF 0x00000020 // UART Transmit FIFO Full
+#define UART_FR_TXFF 0x00000005
 #define UART_FR_RXFE 0x00000010 // UART Receive FIFO Empty
 #define UART_FR_BUSY 0x00000008 // UART Busy
 #define UART_FR_CTS 0x00000001  // Clear To Send

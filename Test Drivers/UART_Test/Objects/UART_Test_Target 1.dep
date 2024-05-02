@@ -1,0 +1,22 @@
+Dependencies for Project 'UART_Test', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6210000::V6.21::ARMCLANG
+F (.\main.c)(0x6633E923)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -Wno-covered-switch-default -Wno-unreachable-code-break -IC:/Users/oashr/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -DTM4C123GH6PM-o ./objects/main.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h®IT_MATH.h`PIO_Interface.h)(0x00000000)
+I (UART_Interface.hRPIO_Private.hem4c123gh6pm.h)(0x00000000)
+F (.\GPIO_config.h)(0x66327324)()
+F (.\GPIO_Interface.h)(0x6633E511)()
+F (.\GPIO_Private.h)(0x6633E59F)()
+F (.\GPIO_Program.c)(0x6633E59F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -Wno-covered-switch-default -Wno-unreachable-code-break -IC:/Users/oashr/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -DTM4C123GH6PM-o ./objects/gpio_program.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.hpIT_MATH.h`m4c123gh6pm.h)(0x00000000)
+I (GPIO_Private.h\PIO_Interface.hePIO_Config.h)(0x00000000)
+F (.\Sys_Tick.h)(0x6632CD43)()
+F (.\UART_Config.h)(0x66291BAF)()
+F (.\UART_Interface.h)(0x6633E163)()
+F (.\UART_Private.h)(0x6633E702)()
+F (.\UART_Program.c)(0x6632CE4E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -Wno-covered-switch-default -Wno-unreachable-code-break -IC:/Users/oashr/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -DTM4C123GH6PM-o ./objects/uart_program.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.hgIT_MATH.h`m4c123gh6pm.h)(0x00000000)
+I (UART_private.h\ART_interface.heART_config.h)(0x00000000)
+F (.\BIT_MATH.h)(0x662A647F)()
+F (.\IO.h)(0x66293AFD)()
+F (.\STD_TYPES.h)(0x662AC329)()
+F (.\tm4c123gh6pm.h)(0x6633E7D8)()
