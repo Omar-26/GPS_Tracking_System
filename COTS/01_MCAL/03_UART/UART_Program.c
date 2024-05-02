@@ -14,7 +14,7 @@
 #include "UART_config.h"
 /******************************************< UART_FUNCTIONS_IMPLEMENTATION ******************************************/
 /******************************************< INIT_FUNCTION_IMPLEMENTATION *******************************************/
-Std_ReturnType UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
+Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
 {
     Std_ReturnType Local_u8ErrorStatus = E_OK;
     switch (copy_u8UARTNo)
@@ -605,7 +605,7 @@ Std_ReturnType UART_u8SendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
     return Local_u8ErrorState;
 }
 /***************************************< Receive_BYTE_FUNCTION_IMPLEMENTATION **************************************/
-Std_ReturnType UART_u8RecieveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData)
+Std_ReturnType UART_u8ReceiveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData)
 {
     // We May Use Busy Waiting but If Condition is more time friendly
     Std_ReturnType Local_u8ErrorStatus = E_OK;

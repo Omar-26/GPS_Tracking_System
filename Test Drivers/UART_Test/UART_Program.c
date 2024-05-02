@@ -14,7 +14,7 @@
 #include "UART_config.h"
 /******************************************< UART_FUNCTIONS_IMPLEMENTATION ******************************************/
 /******************************************< INIT_FUNCTION_IMPLEMENTATION *******************************************/
-Std_ReturnType UART_voidInit(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
+Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
 {
     Std_ReturnType Local_u8ErrorStatus = E_OK;
     switch (copy_u8UARTNo)
@@ -605,7 +605,7 @@ Std_ReturnType UART_u8SendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
     return Local_u8ErrorState;
 }
 /***************************************< Receive_BYTE_FUNCTION_IMPLEMENTATION **************************************/
-Std_ReturnType UART_u8RecieveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData)
+Std_ReturnType UART_u8ReceiveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData)
 {
     // We May Use Busy Waiting but If Condition is more time friendly
     Std_ReturnType Local_u8ErrorStatus = E_OK;
@@ -782,56 +782,56 @@ Std_ReturnType UART_u8ReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer)
     case UART0:
         while (!GET_BIT(UART0_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART0, copy_pu8StringBuffer);
+            UART_u8ReceiveByte(UART0, copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART1:
         while (!GET_BIT(UART1_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART1, copy_pu8StringBuffer);
+            UART_u8ReceiveByte(UART1, copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART2:
         while (!GET_BIT(UART2_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART2, copy_pu8StringBuffer);
+            UART_u8ReceiveByte(UART2, copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART3:
         while (!GET_BIT(UART3_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART3, copy_pu8StringBuffer);
+            UART_u8ReceiveByte(UART3, copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART4:
         while (!GET_BIT(UART4_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART4, copy_pu8StringBuffer);
+            UART_u8ReceiveByte(UART4, copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART5:
         while (!GET_BIT(UART5_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART5, copy_pu8StringBuffer);
+            UART_u8ReceiveByte(UART5, copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART6:
         while (!GET_BIT(UART6_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART6, copy_pu8StringBuffer);
+            UART_u8ReceiveByte(UART6, copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
     case UART7:
         while (!GET_BIT(UART7_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART7, copy_pu8StringBuffer);
+            UART_u8ReceiveByte(UART7, copy_pu8StringBuffer);
             copy_pu8StringBuffer++;
         }
         break;
