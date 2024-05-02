@@ -57,7 +57,9 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
-    "tm4c123gh6pm.h": "c"
+    "tm4c123gh6pm.h": "c",
+    "bit_math.h": "c",
+    "uart_interface.h": "c"
   },
   "cSpell.words": [
     "PORTA"
