@@ -3,6 +3,7 @@
 
 #define M_PI            3.14159265358979323846264338327950
 #define Earth_Radius    6371000
+#define DEG_TO_RAD(DEG)((DEG*PI/180))
 
 
 #endif

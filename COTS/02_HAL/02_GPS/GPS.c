@@ -10,6 +10,7 @@
 #include "../../LIB/BIT_MATH.h"
 
 #include "TM4C123GH6PM.h"
+#define DEG_TO_RAD(DEG)((DEG*PI/180))
 
 
 u8 GPS_Log_Check[] = "$GPRMC,";
@@ -70,5 +71,28 @@ void GPS_format(){
         else
             currentLong = -atof(GPS_Formated[4]);
     }
+}
+const double EARTH_RADIUS = 6371000;
+double Value_to_Degree(double value){return value}
+// double degree = (int)value/100 ;
+// double minutes = value - 	(double)degree*100;
+// return (degree + (minutes/60));
+// }
 
+double calcDistance(volatile double latitude_1, volatile double longitude_1, volatile double latitude_2, volatile double longitude_2){
+	
+  volatile double phi1, phi2, delta_phi, delta_lmbda, a, c, d;
+	
+	phi1 = DEG_TO_RAD(Value_to_Degree(latitude_1));
+	phi2 = DEG_TO_RAD(Value_to_Degree(latitude_2));
+  delta_phi = phi2-phi1;
+  delta_lmbda = longitude_2-longitude_1;
+  delta_lmbda = DEG_TO_RAD(Value_to_Degree(delta_lmbda));
+// harvsine law for calculating distance on sphere
+   a = (sin(delta_phi/2) * sin(delta_phi/2)) + 
+       (cos(phi1) * cos(phi2)) *            
+       (sin(delta_lmbda/2) * sin(delta_lmbda/2)) ;
+   c = 2 * atan2(sqrt(a),sqrt(1-a));
+   d = EARTH_RADIUS * c;
+	return d;
 }
