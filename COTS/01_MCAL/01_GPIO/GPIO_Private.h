@@ -1,5 +1,4 @@
-#include<stdio.h>
-#include<d:\Projects\C_projects\tm4c123gh6pm.h>
+#include "tm4c123gh6pm.h"
 
 // led color
 #define RED_LED 0
@@ -18,22 +17,22 @@
 #define portD (3)
 #define portE (4)
 #define portF (5)
-//GPIO pins
-#define pin0 (1<<0)
-#define pin1 (1<<1)
-#define pin2 (1<<2)     
-#define pin3 (1<<3)
-#define pin4 (1<<4)
-#define pin5 (1<<5)
-#define pin6 (1<<6)
-#define pin7 (1<<7)
-//Gpio pin data
+// GPIO pins
+#define pin0 (1 << 0)
+#define pin1 (1 << 1)
+#define pin2 (1 << 2)
+#define pin3 (1 << 3)
+#define pin4 (1 << 4)
+#define pin5 (1 << 5)
+#define pin6 (1 << 6)
+#define pin7 (1 << 7)
+// Gpio pin data
 #define Pin_High (1)
-#define Pin_Low  (0)
-//Gpio pin direction
+#define Pin_Low (0)
+// Gpio pin direction
 #define pin_out (1)
-#define pin_in  (0)
-// keys 
+#define pin_in (0)
+// keys
 #define key_lock 0x4c4f434B
 #define Enable_portF_pins 0x1F
 #define Enable_portA_Uart_Spi 0x3F

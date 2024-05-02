@@ -59,7 +59,8 @@
   "files.associations": {
     "tm4c123gh6pm.h": "c",
     "bit_math.h": "c",
-    "uart_interface.h": "c"
+    "uart_interface.h": "c",
+    "gpio_interface.h": "c"
   },
   "cSpell.words": [
     "PORTA"
