@@ -3,9 +3,8 @@
  * @file TFT_Displays_config.h
  * @brief This file contains the configuration options for the TFT Displays module.
  ********************************************************************************************
- * @date 20 Jul 2023
  * @version V01
- * @author Mahmoud Abdelraouf Mahmoud
+ * @author Abdulrahman Ahmed Saeed
  *
  * @note Before using this module, make sure to configure the display controller
  * and the required GPIO pins for communication and control.
@@ -32,7 +31,7 @@
  * This option should be set to the width of the TFT display in pixels.
  * For example, if the display has a resolution of 240x320, WIDTH should be set to 240.
  */
-#define TFT_DISPLAY_WIDTH           128  
+#define TFT_DISPLAY_WIDTH           128
 
 /**
  * @brief Defines the TFT display height in pixels.
