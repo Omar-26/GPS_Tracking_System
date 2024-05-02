@@ -1,13 +1,13 @@
-#include "../../03_UART/UART_Interface.h"
-#include "../../02_GPS/GPS_params.h"
-#include "../../02_GPS/GPS_interface.h"
+#include "..\COTS\01_MCAL\03_UART\UART_Interface.h"
+#include "..\COTS\02_HAL\02_GPS\GPS_params.h"
+#include "..\COTS\02_HAL\02_GPS\GPS_interface.h"
 
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
 
-#include "../../LIB/STD_TYPES.h"
-#include "../../LIB/BIT_MATH.h"
+#include "..\COTS\04_LIB\STD_TYPES.h"
+#include "..\COTS\04_LIB\BIT_MATH.h"
 
 #include "TM4C123GH6PM.h"
 #define DEG_TO_RAD(DEG)((DEG*PI/180))
