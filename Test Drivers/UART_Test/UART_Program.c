@@ -29,6 +29,12 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTA))
             ;
+			/**< Disable MCAL_UART */
+			CLR_BIT(UART0_CTL_R, UART_CTL_UARTEN);
+			/**<unlocking GPIO_CR*/
+			GPIO_PORTA_LOCK_R= GPIO_LOCK_KEY;
+			/**<set commit register for all port pins*/
+			GPIO_PORTA_CR_R|=0xff;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTA_AFSEL_R, GPIO_PA0_U0RX);
         SET_BIT(GPIO_PORTA_AFSEL_R, GPIO_PA1_U0TX);
@@ -41,8 +47,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Set Digital Enable */
         SET_BIT(GPIO_PORTA_DEN_R, GPIO_PA0_U0RX);
         SET_BIT(GPIO_PORTA_DEN_R, GPIO_PA1_U0TX);
-        /**< Disable MCAL_UART */
-        CLR_BIT(UART0_CTL_R, UART_CTL_UARTEN);
+        
         /**< Configure Baud Rate */
         UART0_IBRD_R |= (u32)Local_f32Divisor;
         UART0_FBRD_R |= (u32)Local_f32Fraction;
@@ -97,6 +102,10 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTB))
             ;
+		/**<unlocking GPIO_CR*/
+		GPIO_PORTB_LOCK_R= GPIO_LOCK_KEY;
+		/**<set commit register for all port pins*/
+		GPIO_PORTB_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTB_AFSEL_R, GPIO_PB0_U1RX);
         SET_BIT(GPIO_PORTB_AFSEL_R, GPIO_PB1_U1TX);
@@ -165,6 +174,10 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTD))
             ;
+		/**<unlocking GPIO_CR*/
+		GPIO_PORTD_LOCK_R= GPIO_LOCK_KEY;
+		/**<set commit register for all port pins*/
+		GPIO_PORTD_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD6_U2RX);
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD7_U2TX);
@@ -233,6 +246,10 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTC))
             ;
+		/**<unlocking GPIO_CR*/
+		GPIO_PORTC_LOCK_R= GPIO_LOCK_KEY;
+		/**<set commit register for all port pins*/
+		GPIO_PORTC_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC6_U3RX);
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC7_U3TX);
@@ -301,6 +318,10 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTC))
             ;
+		/**<unlocking GPIO_CR*/
+		GPIO_PORTC_LOCK_R= GPIO_LOCK_KEY;
+		/**<set commit register for all port pins*/
+		GPIO_PORTC_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC4_U4RX);
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC5_U4TX);
@@ -369,6 +390,10 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTE))
             ;
+		/**<unlocking GPIO_CR*/
+		GPIO_PORTE_LOCK_R= GPIO_LOCK_KEY;
+		/**<set commit register for all port pins*/
+		GPIO_PORTE_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE4_U5RX);
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE5_U5TX);
@@ -437,6 +462,10 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTD))
             ;
+		/**<unlocking GPIO_CR*/
+		GPIO_PORTD_LOCK_R= GPIO_LOCK_KEY;
+		/**<set commit register for all port pins*/
+		GPIO_PORTD_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD4_U6RX);
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD5_U6TX);
@@ -505,23 +534,29 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTE))
             ;
-        /**< Set Alternate Function */
+		/**< Disable MCAL_UART TO START CONFIG.*/
+		CLR_BIT(UART7_CTL_R,UART_CTL_UARTEN);
+		/**<unlocking GPIO_CR*/
+		GPIO_PORTE_LOCK_R= GPIO_LOCK_KEY;
+		/**<set commit register*/
+		GPIO_PORTE_CR_R|=GPIO_CR_M;
+		/**< Set Alternate Function */
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE0_U7RX);
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE1_U7TX);
         /**< Set Port Control */
         SET_BIT(GPIO_PORTE_PCTL_R, GPIO_PCTL_PE0_U7RX);
         SET_BIT(GPIO_PORTE_PCTL_R, GPIO_PCTL_PE1_U7TX);
-        /**< Set Bin Direction */
+				/**< Set Bin Direction */
         CLR_BIT(GPIO_PORTE_DIR_R, GPIO_PE0_U7RX); // RX (Input)
         SET_BIT(GPIO_PORTE_DIR_R, GPIO_PE1_U7TX); // TX (Output)
         /**< Set Digital Enable */
         SET_BIT(GPIO_PORTE_DEN_R, GPIO_PE0_U7RX);
         SET_BIT(GPIO_PORTE_DEN_R, GPIO_PE1_U7TX);
-        /**< Disable MCAL_UART */
-        CLR_BIT(UART7_CTL_R, UART_CTL_UARTEN);
-        /**< Configure Baud Rate */
+				
+				/**< Configure Baud Rate */
         UART7_IBRD_R |= (u32)Local_f32Divisor;
-        UART7_FBRD_R |= (u32)Local_f32Fraction;
+		UART7_FBRD_R |= (u32)Local_f32Fraction;
+        
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
         {
