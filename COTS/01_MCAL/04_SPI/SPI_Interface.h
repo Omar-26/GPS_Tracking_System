@@ -1,4 +1,4 @@
-///@file SPI.h
+
 /******************************************************************
 * @Title : Serial Peripheral interface (SPI)
 * @Filename : SPI.h
@@ -7,7 +7,7 @@
 ********************************************************************/
 #ifndef __SPI__H
 #define __SPI__H
-#include "gpio.h"
+#include "GPIO_Program.c"
 
 //*******************************************************************
 //            (1) Macros for SPI module
@@ -104,7 +104,7 @@
 
 
 //spi enable module clock 
-#define SPI_Clock_enable(module) (SYSCTL->RCGCSSI|=(1<<module))
+#define SPI_Clock_enable(module) (SYSCTL_RCGCSSI_R|=(1<<module))
 
 //Spi peripheral number
 #define SPI_0  (0)
@@ -129,27 +129,27 @@
 #define     SSI3    0x4000B000U
 
 typedef struct {
-    volatile uint32_t CR0;           /**< Control register 0. */
-    volatile uint32_t CR1;           /**< Control register 1. */
-    volatile uint32_t DR;            /**< Data register. */
-    volatile uint32_t SR;            /**< Status register. */
-    volatile uint32_t CPSR;          /**< Clock Prescale. */
-    volatile uint32_t IM;            /**< Interrupt mask. */
-    volatile uint32_t RIS;           /**< Raw interrupt status. */
-    volatile uint32_t MIS;           /**< Masked interrupt statusr. */
-    volatile uint32_t ICR;           /**< Interrupt clear. */
-    volatile uint32_t DMACTL;        /**< DMA control. */
-    volatile uint32_t CC;           /**< Clock configuration . */
-    volatile uint32_t PeriphID0;     /**< Peripheral identification 0. */
-    volatile uint32_t PeriphID1;     /**< Peripheral identification 1. */
-    volatile uint32_t PeriphID2;     /**< Peripheral identification 2. */
-    volatile uint32_t PeriphID3;     /**< Peripheral identification 3. */
-    volatile uint32_t PeriphID4;     /**< Peripheral identification 4. */
-    volatile uint32_t PeriphID5;     /**< Peripheral identification 5. */
-    volatile uint32_t PeriphID6;     /**< Peripheral identification 6. */
-    volatile uint32_t PeriphID7;     /**< Peripheral identification 7. */
-    volatile uint32_t PCellID0;      /**< PrimeCell identification 0. */
-    volatile uint32_t PCellID1;      /**< PrimeCell identification 1. */
+    volatile u32 CR0;           /**< Control register 0. */
+    volatile u32 CR1;           /**< Control register 1. */
+    volatile u32 DR;            /**< Data register. */
+    volatile u32 SR;            /**< Status register. */
+    volatile u32 CPSR;          /**< Clock Prescale. */
+    volatile u32 IM;            /**< Interrupt mask. */
+    volatile u32 RIS;           /**< Raw interrupt status. */
+    volatile u32 MIS;           /**< Masked interrupt statusr. */
+    volatile u32 ICR;           /**< Interrupt clear. */
+    volatile u32 DMACTL;        /**< DMA control. */
+    volatile u32 CC;           /**< Clock configuration . */
+    volatile u32 PeriphID0;     /**< Peripheral identification 0. */
+    volatile u32 PeriphID1;     /**< Peripheral identification 1. */
+    volatile u32 PeriphID2;     /**< Peripheral identification 2. */
+    volatile u32 PeriphID3;     /**< Peripheral identification 3. */
+    volatile u32 PeriphID4;     /**< Peripheral identification 4. */
+    volatile u32 PeriphID5;     /**< Peripheral identification 5. */
+    volatile u32 PeriphID6;     /**< Peripheral identification 6. */
+    volatile u32 PeriphID7;     /**< Peripheral identification 7. */
+    volatile u32 PCellID0;      /**< PrimeCell identification 0. */
+    volatile u32 PCellID1;      /**< PrimeCell identification 1. */
 
 } SSI0_Type;
 
@@ -168,26 +168,26 @@ NotFullOrEmpty
 
 typedef struct 
 {
-	uint8_t  MasterSlaveMode;
-	uint8_t  FrameFormat;
-	uint8_t  ClkPolarityPhaseMode;
-	uint8_t  DataSize;
-	uint8_t  ClkSource;
-	uint8_t  PreScaler;
+	u8  MasterSlaveMode;
+	u8  FrameFormat;
+	u8  ClkPolarityPhaseMode;
+	u8  DataSize;
+	u8  ClkSource;
+	u8  PreScaler;
 }SPI_configParameters;
 
 
 typedef struct 
 {
 SSI0_Type *SSIx;
-uint8_t   PeripherlaNumber;
+u8   PeripherlaNumber;
 SPI_configParameters config;
 char *pTx;
-uint8_t Txcounter;
-uint8_t Tx_length;
+u8 Txcounter;
+u8 Tx_length;
 char *pRx;
-uint8_t Rx_length;
-uint8_t RxCounter;
+u8 Rx_length;
+u8 RxCounter;
 void (*DataTransmitted_CallBack) (void* spihandler,char* txBuff);
 void (*DataReceived_CallBack)    (void* spihandler,char* rxBuff);
 }SPI_handler;
@@ -204,19 +204,19 @@ void SPI_Enable(SPI_handler *spiHandler);
 void SPI_Disable(SPI_handler *spiHandler);
 
 /*Blocking APIS*/
-void SPI_Slave_Transmit (SPI_handler *spiHandler,char* pTxBuffer,uint8_t dataLength);
-void SPI_Master_Transmit(SPI_handler *spiHandler,char* pTxBuffer,uint8_t dataLength);
-void SPI_Master_Receive (SPI_handler *spiHandler,char* pRxBuffer,uint8_t dataLength);
-void SPI_Slave_Receive  (SPI_handler *spiHandler,char* pRxBuffer,uint8_t dataLength);
+void SPI_Slave_Transmit (SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength);
+void SPI_Master_Transmit(SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength);
+void SPI_Master_Receive (SPI_handler *spiHandler,char* pRxBuffer,u8 dataLength);
+void SPI_Slave_Receive  (SPI_handler *spiHandler,char* pRxBuffer,u8 dataLength);
 
 /* interrupts APIs Non blocking*/
 void SPI_Interrupt_Enable  (SPI_handler *spiHandler);
 void SPI_Interrupt_Disable (SPI_handler *spiHandler);
 
-void SPI_Master_Start_Receive (SPI_handler *spiHandler,char* pRxBuffer,uint8_t dataLength);
-void SPI_Master_Start_Trasnmit(SPI_handler *spiHandler,char* pTxBuffer,uint8_t dataLength);
-void SPI_Slave_Start_Receive  (SPI_handler *spiHandler,char* pRxBuffer,uint8_t dataLength);
-void SPI_Slave_Start_Transmit (SPI_handler *spiHandler,char* pTxBuffer,uint8_t dataLength);
+void SPI_Master_Start_Receive (SPI_handler *spiHandler,char* pRxBuffer,u8 dataLength);
+void SPI_Master_Start_Trasnmit(SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength);
+void SPI_Slave_Start_Receive  (SPI_handler *spiHandler,char* pRxBuffer,u8 dataLength);
+void SPI_Slave_Start_Transmit (SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength);
 
 
 
