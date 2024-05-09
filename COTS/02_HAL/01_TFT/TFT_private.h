@@ -208,19 +208,63 @@
  */
 /**
  * @brief A function that writes a charcter to the TFT display.
- * this function send a charcter to be displayed on the TFT display.
+  * This function is used to display a charcter to be displayed on the TFT display using SPI 
+ * at the specified coordinates using the specified color. It encapsulates the process of setting
+ * the X and Y addresses, the charcter to be printed, sending the RAM write command, and sending the color data
+ * to the display.
  * @param Copy_psTftDisplay Pointer to the TFT display configuration structure.
  * @param Copy_SpiPeripheral The SPI peripheral to be used for communication.
  * @param Copy_XPosition The x-coordinate of the pixel.
  * @param Copy_YPosition The y-coordinate of the pixel.
  * @param color The color of the pixel in 16-bit RGB565 format.
  * @param ch the charcter to be printed.
- * @param font the font format which will determine the charcter to be printed.
+ * @param font the font format which will determine the font of the charcter to be printed.
  * @param bgcolor the color of the TFT background.
+ *  * /// Create a TFT display configuration structure
+ * TFT_Config_t tftConfig = {
+ *     .TFT_Port = portA,
+ *     .TFT_CsPin = pin0,
+ *     .TFT_RsPin = pin1,
+ *     /// ... other configuration settings ...
+ * };
+ *
+ * /// Select the SPI peripheral (e.g., SPI_0)
+ * SPI_Peripheral_t spiPeripheral = SPI_0;
+ *  TFT_WriteChar(&tftConfig, spiPeripheral,5,45,'H',Font_11x18,COLOR_CYAN,COLOR_BLACK);
  * 
 */
 void TFT_WriteChar(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, 
 uint16_t Copy_XPosition, uint16_t Copy_YPosition, char ch, FontDef font, uint16_t color, uint16_t bgcolor);
+
+/**
+ * @brief A function that writes a string to the TFT display.
+ * This function is used to display a string to be displayed on the TFT display using SPI 
+ * at the specified coordinates using the specified color. It encapsulates the process of setting
+ * the X and Y addresses, the string to be printed, sending the RAM write command, and sending the color data
+ * to the display.
+ * @param Copy_psTftDisplay Pointer to the TFT display configuration structure.
+ * @param Copy_SpiPeripheral The SPI peripheral to be used for communication.
+ * @param Copy_XPosition The x-coordinate of the pixel.
+ * @param Copy_YPosition The y-coordinate of the pixel.
+ * @param color The color of the pixel in 16-bit RGB565 format.
+ * @param ch the charcter to be printed.
+ * @param font the font format which will determine the font of the charcter to be printed.
+ * @param bgcolor the color of the TFT background.
+ *  * /// Create a TFT display configuration structure
+ * TFT_Config_t tftConfig = {
+ *     .TFT_Port = portA,
+ *     .TFT_CsPin = pin0,
+ *     .TFT_RsPin = pin1,
+ *     /// ... other configuration settings ...
+ * };
+ *
+ * /// Select the SPI peripheral (e.g., SPI_0)
+ * SPI_Peripheral_t spiPeripheral = SPI_0;
+ *  TFT_WriteString(&tftConfig, spiPeripheral,5,45,"Hello",Font_11x18,COLOR_CYAN,COLOR_BLACK);
+ * 
+*/
+void TFT_WriteString(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral,
+uint16_t Copy_XPosition, uint16_t Copy_YPosition, char* str, FontDef font, uint16_t color, uint16_t bgcolor);
 /**
  * @brief Internal function to send commands to the TFT display controller.
  *

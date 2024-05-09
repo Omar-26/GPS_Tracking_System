@@ -1,3 +1,9 @@
+/******************************************************************
+* @Title : Thin-Film Transistor display (TFT)
+* @Filename : TFT_interface.h
+* @Author : Ahmed Khaled Mohamed Abdulrahman
+* @Version : 1.0
+********************************************************************/
 /**
  ********************************************************************************************
  * @file TFT_Displays_interface.h
@@ -6,9 +12,6 @@
  * This module provides functions for interfacing with TFT (Thin-Film Transistor) displays
  * to control graphical user interfaces (GUIs), display images, and render text.
  ********************************************************************************************
- * @version V01
- * @author Abdulrahman Ahmed Saeed
- *
  * @note This module is designed to work with various TFT display controllers.
  * @attention Before using this module, make sure to configure the display controller
  * and the required GPIO pins for communication and control.

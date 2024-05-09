@@ -452,7 +452,8 @@ uint16_t Copy_XPosition, uint16_t Copy_YPosition, char ch, FontDef font, uint16_
         }
     }
 }
-void TFT_WriteString(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral,uint16_t Copy_XPosition, uint16_t Copy_YPosition, const char* str, FontDef font, uint16_t color, uint16_t bgcolor) {
+void TFT_WriteString(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral,
+uint16_t Copy_XPosition, uint16_t Copy_YPosition, char* str, FontDef font, uint16_t color, uint16_t bgcolor) {
     TFT_Select(Copy_TftDisplay);
 
     while(*str) {
