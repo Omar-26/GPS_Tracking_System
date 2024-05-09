@@ -51,19 +51,19 @@
 void TFT_Init(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_SpiPeripheral)
 {
     /**< Set the Reset (RES) pin to high logic level to release reset signal */
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
+    Set_Pin_value(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
     
     /**< Wait for a specified delay before proceeding */
     MCAL_STK_SetDelay_ms(5);
     
     /**< Set the Reset (RST) pin to low logic level to assert reset signal */
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_LOW);
+   Set_Pin_value(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_LOW);
     
     /**< Wait for a short delay */
     MCAL_STK_SetDelay_ms(15);
     
     /**< Set the Reset (RES) pin to high logic level to release reset signal */
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
+    Set_Pin_value(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
     
     /**< Wait for a specified delay before proceeding */
     MCAL_STK_SetDelay_ms(15);
@@ -198,17 +198,17 @@ static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, SPI_handler Cop
     u8 Local_u8ReceivedData = 0;
 
     /**<  Set CS (Chip Select) pin low to select the TFT display for communication */
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_LOW); 
+    Set_Pin_value(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_LOW); 
 
     /**< Set DC (Data/Command Control) pin low to indicate command mode */ 
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_DCPin.TFT_Port, Copy_TftDisplay->TFT_DCPin.TFT_Pin, GPIO_LOW); 
+    Set_Pin_value(Copy_TftDisplay->TFT_DCPin.TFT_Port, Copy_TftDisplay->TFT_DCPin.TFT_Pin, GPIO_LOW); 
 
     /**< Perform SPI data transfer to send the command byte */ 
     SPI_Master_Transmit (&Copy_SpiPeripheral,&Copy_Command,1);
 
 
     /**< Set CS pin high to release the TFT display */ 
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_HIGH); 
+    Set_Pin_value(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_HIGH); 
 }
 /**< Needed*/
 static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_SpiPeripheral, u8 Copy_Data)
@@ -217,16 +217,16 @@ static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_Sp
     u8 Local_u8ReceivedData = 0;
 
     /**<  Set CS (Chip Select) pin low to select the TFT display for communication */
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_LOW); 
+    Set_Pin_value(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_LOW); 
 
     /**< Set DC (Data/Command Control) pin low to indicate command mode */ 
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_DCPin.TFT_Port, Copy_TftDisplay->TFT_DCPin.TFT_Pin, GPIO_HIGH); 
+    Set_Pin_value(Copy_TftDisplay->TFT_DCPin.TFT_Port, Copy_TftDisplay->TFT_DCPin.TFT_Pin, GPIO_HIGH); 
 
     /**< Perform SPI data transfer to send the command byte */ 
     SPI_Master_Transmit (&Copy_SpiPeripheral,&Copy_Data,1);
 
     /**< Set CS pin high to release the TFT display */ 
-    GPIO_SetPinValue(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin,GPIO_HIGH); 
+    Set_Pin_value(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin,GPIO_HIGH); 
 }
 /**< Not needed*/
 static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition, u16 color) 

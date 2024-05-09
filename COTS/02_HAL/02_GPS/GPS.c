@@ -73,7 +73,7 @@ void GPS_format(){
     }
 }
 const double EARTH_RADIUS = 6371000;
-double Value_to_Degree(double value){return value}
+double Value_to_Degree(double value){return value;}
 // double degree = (int)value/100 ;
 // double minutes = value - 	(double)degree*100;
 // return (degree + (minutes/60));
