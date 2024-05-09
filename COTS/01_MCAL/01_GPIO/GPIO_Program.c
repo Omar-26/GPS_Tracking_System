@@ -10,7 +10,8 @@
 void init_port_f()
 {
     SYSCTL_RCGCGPIO_R |= 0x20;
-    while ((SYSCTL_PRGPIO_R & 0x20) == 0);
+    while ((SYSCTL_PRGPIO_R & 0x20) == 0)
+        ;
     GPIO_PORTF_LOCK_R = key_lock;
     GPIO_PORTF_CR_R |= 0x1F;
     GPIO_PORTF_AMSEL_R &= 0x00;
@@ -24,7 +25,8 @@ void init_port_f()
 void init_port_A()
 {
     SYSCTL_RCGCGPIO_R |= 0x01;
-    while ((SYSCTL_PRGPIO_R & 0x01) == 0);
+    while ((SYSCTL_PRGPIO_R & 0x01) == 0)
+        ;
     GPIO_PORTA_LOCK_R |= key_lock;
     GPIO_PORTA_CR_R |= 0xFF;
     GPIO_PORTA_AMSEL_R &= 0x00;

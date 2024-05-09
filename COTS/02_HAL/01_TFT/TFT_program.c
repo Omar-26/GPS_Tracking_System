@@ -26,8 +26,9 @@
 /*******************************************< MCAL *******************************************/
 /**<=========================================================================================*/
 #include "GPIO_interface.h"
+#include "GPIO_Private.h"
 #include "SPI_interface.h"
-#include "STK_interface.h"
+#include "Sys_Tick.h"
 
 /**<========================================================================================*/
 /*******************************************< HAL *******************************************/
@@ -35,6 +36,7 @@
 #include "TFT_interface.h"
 #include "TFT_private.h"
 #include "TFT_config.h"
+#include "fonts.c"
 
 /**<=============================================================================================================*/
 /*******************************************< Functions Implementation *******************************************/
@@ -46,7 +48,7 @@
  */
 
 /**< Needed */
-void TFT_Init(const TFT_Config_t *Copy_TftDisplay, SPI_t Copy_SpiPeripheral)
+void TFT_Init(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_SpiPeripheral)
 {
     /**< Set the Reset (RES) pin to high logic level to release reset signal */
     GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
@@ -70,7 +72,7 @@ void TFT_Init(const TFT_Config_t *Copy_TftDisplay, SPI_t Copy_SpiPeripheral)
 }
 
 /**< Not needed*/
-void TFT_ClearScreen(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral)
+void TFT_ClearScreen(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral)
 {
     /**< Set the X and Y addresses */
     TFT_SetXYAddress(Copy_TftDisplay, Copy_SpiPeripheral, 0, 0);
@@ -88,7 +90,7 @@ void TFT_ClearScreen(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPe
 
 /**< Not needed*/
 
-void TFT_DrawLine(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 x1, u16 y1, u16 x2, u16 y2, u16 color)
+void TFT_DrawLine(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 x1, u16 y1, u16 x2, u16 y2, u16 color)
 {
     int Local_dx = abs(x2 - x1);            /**< Calculate the absolute difference in X coordinates. */
     int Local_sx = x1 < x2 ? 1 : -1;        /**< Determine the X direction (positive or negative). */
@@ -124,7 +126,7 @@ void TFT_DrawLine(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPerip
 }
 
 /**< Needed*/
-void TFT_DisplayImage(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, const u16 *Copy_Image)
+void TFT_DisplayImage(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, const u16 *Copy_Image)
 {
     /*******************************************< Set the X and Y addresses for drawing pixels *******************************************/ 
 	
@@ -190,7 +192,7 @@ void TFT_DisplayImage(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiP
  * @{
  */
 /**< Needed*/
-static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u8 Copy_Command)
+static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u8 Copy_Command)
 {
     /**< Temp variable to receive the data in */
     u8 Local_u8ReceivedData = 0;
@@ -202,13 +204,14 @@ static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
     GPIO_SetPinValue(Copy_TftDisplay->TFT_DCPin.TFT_Port, Copy_TftDisplay->TFT_DCPin.TFT_Pin, GPIO_LOW); 
 
     /**< Perform SPI data transfer to send the command byte */ 
-    SPI_Transfer(Copy_SpiPeripheral, &Copy_Command, &Local_u8ReceivedData, 1); 
+    SPI_Master_Transmit (&Copy_SpiPeripheral,&Copy_Command,1);
+
 
     /**< Set CS pin high to release the TFT display */ 
     GPIO_SetPinValue(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_HIGH); 
 }
 /**< Needed*/
-static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u8 Copy_Data)
+static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_SpiPeripheral, u8 Copy_Data)
 {
     /**< Temp variable to receive the data in */
     u8 Local_u8ReceivedData = 0;
@@ -220,13 +223,13 @@ static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_S
     GPIO_SetPinValue(Copy_TftDisplay->TFT_DCPin.TFT_Port, Copy_TftDisplay->TFT_DCPin.TFT_Pin, GPIO_HIGH); 
 
     /**< Perform SPI data transfer to send the command byte */ 
-    SPI_Transfer(Copy_SpiPeripheral, &Copy_Data, &Local_u8ReceivedData, 1); 
+    SPI_Master_Transmit (&Copy_SpiPeripheral,&Copy_Data,1);
 
     /**< Set CS pin high to release the TFT display */ 
     GPIO_SetPinValue(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin,GPIO_HIGH); 
 }
 /**< Not needed*/
-static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition, u16 color) 
+static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition, u16 color) 
 {
     /**< Set the X and Y addresses */
     TFT_SetXYAddress(Copy_TftDisplay, Copy_SpiPeripheral, Copy_XPosition, Copy_YPosition);
@@ -235,11 +238,11 @@ static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_
     TFT_SendCommand(Copy_TftDisplay, Copy_SpiPeripheral, TFT_RAMWR);
 
     /**< Send the pixel color data */
-    TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral, (color >> 8) & 0xFF); /**< High byte of color */ 
-    TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral, color & 0xFF);        /**< Low byte of color */
+    TFT_SendData(Copy_TftDisplay,Copy_SpiPeripheral, (color >> 8) & 0xFF); /**< High byte of color */ 
+    TFT_SendData(Copy_TftDisplay,Copy_SpiPeripheral, color & 0xFF);        /**< Low byte of color */
 }
 /**< Not needed*/
-static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition)
+static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 Copy_XPosition)
  {
     /**< Calculate the high and low bytes of the X coordinate */ 
     u8 xHigh = (Copy_XPosition >> 8) & 0xFF;
@@ -251,7 +254,7 @@ static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
     TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral, xLow);          /**< Send low byte of X address */
 }
 /**< Not needed*/
-static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_YPosition) 
+static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 Copy_YPosition) 
 {
     // Calculate the high and low bytes of the Y coordinate
     u8 yHigh = (Copy_YPosition >> 8) & 0xFF;
@@ -263,7 +266,7 @@ static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
     TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral, yLow);         /**< Send low byte of Y address */ 
 }
 /**< Not needed*/
-static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition) 
+static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition) 
 {
     /**< Calculate the high and low bytes of the X coordinates */ 
     u8 xHigh = (Copy_XPosition >> 8) & 0xFF;
@@ -284,7 +287,7 @@ static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Co
     TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral, yLow);         /**< Send low byte of Y address */
 }
 /**< Needed*/
-static void TFT_InitController(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral)
+static void TFT_InitController(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral)
 {
     /**<==============================================================================================================*/
     /*******************************************< Configure ST7735S display *******************************************/ 
@@ -429,7 +432,57 @@ static void TFT_InitController(const TFT_Config_t *Copy_TftDisplay, const SPI_t 
     /*******************************************< End of ST7735S display configuration *******************************************/
     /**<=========================================================================================================================*/
 }
+/*Tft display char */
+static void TFT_WriteChar(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, 
+uint16_t Copy_XPosition, uint16_t Copy_YPosition, char ch, FontDef font, uint16_t color, uint16_t bgcolor) {
+    uint32_t i, b, j;
 
+    TFT_SetXYAddress(Copy_TftDisplay, Copy_SpiPeripheral,Copy_XPosition, Copy_YPosition);
+
+    for(i = 0; i < font.height; i++) {
+        b = font.data[(ch - 32) * font.height + i];
+        for(j = 0; j < font.width; j++) {
+            if((b << j) & 0x8000)  {
+                uint8_t data[] = { color >> 8, color & 0xFF };
+                TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral,data);
+            } else {
+                uint8_t data[] = { bgcolor >> 8, bgcolor & 0xFF };
+                TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral,data);
+            }
+        }
+    }
+}
+void TFT_WriteString(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral,uint16_t Copy_XPosition, uint16_t Copy_YPosition, const char* str, FontDef font, uint16_t color, uint16_t bgcolor) {
+    TFT_Select(Copy_TftDisplay);
+
+    while(*str) {
+        if(Copy_XPosition + font.width >= TFT_DISPLAY_WIDTH) {
+            Copy_XPosition = 0;
+            Copy_YPosition += font.height;
+            if(Copy_YPosition + font.height >= TFT_DISPLAY_HEIGHT) {
+                break;
+            }
+
+            if(*str == ' ') {
+                // skip spaces in the beginning of the new line
+                str++;
+                continue;
+            }
+        }
+
+        TFT_WriteChar(Copy_TftDisplay, Copy_SpiPeripheral, Copy_XPosition,str, Copy_YPosition,font, color, bgcolor);
+        Copy_XPosition += font.width;
+        str++;
+    }
+
+    TFT_Unselect(Copy_TftDisplay);
+}
+void TFT_Unselect(const TFT_Config_t *Copy_TftDisplay) {
+    GPIO_SetPinValue(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_LOW); 
+}
+static void TFT_Select(const TFT_Config_t *Copy_TftDisplay) {
+     GPIO_SetPinValue(Copy_TftDisplay->TFT_CSPin.TFT_Port, Copy_TftDisplay->TFT_CSPin.TFT_Pin, GPIO_HIGH); 
+}
 /**
  * @} TFT_Private_Functions
  */

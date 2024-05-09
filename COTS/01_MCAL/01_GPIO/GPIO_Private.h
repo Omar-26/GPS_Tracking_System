@@ -28,6 +28,8 @@
 #define pin7 (1 << 7)
 // Gpio pin data
 #define Pin_High (1)
+#define GPIO_HIGH (1)
+#define GPIO_LOW (0)
 #define Pin_Low (0)
 // Gpio pin direction
 #define pin_out (1)

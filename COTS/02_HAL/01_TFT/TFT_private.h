@@ -206,7 +206,21 @@
  * @brief Internal/private functions for the TFT Displays module.
  * @{
  */
-
+/**
+ * @brief A function that writes a charcter to the TFT display.
+ * this function send a charcter to be displayed on the TFT display.
+ * @param Copy_psTftDisplay Pointer to the TFT display configuration structure.
+ * @param Copy_SpiPeripheral The SPI peripheral to be used for communication.
+ * @param Copy_XPosition The x-coordinate of the pixel.
+ * @param Copy_YPosition The y-coordinate of the pixel.
+ * @param color The color of the pixel in 16-bit RGB565 format.
+ * @param ch the charcter to be printed.
+ * @param font the font format which will determine the charcter to be printed.
+ * @param bgcolor the color of the TFT background.
+ * 
+*/
+void TFT_WriteChar(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, 
+uint16_t Copy_XPosition, uint16_t Copy_YPosition, char ch, FontDef font, uint16_t color, uint16_t bgcolor);
 /**
  * @brief Internal function to send commands to the TFT display controller.
  *
@@ -236,7 +250,7 @@
  * TFT_SendCommand(&tftConfig, spiPeripheral, 0xA1);
  * @endcode
  */
-static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u8 Copy_Command);
+static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u8 Copy_Command);
 
 /**
  * @brief Send data to the TFT display using SPI communication.
@@ -271,7 +285,7 @@ static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
  * TFT_SendData(spiPeripheral, &tftConfig, 0x55);
  * @endcode
  */
-static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u8 Copy_Data);
+static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u8 Copy_Data);
 
 /**
  * @brief Draw a pixel on the TFT display.
@@ -307,7 +321,7 @@ static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_S
  * TFT_DrawPixel(&tftConfig, spiPeripheral, 100, 50, TFT_COLOR_RED);
  * @endcode
  */
-static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition, u16 color);
+static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition, u16 color);
 
 /**
  * @brief Set the X address on the TFT display controller.
@@ -340,7 +354,7 @@ static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_
  * TFT_SetXAddress(&tftConfig, spiPeripheral, 100);
  * @endcode
  */
-static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition);
+static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 Copy_XPosition);
 
 /**
  * @brief Set the Y address on the TFT display controller.
@@ -373,7 +387,7 @@ static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
  * TFT_SetYAddress(&tftConfig, spiPeripheral, 50);
  * @endcode
  */
-static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_YPosition);
+static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_SpiPeripheral, u16 Copy_YPosition);
 
 /**
  * @brief Set the X and Y addresses on the TFT display controller.
@@ -408,7 +422,7 @@ static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
  * TFT_SetXYAddress(&tftConfig, spiPeripheral, 100, 50);
  * @endcode
  */
-static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition);
+static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, SPI_handler Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition);
 
 /**
  * @brief Internal function to initialize the TFT display controller.
@@ -440,7 +454,7 @@ static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Co
  * TFT_InitController(&tftConfig, spiPeripheral);
  * @endcode
  */
-static void TFT_InitController(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral);
+static void TFT_InitController(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_SpiPeripheral);
 
 /**
  * @brief Internal function to draw a character on the TFT display.
