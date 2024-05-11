@@ -30,7 +30,7 @@ void GPS_Read(){
     do{
         flag = 0;
         for(u8 i = 0; i < length(GPS_Log_Check); i++){
-            UART_voidReceiveByte(UART0, &Local_u8ReceivedChar);
+            UART_u8ReceiveByte(UART0, &Local_u8ReceivedChar);
             if (Local_u8ReceivedChar !=  GPS_Log_Check[i])
                 flag = 1;
                 break;
@@ -41,7 +41,7 @@ void GPS_Read(){
 
     do{
         u8 GPS_Counter = 0;
-        UART_voidReceiveByte(UART0, &Local_u8ReceivedChar);
+        UART_u8ReceiveByte(UART0, &Local_u8ReceivedChar);
         Recieved_Char = Local_u8ReceivedChar;
         GPS[GPS_Counter++] = Recieved_Char;
     } while(Recieved_Char != '*');
