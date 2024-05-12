@@ -32,6 +32,8 @@
 #define GPIO_PE0_U7RX 0
 #define GPIO_PE1_U7TX 1
 
+#define GPIO_CR_M   0xff
+
 #define UART_PORTA 0
 #define UART_PORTB 1
 #define UART_PORTC 2
@@ -49,5 +51,5 @@
 #define UART_LCRH_WLEN 5
 // #define UART_LCRH_SPS 7
 
-#define UART_CLK 80000000
+#define UART_CLK 16000000
 #endif /**< _MCAL_UART_PRIVATE_H_ */

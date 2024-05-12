@@ -7,23 +7,26 @@
 /**< LIB */
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
-#include "tm4c123gh6pm.h"
+#include "tiva.h"
 /**< MCAL_UART */
-#include "UART_private.h"
-#include "UART_interface.h"
-#include "UART_config.h"
+#include "uart_private.h"
+#include "uart_header.h"
+//#include "UART_config.h"
 /******************************************< UART_FUNCTIONS_IMPLEMENTATION ******************************************/
 /******************************************< INIT_FUNCTION_IMPLEMENTATION *******************************************/
-Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
+u8 UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u8 copy_u8Parity, u8 copy_u8StopBits)
 {
-    Std_ReturnType Local_u8ErrorStatus = E_OK;
+    u8 Local_u8ErrorStatus = 0;
+		u16 Local_u16IntegerDivisor = (u16)(UART_CLK / (16 * copy_u32BaudRate));
+    u8 Local_f32Fraction = (u8)((Local_u16IntegerDivisor - (u16)Local_u16IntegerDivisor) * 64 + 0.5);
     switch (copy_u8UARTNo)
     {
-        f32 Local_f32Divisor = UART_CLK / (16 * copy_u32BaudRate);
-        f32 Local_f32Fraction = (Local_f32Divisor - (u32)Local_f32Divisor) * 64 + 0.5;
+        
     case UART0:
         /**< Enable MCAL_UART Clock */
         SET_BIT(SYSCTL_RCGCUART_R, copy_u8UARTNo);
+				/**< Wait for UART Clock Stabilization */
+				while(!(SYSCTL_PRUART_R|SYSCTL_PRUART_R0));
         /**< Enable MCAL_GPIO Clock */
         SET_BIT(SYSCTL_RCGCGPIO_R, UART_PORTA);
         /**< Wait for UART Clock Stabilization */
@@ -49,8 +52,10 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         SET_BIT(GPIO_PORTA_DEN_R, GPIO_PA1_U0TX);
         
         /**< Configure Baud Rate */
-        UART0_IBRD_R |= (u32)Local_f32Divisor;
-        UART0_FBRD_R |= (u32)Local_f32Fraction;
+        //UART0_IBRD_R |= (u16)Local_u16IntegerDivisor;
+        //UART0_FBRD_R |= (u32)Local_f32Fraction;
+				UART0_IBRD_R |= 104;
+        UART0_FBRD_R |= 11;
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
         {
@@ -121,7 +126,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Disable MCAL_UART */
         CLR_BIT(UART1_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART1_IBRD_R |= (u32)Local_f32Divisor;
+        UART1_IBRD_R |= (u32)Local_u16IntegerDivisor;
         UART1_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
@@ -193,7 +198,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Disable MCAL_UART */
         CLR_BIT(UART2_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART2_IBRD_R |= (u32)Local_f32Divisor;
+        UART2_IBRD_R |= (u32)Local_u16IntegerDivisor;
         UART2_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
@@ -265,7 +270,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Disable MCAL_UART */
         CLR_BIT(UART3_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART3_IBRD_R |= (u32)Local_f32Divisor;
+        UART3_IBRD_R |= (u32)Local_u16IntegerDivisor;
         UART3_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
@@ -337,7 +342,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Disable MCAL_UART */
         CLR_BIT(UART4_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART4_IBRD_R |= (u32)Local_f32Divisor;
+        UART4_IBRD_R |= (u32)Local_u16IntegerDivisor;
         UART4_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
@@ -409,7 +414,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Disable MCAL_UART */
         CLR_BIT(UART5_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART5_IBRD_R |= (u32)Local_f32Divisor;
+        UART5_IBRD_R |= (u32)Local_u16IntegerDivisor;
         UART5_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
@@ -481,7 +486,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Disable MCAL_UART */
         CLR_BIT(UART6_CTL_R, UART_CTL_UARTEN);
         /**< Configure Baud Rate */
-        UART6_IBRD_R |= (u32)Local_f32Divisor;
+        UART6_IBRD_R |= (u32)Local_u16IntegerDivisor;
         UART6_FBRD_R |= (u32)Local_f32Fraction;
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
@@ -527,20 +532,20 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         break;
     /**************************************************< END_OF_UART6 ***************************************************/
     case UART7:
-        /**< Enable MCAL_UART Clock */
-        SET_BIT(SYSCTL_RCGCUART_R, copy_u8UARTNo);
-        /**< Enable MCAL_GPIO Clock */
+				/**< Enable MCAL_GPIO Clock */
         SET_BIT(SYSCTL_RCGCGPIO_R, UART_PORTE);
-        /**< Wait for UART Clock Stabilization */
+				/**< Wait for port Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTE))
             ;
-		/**< Disable MCAL_UART TO START CONFIG.*/
-		CLR_BIT(UART7_CTL_R,UART_CTL_UARTEN);
-		/**<unlocking GPIO_CR*/
-		GPIO_PORTE_LOCK_R= GPIO_LOCK_KEY;
-		/**<set commit register*/
-		GPIO_PORTE_CR_R|=GPIO_CR_M;
-		/**< Set Alternate Function */
+        /**< Enable MCAL_UART Clock */
+        SET_BIT(SYSCTL_RCGCUART_R, copy_u8UARTNo);
+				while(!GET_BIT(SYSCTL_PRUART_R,copy_u8UARTNo));
+		
+				/**<unlocking GPIO_CR*/
+				GPIO_PORTE_LOCK_R= GPIO_LOCK_KEY;
+				/**<set commit register*/
+				GPIO_PORTE_CR_R|=GPIO_CR_M;
+				/**< Set Alternate Function */
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE0_U7RX);
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE1_U7TX);
         /**< Set Port Control */
@@ -552,11 +557,13 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Set Digital Enable */
         SET_BIT(GPIO_PORTE_DEN_R, GPIO_PE0_U7RX);
         SET_BIT(GPIO_PORTE_DEN_R, GPIO_PE1_U7TX);
-				
+				/**< Disable MCAL_UART TO START CONFIG.*/
+				CLR_BIT(UART7_CTL_R,UART_CTL_UARTEN);
 				/**< Configure Baud Rate */
-        UART7_IBRD_R |= (u32)Local_f32Divisor;
-		UART7_FBRD_R |= (u32)Local_f32Fraction;
-        
+        //UART7_IBRD_R |= (u32)Local_u16IntegerDivisor;
+				//UART7_FBRD_R |= (u32)Local_f32Fraction;
+        UART7_IBRD_R |= 104;
+				UART7_FBRD_R |= 11;
         /**< Configure Parity Bits */
         if (copy_u8Parity == UART_PARITY_NONE)
         {
