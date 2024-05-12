@@ -24,7 +24,9 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
     case UART0:
         /**< Enable MCAL_UART Clock */
         SET_BIT(SYSCTL_RCGCUART_R, copy_u8UARTNo);
-        /**< Enable MCAL_GPIO Clock */
+				/**< Wait until clock is ready*/
+	      while (!GET_BIT(SYSCTL_RCGCUART_R,SYSCTL_RCGCUART_R0));
+				/**< Enable MCAL_GPIO Clock */
         SET_BIT(SYSCTL_RCGCGPIO_R, UART_PORTA);
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTA))
@@ -105,7 +107,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
 		/**<unlocking GPIO_CR*/
 		GPIO_PORTB_LOCK_R= GPIO_LOCK_KEY;
 		/**<set commit register for all port pins*/
-		GPIO_PORTB_CR_R|=GPIO_CR_M;
+		// GPIO_PORTB_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTB_AFSEL_R, GPIO_PB0_U1RX);
         SET_BIT(GPIO_PORTB_AFSEL_R, GPIO_PB1_U1TX);
@@ -177,7 +179,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
 		/**<unlocking GPIO_CR*/
 		GPIO_PORTD_LOCK_R= GPIO_LOCK_KEY;
 		/**<set commit register for all port pins*/
-		GPIO_PORTD_CR_R|=GPIO_CR_M;
+		//GPIO_PORTD_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD6_U2RX);
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD7_U2TX);
@@ -249,7 +251,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
 		/**<unlocking GPIO_CR*/
 		GPIO_PORTC_LOCK_R= GPIO_LOCK_KEY;
 		/**<set commit register for all port pins*/
-		GPIO_PORTC_CR_R|=GPIO_CR_M;
+//		GPIO_PORTC_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC6_U3RX);
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC7_U3TX);
@@ -321,7 +323,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
 		/**<unlocking GPIO_CR*/
 		GPIO_PORTC_LOCK_R= GPIO_LOCK_KEY;
 		/**<set commit register for all port pins*/
-		GPIO_PORTC_CR_R|=GPIO_CR_M;
+//		GPIO_PORTC_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC4_U4RX);
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC5_U4TX);
@@ -393,7 +395,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
 		/**<unlocking GPIO_CR*/
 		GPIO_PORTE_LOCK_R= GPIO_LOCK_KEY;
 		/**<set commit register for all port pins*/
-		GPIO_PORTE_CR_R|=GPIO_CR_M;
+//		GPIO_PORTE_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE4_U5RX);
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE5_U5TX);
@@ -465,7 +467,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
 		/**<unlocking GPIO_CR*/
 		GPIO_PORTD_LOCK_R= GPIO_LOCK_KEY;
 		/**<set commit register for all port pins*/
-		GPIO_PORTD_CR_R|=GPIO_CR_M;
+//		GPIO_PORTD_CR_R|=GPIO_CR_M;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD4_U6RX);
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD5_U6TX);
@@ -539,7 +541,7 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
 		/**<unlocking GPIO_CR*/
 		GPIO_PORTE_LOCK_R= GPIO_LOCK_KEY;
 		/**<set commit register*/
-		GPIO_PORTE_CR_R|=GPIO_CR_M;
+//		GPIO_PORTE_CR_R|= GPIO_CR_M;
 		/**< Set Alternate Function */
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE0_U7RX);
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE1_U7TX);

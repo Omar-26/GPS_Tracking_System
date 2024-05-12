@@ -7,7 +7,7 @@ void GPS_Read();
 
 void GPS_format();
 
-double Value_to_Degree(double value){return value}
+double Value_to_Degree(double value){return value};
 
 #define DEG_TO_RAD(DEG)((DEG*PI/180))
 
