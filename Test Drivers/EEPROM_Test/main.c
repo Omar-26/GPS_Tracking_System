@@ -1,12 +1,15 @@
-#include "IO.h"
 #include "EEPROM_Interface.h"
 #include "tm4c123gh6pm.h"
-int k = 0;
-float latitudee[20] ;
-float longitudee[20] ;
-float latit[20];
-float longit[20];
-void RGBLED_Init(void){
+#include "IO.h"
+
+uint32_t i = 0;
+
+f32 write_latitude[50] ;
+f32 write_longitude[50] ;
+f32 read_latitude[50];
+f32 read_longitude[50];
+
+void init_RGBLEDs(void){
 SYSCTL_RCGCGPIO_R |= PF_mask;
 while((SYSCTL_PRGPIO_R & 0x20)==0 )
 GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY;
@@ -19,64 +22,33 @@ GPIO_PORTF_DIR_R |= PF123_mask;
 GPIO_PORTF_DEN_R |= PF123_mask;
 GPIO_PORTF_DATA_R &= ~PF123_mask;
 }
-void SW_Init(int sw){
-GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY;
-GPIO_PORTF_CR_R |= sw;
-GPIO_PORTF_AMSEL_R &= ~sw;
-GPIO_PORTF_AFSEL_R &= ~sw;
-GPIO_PORTF_PCTL_R &= ~0x000F0000;
-GPIO_PORTF_DIR_R &= ~sw;
-GPIO_PORTF_DEN_R |= sw;
-GPIO_PORTF_PUR_R = sw;
-}
-unsigned char SW_Input(int sw) {
-return ~GPIO_PORTF_DATA_R & sw;
-}
-void LEDS_output(unsigned char data){
+
+void LEDs_output(u8 data){
 GPIO_PORTF_DATA_R &= ~0x0E;
 GPIO_PORTF_DATA_R |= data;
 }
-unsigned char sw1_in;
-unsigned char sw2_in;
-unsigned char sw1_prev;
-unsigned char sw2_prev;
+
 int main() {
-RGBLED_Init();
-SW_Init(PF_SW1_mask);
-SW_Init(PF_SW2_mask);
-longitudee[7]=20;
-latitudee[19]=5;
+init_RGBLEDs();
 init_EEPROM();
-	
+write_latitude[10] = 4;
+write_longitude[4] = 10;
 
-    
-
-
-write_Array_EEPROM(latitudee, longitudee, 20);
-read_Array_EEPROM(latit, longit, 20);
+write_Array_EEPROM(write_latitude, write_longitude, 50);
+read_Array_EEPROM(read_latitude, read_longitude, 50);
 		
 while(1){
-sw1_in= SW_Input(PF_SW1_mask);
-sw2_in = SW_Input(PF_SW2_mask);
-	
-	
-	
-		
-//if(sw1_prev != sw1_in || sw2_prev != sw2_in){
-if(longit[8]== 20){
-LEDS_output(BLUE);
+if(read_latitude[10] == 4){
+LEDs_output(RED);
 }
-else if( latit[19]==5){
-LEDS_output(GREEN);
+else if(read_longitude[4] == 10){
+LEDs_output(BLUE);
 }
-else if ( latit[5]== 0){
-LEDS_output(RED);
+else if (read_latitude[5] == 0){
+LEDs_output(GREEN);
 }
 else {
-LEDS_output(0);
-}
-sw1_prev = sw1_in;
-sw2_prev = sw2_in;
+LEDs_output(0);
 }
 }
-//}
+}
