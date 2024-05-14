@@ -1,0 +1,346 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: ahmed Sallam, srudnet, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.9.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\embedded\GPS_Tracking_System\GPS_Tracking_System\gps.uvprojx
+Project File Date:  05/12/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+compiling EEPROM_Program.c...
+compiling GPIO_Program.c...
+main.c(8): warning: In file included from...
+./STD_TYPES.h(30): warning: 'NULL' macro redefined [-Wmacro-redefined]
+   30 | #define     NULL        ((void *)0x0)   /**< Null pointer definition */
+      |             ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(76): note: previous definition is here
+   76 | #define NULL 0                   /* see <stddef.h> */
+      |         ^
+1 warning generated.
+compiling main.c...
+TFT_program.c(208): warning: passing 'u8 *' (aka 'unsigned char *') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  208 |     SPI_Master_Transmit (&Copy_SpiPeripheral,&Copy_Command,1);
+      |                                              ^~~~~~~~~~~~~
+./SPI_interface.h(208): note: passing argument to parameter 'pTxBuffer' here
+  208 | void SPI_Master_Transmit(SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength);
+      |                                                        ^
+TFT_program.c(227): warning: passing 'u8 *' (aka 'unsigned char *') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  227 |     SPI_Master_Transmit (&Copy_SpiPeripheral,&Copy_Data,1);
+      |                                              ^~~~~~~~~~
+./SPI_interface.h(208): note: passing argument to parameter 'pTxBuffer' here
+  208 | void SPI_Master_Transmit(SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength);
+      |                                                        ^
+2 warnings generated.
+compiling TFT_program.c...
+compiling Sys_Tick.c...
+compiling fonts.c...
+compiling system_TM4C123.c...
+GPS.c(20): warning: 'sizeof (arr)' will return the size of the pointer, not the array itself [-Wsizeof-pointer-div]
+   20 | {return sizeof(arr)/sizeof(arr[0]);
+      |         ~~~~~~~~~~~^
+GPS.c(19): note: pointer 'arr' declared here
+   19 | u16 length (u8* arr)
+      |                 ^
+GPS.c(42): warning: passing 'u8[80]' (aka 'unsigned char[80]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   42 |     strcpy(GPS, "");
+      |            ^~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                     ^
+GPS.c(58): warning: passing 'u8[80]' (aka 'unsigned char[80]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   58 |     token = strtok(GPS, ",");
+      |                    ^~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(280): note: passing argument to parameter here
+  280 | extern _ARMABI char *strtok(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(2)));
+      |                                                     ^
+GPS.c(58): warning: assigning to 'u8 *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   58 |     token = strtok(GPS, ",");
+      |           ^ ~~~~~~~~~~~~~~~~
+GPS.c(62): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   62 |         strcpy(GPS_Formatted[No_Of_Token_Strings++], token);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                     ^
+GPS.c(62): warning: passing 'u8 *' (aka 'unsigned char *') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   62 |         strcpy(GPS_Formatted[No_Of_Token_Strings++], token);
+      |                                                      ^~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                                                     ^
+GPS.c(63): warning: assigning to 'u8 *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   63 |         token = strtok(NULL, ",");
+      |               ^ ~~~~~~~~~~~~~~~~~
+GPS.c(66): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   66 |     if (strcmp(GPS_Formatted[1], "A") == 0)
+      |                ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+GPS.c(69): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   69 |         if (strcmp(GPS_Formatted[3], "N") == 0)
+      |                    ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+GPS.c(70): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   70 |             currentLat = atof(GPS_Formatted[2]);
+      |                               ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(158): note: passing argument to parameter here
+  158 | extern _ARMABI double atof(const char * /*nptr*/) __attribute__((__nonnull__(1)));
+      |                                                 ^
+GPS.c(72): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   72 |             currentLat = -atof(GPS_Formatted[2]);
+      |                                ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(158): note: passing argument to parameter here
+  158 | extern _ARMABI double atof(const char * /*nptr*/) __attribute__((__nonnull__(1)));
+      |                                                 ^
+GPS.c(74): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   74 |         if (strcmp(GPS_Formatted[5], "E") == 0)
+      |                    ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+GPS.c(75): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   75 |             currentLong = atof(GPS_Formatted[4]);
+      |                                ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(158): note: passing argument to parameter here
+  158 | extern _ARMABI double atof(const char * /*nptr*/) __attribute__((__nonnull__(1)));
+      |                                                 ^
+GPS.c(77): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   77 |             currentLong = -atof(GPS_Formatted[4]);
+      |                                 ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(158): note: passing argument to parameter here
+  158 | extern _ARMABI double atof(const char * /*nptr*/) __attribute__((__nonnull__(1)));
+      |                                                 ^
+14 warnings generated.
+compiling GPS.c...
+SPI_Program.c(72): warning: while loop has empty body [-Wempty-body]
+   72 | while(((spiHandler->SSIx->SR & (1<<0) ) == 0));       
+      |                                               ^
+SPI_Program.c(72): note: put the semicolon on a separate line to silence this warning
+SPI_Program.c(556): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  556 | }
+      | ^
+SPI_Program.c(575): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  575 | }
+      | ^
+SPI_Program.c(595): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  595 | }
+      | ^
+4 warnings generated.
+compiling SPI_Program.c...
+UART_Program.c(589): warning: shift count >= width of type [-Wshift-count-overflow]
+  589 |         if (!GET_BIT(UART0_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(589): warning: shift count >= width of type [-Wshift-count-overflow]
+  589 |         if (!GET_BIT(UART0_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(593): warning: shift count >= width of type [-Wshift-count-overflow]
+  593 |         if (!GET_BIT(UART1_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(593): warning: shift count >= width of type [-Wshift-count-overflow]
+  593 |         if (!GET_BIT(UART1_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(597): warning: shift count >= width of type [-Wshift-count-overflow]
+  597 |         if (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(597): warning: shift count >= width of type [-Wshift-count-overflow]
+  597 |         if (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(601): warning: shift count >= width of type [-Wshift-count-overflow]
+  601 |         if (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(601): warning: shift count >= width of type [-Wshift-count-overflow]
+  601 |         if (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(605): warning: shift count >= width of type [-Wshift-count-overflow]
+  605 |         if (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(605): warning: shift count >= width of type [-Wshift-count-overflow]
+  605 |         if (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(723): warning: shift count >= width of type [-Wshift-count-overflow]
+  723 |         while (!GET_BIT(UART0_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(723): warning: shift count >= width of type [-Wshift-count-overflow]
+  723 |         while (!GET_BIT(UART0_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(730): warning: shift count >= width of type [-Wshift-count-overflow]
+  730 |         while (!GET_BIT(UART1_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(730): warning: shift count >= width of type [-Wshift-count-overflow]
+  730 |         while (!GET_BIT(UART1_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(737): warning: shift count >= width of type [-Wshift-count-overflow]
+  737 |         while (!GET_BIT(UART2_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(737): warning: shift count >= width of type [-Wshift-count-overflow]
+  737 |         while (!GET_BIT(UART2_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(744): warning: shift count >= width of type [-Wshift-count-overflow]
+  744 |         while (!GET_BIT(UART3_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(744): warning: shift count >= width of type [-Wshift-count-overflow]
+  744 |         while (!GET_BIT(UART3_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(751): warning: shift count >= width of type [-Wshift-count-overflow]
+  751 |         while (!GET_BIT(UART4_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(751): warning: shift count >= width of type [-Wshift-count-overflow]
+  751 |         while (!GET_BIT(UART4_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(758): warning: shift count >= width of type [-Wshift-count-overflow]
+  758 |         while (!GET_BIT(UART5_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(758): warning: shift count >= width of type [-Wshift-count-overflow]
+  758 |         while (!GET_BIT(UART5_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(765): warning: shift count >= width of type [-Wshift-count-overflow]
+  765 |         while (!GET_BIT(UART6_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(765): warning: shift count >= width of type [-Wshift-count-overflow]
+  765 |         while (!GET_BIT(UART6_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(772): warning: shift count >= width of type [-Wshift-count-overflow]
+  772 |         while (!GET_BIT(UART7_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(772): warning: shift count >= width of type [-Wshift-count-overflow]
+  772 |         while (!GET_BIT(UART7_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+26 warnings generated.
+compiling UART_Program.c...
+assembling startup_TM4C123.s...
+linking...
+Program Size: Code=23596 RO-data=1580 RW-data=12 ZI-data=968  
+".\Objects\gps.axf" - 0 Error(s), 47 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil::TM4C_DFP@1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: Keil::Device:Startup@1.0.1
+      Source file:   Device/Source/ARM/startup_TM4C123.s
+      Include file:  Device/Include/TM4C123/TM4C123.h
+      Source file:   Device/Source/system_TM4C123.c
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>
