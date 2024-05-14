@@ -5,6 +5,7 @@
 /********** Version   : 1.0                    		***********/
 /**************************************************************/
 #include "STD_TYPES.h"
+#include "BIT_MATH.h"
 #ifndef _MCAL_UART_INTERFACE_H_
 #define _MCAL_UART_INTERFACE_H_
 
@@ -101,7 +102,7 @@ u8 UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8DataBits, u8 co
 
 u8 UART_u8SendByte(u8 copy_u8UARTNo, u8 copy_u8Data);
 
-u8 UART_u8ReceiveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData);
+u8 UART_u8RecieveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData);
 
 u8 UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8SentString);
 

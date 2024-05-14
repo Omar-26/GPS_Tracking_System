@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>UART_Test</OutputName>
+          <OutputName>uart_test</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -385,6 +385,46 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
+              <FileName>BIT_MATH.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\BIT_MATH.h</FilePath>
+            </File>
+            <File>
+              <FileName>IO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\IO.h</FilePath>
+            </File>
+            <File>
+              <FileName>STD_TYPES.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\STD_TYPES.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm4c123gh6pm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tm4c123gh6pm.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART_Config.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Interface.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART_Interface.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UART_Program.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
@@ -409,57 +449,13 @@
               <FileType>1</FileType>
               <FilePath>.\GPIO_Program.c</FilePath>
             </File>
-            <File>
-              <FileName>Sys_Tick.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Sys_Tick.h</FilePath>
-            </File>
-            <File>
-              <FileName>UART_Config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\UART_Config.h</FilePath>
-            </File>
-            <File>
-              <FileName>UART_Interface.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\UART_Interface.h</FilePath>
-            </File>
-            <File>
-              <FileName>UART_Private.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\UART_Private.h</FilePath>
-            </File>
-            <File>
-              <FileName>UART_Program.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\UART_Program.c</FilePath>
-            </File>
-            <File>
-              <FileName>BIT_MATH.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\BIT_MATH.h</FilePath>
-            </File>
-            <File>
-              <FileName>IO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\IO.h</FilePath>
-            </File>
-            <File>
-              <FileName>STD_TYPES.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\STD_TYPES.h</FilePath>
-            </File>
-            <File>
-              <FileName>tm4c123gh6pm.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\tm4c123gh6pm.h</FilePath>
-            </File>
-            <File>
-              <FileName>startup_TM4C123.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\startup_TM4C123.s</FilePath>
-            </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
       </Groups>
     </Target>
@@ -467,8 +463,38 @@
 
   <RTE>
     <apis/>
-    <components/>
-    <files/>
+    <components>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="6.0.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="6.0.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.1" condition="TM4C123x CMSIS">
+        <package name="TM4C_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.1.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+    </components>
+    <files>
+      <file attr="config" category="source" condition="Compiler ARMCC" name="Device\Source\ARM\startup_TM4C123.s" version="1.0.0">
+        <instance index="0">RTE\Device\TM4C123GH6PM\startup_TM4C123.s</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.1" condition="TM4C123x CMSIS"/>
+        <package name="TM4C_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.1.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\Source\system_TM4C123.c" version="1.0.1">
+        <instance index="0">RTE\Device\TM4C123GH6PM\system_TM4C123.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.1" condition="TM4C123x CMSIS"/>
+        <package name="TM4C_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.1.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+    </files>
   </RTE>
 
 </Project>

@@ -1,0 +1,461 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Omar Ashraf, Ain Shams University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.9.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\Study\Embedded Systems\9-Project\GPS_Tracking_System\gps.uvprojx
+Project File Date:  05/12/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+compiling GPIO_Program.c...
+compiling EEPROM_Program.c...
+compiling fonts.c...
+UART_Program.c(589): warning: shift count >= width of type [-Wshift-count-overflow]
+  589 |         if (!GET_BIT(UART0_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(589): warning: shift count >= width of type [-Wshift-count-overflow]
+  589 |         if (!GET_BIT(UART0_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(593): warning: shift count >= width of type [-Wshift-count-overflow]
+  593 |         if (!GET_BIT(UART1_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(593): warning: shift count >= width of type [-Wshift-count-overflow]
+  593 |         if (!GET_BIT(UART1_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(597): warning: shift count >= width of type [-Wshift-count-overflow]
+  597 |         if (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(597): warning: shift count >= width of type [-Wshift-count-overflow]
+  597 |         if (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(601): warning: shift count >= width of type [-Wshift-count-overflow]
+  601 |         if (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(601): warning: shift count >= width of type [-Wshift-count-overflow]
+  601 |         if (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(605): warning: shift count >= width of type [-Wshift-count-overflow]
+  605 |         if (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(605): warning: shift count >= width of type [-Wshift-count-overflow]
+  605 |         if (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(723): warning: shift count >= width of type [-Wshift-count-overflow]
+  723 |         while (!GET_BIT(UART0_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(723): warning: shift count >= width of type [-Wshift-count-overflow]
+  723 |         while (!GET_BIT(UART0_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(730): warning: shift count >= width of type [-Wshift-count-overflow]
+  730 |         while (!GET_BIT(UART1_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(730): warning: shift count >= width of type [-Wshift-count-overflow]
+  730 |         while (!GET_BIT(UART1_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(737): warning: shift count >= width of type [-Wshift-count-overflow]
+  737 |         while (!GET_BIT(UART2_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(737): warning: shift count >= width of type [-Wshift-count-overflow]
+  737 |         while (!GET_BIT(UART2_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(744): warning: shift count >= width of type [-Wshift-count-overflow]
+  744 |         while (!GET_BIT(UART3_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(744): warning: shift count >= width of type [-Wshift-count-overflow]
+  744 |         while (!GET_BIT(UART3_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(751): warning: shift count >= width of type [-Wshift-count-overflow]
+  751 |         while (!GET_BIT(UART4_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(751): warning: shift count >= width of type [-Wshift-count-overflow]
+  751 |         while (!GET_BIT(UART4_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(758): warning: shift count >= width of type [-Wshift-count-overflow]
+  758 |         while (!GET_BIT(UART5_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(758): warning: shift count >= width of type [-Wshift-count-overflow]
+  758 |         while (!GET_BIT(UART5_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(765): warning: shift count >= width of type [-Wshift-count-overflow]
+  765 |         while (!GET_BIT(UART6_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(765): warning: shift count >= width of type [-Wshift-count-overflow]
+  765 |         while (!GET_BIT(UART6_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(772): warning: shift count >= width of type [-Wshift-count-overflow]
+  772 |         while (!GET_BIT(UART7_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(772): warning: shift count >= width of type [-Wshift-count-overflow]
+  772 |         while (!GET_BIT(UART7_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(793): error: call to undeclared function 'UART_u8RecieveByte'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  793 |             UART_u8RecieveByte(UART0, copy_pu8StringBuffer);
+      |             ^
+UART_Program.c(793): note: did you mean 'UART_u8ReceiveByte'?
+UART_Program.c(616): note: 'UART_u8ReceiveByte' declared here
+  616 | Std_ReturnType UART_u8ReceiveByte(u8 copy_u8UARTNo, u8 *copy_pu8ReceivedData)
+      |                ^
+UART_Program.c(800): error: call to undeclared function 'UART_u8RecieveByte'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  800 |             UART_u8RecieveByte(UART1, copy_pu8StringBuffer);
+      |             ^
+UART_Program.c(807): error: call to undeclared function 'UART_u8RecieveByte'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  807 |             UART_u8RecieveByte(UART2, copy_pu8StringBuffer);
+      |             ^
+UART_Program.c(814): error: call to undeclared function 'UART_u8RecieveByte'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  814 |             UART_u8RecieveByte(UART3, copy_pu8StringBuffer);
+      |             ^
+UART_Program.c(821): error: call to undeclared function 'UART_u8RecieveByte'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  821 |             UART_u8RecieveByte(UART4, copy_pu8StringBuffer);
+      |             ^
+UART_Program.c(828): error: call to undeclared function 'UART_u8RecieveByte'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  828 |             UART_u8RecieveByte(UART5, copy_pu8StringBuffer);
+      |             ^
+UART_Program.c(835): error: call to undeclared function 'UART_u8RecieveByte'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  835 |             UART_u8RecieveByte(UART6, copy_pu8StringBuffer);
+      |             ^
+UART_Program.c(842): error: call to undeclared function 'UART_u8RecieveByte'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  842 |             UART_u8RecieveByte(UART7, copy_pu8StringBuffer);
+      |             ^
+26 warnings and 8 errors generated.
+compiling UART_Program.c...
+main.c(8): warning: In file included from...
+./STD_TYPES.h(30): warning: 'NULL' macro redefined [-Wmacro-redefined]
+   30 | #define     NULL        ((void *)0x0)   /**< Null pointer definition */
+      |             ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(76): note: previous definition is here
+   76 | #define NULL 0                   /* see <stddef.h> */
+      |         ^
+main.c(11): warning: In file included from...
+./Sys_Tick.c(126): warning: shift count >= width of type [-Wshift-count-overflow]
+  126 |         while(GET_BIT(SysTick->CTRL,SysTick_CTRL_COUNTFLAG_Msk) == 0);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+main.c(11): warning: In file included from...
+./Sys_Tick.c(126): warning: shift count >= width of type [-Wshift-count-overflow]
+  126 |         while(GET_BIT(SysTick->CTRL,SysTick_CTRL_COUNTFLAG_Msk) == 0);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+3 warnings generated.
+compiling main.c...
+GPS.c(3): warning: In file included from...
+./GPS_interface.h(12): warning: 'DEG_TO_RAD' macro redefined [-Wmacro-redefined]
+   12 | #define DEG_TO_RAD(DEG) ((DEG * PI / 180))
+      |         ^
+./GPS_params.h(6): note: previous definition is here
+    6 | #define DEG_TO_RAD(DEG)((DEG*PI/180))
+      |         ^
+GPS.c(32): error: call to undeclared function 'length'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   32 |         for (u8 i = 0; i < length(GPS_Log_Check); i++)
+      |                            ^
+GPS.c(41): warning: passing 'u8[80]' (aka 'unsigned char[80]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   41 |     strcpy(GPS, "");
+      |            ^~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                     ^
+GPS.c(57): warning: passing 'u8[80]' (aka 'unsigned char[80]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   57 |     token = strtok(GPS, ",");
+      |                    ^~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(280): note: passing argument to parameter here
+  280 | extern _ARMABI char *strtok(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(2)));
+      |                                                     ^
+GPS.c(57): warning: assigning to 'u8 *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   57 |     token = strtok(GPS, ",");
+      |           ^ ~~~~~~~~~~~~~~~~
+GPS.c(61): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   61 |         strcpy(GPS_Formatted[No_Of_Token_Strings++], token);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                     ^
+GPS.c(61): warning: passing 'u8 *' (aka 'unsigned char *') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   61 |         strcpy(GPS_Formatted[No_Of_Token_Strings++], token);
+      |                                                      ^~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                                                     ^
+GPS.c(62): warning: assigning to 'u8 *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   62 |         token = strtok(NULL, ",");
+      |               ^ ~~~~~~~~~~~~~~~~~
+GPS.c(65): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   65 |     if (strcmp(GPS_Formatted[1], "A") == 0)
+      |                ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+GPS.c(68): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   68 |         if (strcmp(GPS_Formatted[3], "N") == 0)
+      |                    ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+GPS.c(69): error: call to undeclared function 'atof'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   69 |             currentLat = atof(GPS_Formatted[2]);
+      |                          ^
+GPS.c(73): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   73 |         if (strcmp(GPS_Formatted[5], "E") == 0)
+      |                    ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+10 warnings and 2 errors generated.
+compiling GPS.c...
+SPI_Program.c(5): warning: In file included from...
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(89): error: "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+   89 |       #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+      |        ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1693): error: unknown type name 'IRQn_Type'
+ 1693 | __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
+      |                                       ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1712): error: unknown type name 'IRQn_Type'
+ 1712 | __STATIC_INLINE uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
+      |                                              ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1731): error: unknown type name 'IRQn_Type'
+ 1731 | __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
+      |                                        ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1750): error: unknown type name 'IRQn_Type'
+ 1750 | __STATIC_INLINE uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
+      |                                               ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1769): error: unknown type name 'IRQn_Type'
+ 1769 | __STATIC_INLINE void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
+      |                                           ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1784): error: unknown type name 'IRQn_Type'
+ 1784 | __STATIC_INLINE void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+      |                                             ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1801): error: unknown type name 'IRQn_Type'
+ 1801 | __STATIC_INLINE uint32_t __NVIC_GetActive(IRQn_Type IRQn)
+      |                                           ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1823): error: unknown type name 'IRQn_Type'
+ 1823 | __STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+      |                                         ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1827): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1827 |     NVIC->IPR[((uint32_t)IRQn)]               = (uint8_t)((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |                                                                              ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1831): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1831 |     SCB->SHPR[(((uint32_t)IRQn) & 0xFUL)-4UL] = (uint8_t)((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |                                                                              ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1845): error: unknown type name 'IRQn_Type'
+ 1845 | __STATIC_INLINE uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
+      |                                             ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1850): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1850 |     return(((uint32_t)NVIC->IPR[((uint32_t)IRQn)]               >> (8U - __NVIC_PRIO_BITS)));
+      |                                                                          ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1854): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1854 |     return(((uint32_t)SCB->SHPR[(((uint32_t)IRQn) & 0xFUL)-4UL] >> (8U - __NVIC_PRIO_BITS)));
+      |                                                                          ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1876): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1876 |   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NVIC_PRIO_BITS) : (uint32_t)(7UL - PriorityGroupTmp);
+      |                                                                ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1876): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1876 |   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NVIC_PRIO_BITS) : (uint32_t)(7UL - PriorityGroupTmp);
+      |                                                                                                ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1877): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1877 |   SubPriorityBits     = ((PriorityGroupTmp + (uint32_t)(__NVIC_PRIO_BITS)) < (uint32_t)7UL) ? (uint32_t)0UL : (uint32_t)((PriorityGroupTmp - 7UL) + (uint32_t)(__NVIC_PRIO_BITS));
+      |                                                         ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1877): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1877 |   SubPriorityBits     = ((PriorityGroupTmp + (uint32_t)(__NVIC_PRIO_BITS)) < (uint32_t)7UL) ? (uint32_t)0UL : (uint32_t)((PriorityGroupTmp - 7UL) + (uint32_t)(__NVIC_PRIO_BITS));
+      |                                                                                                                                                                ^
+C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm4.h(1903): error: use of undeclared identifier '__NVIC_PRIO_BITS'
+ 1903 |   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NVIC_PRIO_BITS) : (uint32_t)(7UL - PriorityGroupTmp);
+      |                                                                ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+compiling SPI_Program.c...
+Sys_Tick.c(126): warning: shift count >= width of type [-Wshift-count-overflow]
+  126 |         while(GET_BIT(SysTick->CTRL,SysTick_CTRL_COUNTFLAG_Msk) == 0);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+Sys_Tick.c(126): warning: shift count >= width of type [-Wshift-count-overflow]
+  126 |         while(GET_BIT(SysTick->CTRL,SysTick_CTRL_COUNTFLAG_Msk) == 0);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+2 warnings generated.
+compiling Sys_Tick.c...
+compiling iota.c...
+TFT_program.c(31): warning: In file included from...
+./Sys_Tick.c(126): warning: shift count >= width of type [-Wshift-count-overflow]
+  126 |         while(GET_BIT(SysTick->CTRL,SysTick_CTRL_COUNTFLAG_Msk) == 0);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+TFT_program.c(31): warning: In file included from...
+./Sys_Tick.c(126): warning: shift count >= width of type [-Wshift-count-overflow]
+  126 |         while(GET_BIT(SysTick->CTRL,SysTick_CTRL_COUNTFLAG_Msk) == 0);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+TFT_program.c(208): warning: passing 'u8 *' (aka 'unsigned char *') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  208 |     SPI_Master_Transmit (&Copy_SpiPeripheral,&Copy_Command,1);
+      |                                              ^~~~~~~~~~~~~
+./SPI_interface.h(208): note: passing argument to parameter 'pTxBuffer' here
+  208 | void SPI_Master_Transmit(SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength);
+      |                                                        ^
+TFT_program.c(227): warning: passing 'u8 *' (aka 'unsigned char *') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  227 |     SPI_Master_Transmit (&Copy_SpiPeripheral,&Copy_Data,1);
+      |                                              ^~~~~~~~~~
+./SPI_interface.h(208): note: passing argument to parameter 'pTxBuffer' here
+  208 | void SPI_Master_Transmit(SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength);
+      |                                                        ^
+TFT_program.c(448): error: incompatible pointer to integer conversion passing 'uint8_t[2]' (aka 'unsigned char[2]') to parameter of type 'u8' (aka 'unsigned char') [-Wint-conversion]
+  448 |                 TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral,data);
+      |                                                                  ^~~~
+TFT_program.c(215): note: passing argument to parameter 'Copy_Data' here
+  215 | static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_SpiPeripheral, u8 Copy_Data)
+      |                                                                                                 ^
+TFT_program.c(451): error: incompatible pointer to integer conversion passing 'uint8_t[2]' (aka 'unsigned char[2]') to parameter of type 'u8' (aka 'unsigned char') [-Wint-conversion]
+  451 |                 TFT_SendData(Copy_TftDisplay, Copy_SpiPeripheral,data);
+      |                                                                  ^~~~
+TFT_program.c(215): note: passing argument to parameter 'Copy_Data' here
+  215 | static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay,SPI_handler Copy_SpiPeripheral, u8 Copy_Data)
+      |                                                                                                 ^
+TFT_program.c(481): error: incompatible pointer to integer conversion passing 'char *' to parameter of type 'uint16_t' (aka 'unsigned short') [-Wint-conversion]
+  481 |         TFT_WriteChar(Copy_TftDisplay, Copy_SpiPeripheral, Copy_XPosition,str, Copy_YPosition,font, color, bgcolor);
+      |                                                                           ^~~
+TFT_program.c(438): note: passing argument to parameter 'Copy_YPosition' here
+  438 | uint16_t Copy_XPosition, uint16_t Copy_YPosition, char ch, FontDef font, uint16_t color, uint16_t bgcolor) {
+      |                                   ^
+4 warnings and 3 errors generated.
+compiling TFT_program.c...
+compiling system_TM4C123.c...
+".\Objects\gps.axf" - 32 Error(s), 45 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil::TM4C_DFP@1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/oashr/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  C:/Users/oashr/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: Keil::Device:Startup@1.0.1
+      Source file:   Device/Source/ARM/startup_TM4C123.s
+      Source file:   Device/Source/system_TM4C123.c
+      Include file:  Device/Include/TM4C123/TM4C123.h
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

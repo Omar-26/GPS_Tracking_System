@@ -49,5 +49,7 @@
 #define UART_LCRH_WLEN 5
 // #define UART_LCRH_SPS 7
 
+#define GPIO_LOCK_KEY 0x4C4F434B
+
 #define UART_CLK 80000000
 #endif /**< _MCAL_UART_PRIVATE_H_ */

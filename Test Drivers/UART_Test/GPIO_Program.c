@@ -113,7 +113,6 @@ void RGB_LED(u8 led_color, u8 led_state)
             GPIO_PORTF_DATA_R &= ~0x04;
 
         default:
-
             break;
         }
         break;
@@ -132,6 +131,7 @@ void RGB_LED(u8 led_color, u8 led_state)
         break;
 
     default:
+  
         break;
     }
 }
@@ -209,7 +209,7 @@ void Toggle_pin(u8 port, u8 pin)
     }
 }
 
- void Get_Pin_Value(u8 port, u8 pin, u8 *pin_value)
+u8 Get_Pin_Value(u8 port, u8 pin, u8 *pin_value)
 {
     switch (port)
     {

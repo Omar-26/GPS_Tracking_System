@@ -1,33 +1,37 @@
-#include "SPI.h"
+
+#include "SPI_Interface.h"
+#include "GPIO_Program.c"
+#include "tm4c123gh6pm.h"
+#include "core_cm4.h"
 
 //*******************************************************
 //                   private data
 //*******************************************************
-static uint8_t interruptHandler[4]={7,34,57,58};
+static u8 interruptHandler[4]={7,34,57,58};
 static SPI_handler *spihandler[4];
 //*******************************************************
 
 //*********************************************************************
 //             Helper Functions Prototypes
 //*********************************************************************
-static void SPI_MasterSlave_Set(SSI0_Type* SSIx,uint8_t MasterSlaveMode);
-static void SPI_FrameFormat_Set(SSI0_Type* SSIx,uint8_t FrameFormat);
-static void SPI_ClockPolarityPhase_set(SSI0_Type* SSIx,uint8_t clockPolarityPhaseMode);
-static void SPI_DataSize_set(SSI0_Type* SSIx,uint8_t datasize);
-static void SPI_ClockSource_Set (SSI0_Type* SSIx,uint8_t source);
-static void SPI_ClockDivider_Set (SSI0_Type* SSIx,uint8_t PrescalerValue);
+static void SPI_MasterSlave_Set(SSI0_Type* SSIx,u8 MasterSlaveMode);
+static void SPI_FrameFormat_Set(SSI0_Type* SSIx,u8 FrameFormat);
+static void SPI_ClockPolarityPhase_set(SSI0_Type* SSIx,u8 clockPolarityPhaseMode);
+static void SPI_DataSize_set(SSI0_Type* SSIx,u8 datasize);
+static void SPI_ClockSource_Set (SSI0_Type* SSIx,u8 source);
+static void SPI_ClockDivider_Set (SSI0_Type* SSIx,u8 PrescalerValue);
 static SPI_Bus_State SPI_Bustate_get(SSI0_Type* SSIx);
 static SPI_Fifo_State SPI_TxFifoState_get(SSI0_Type* SSIx);
 static SPI_Fifo_State SPI_RxFifoState_get(SSI0_Type* SSIx);
-static void SPI_Gpio_configure (uint8_t spiNumber);
-static uint8_t SPI_ClockDivider_Get(SSI0_Type* SSIx);
-static uint8_t SPI_MasterSlave_Get(SSI0_Type* SSIx);
+static void SPI_Gpio_configure (u8 spiNumber);
+static u8 SPI_ClockDivider_Get(SSI0_Type* SSIx);
+static u8 SPI_MasterSlave_Get(SSI0_Type* SSIx);
 
-static uint8_t SPI_InterruptStatus(SSI0_Type* SSIx,uint8_t interrupt);
-static uint8_t SPI_MaskedInterruptStatus(SSI0_Type* SSIx,uint8_t interrupt);
-static void SPI_InterruptClear(SSI0_Type* SSIx,uint8_t interrupt);
-static void SPI_InterruptMask(SSI0_Type* SSIx,uint8_t interrupt);
-static void SPI_InterruptUnMask(SSI0_Type* SSIx,uint8_t interrupt);
+static u8 SPI_InterruptStatus(SSI0_Type* SSIx,u8 interrupt);
+static u8 SPI_MaskedInterruptStatus(SSI0_Type* SSIx,u8 interrupt);
+static void SPI_InterruptClear(SSI0_Type* SSIx,u8 interrupt);
+static void SPI_InterruptMask(SSI0_Type* SSIx,u8 interrupt);
+static void SPI_InterruptUnMask(SSI0_Type* SSIx,u8 interrupt);
 static void spi_delay(void);
 //*********************************************************************
 
@@ -52,7 +56,7 @@ spihandler[spiHandler->PeripherlaNumber]=spiHandler;
 SPI_Enable(spiHandler);
 }
 
-void SPI_Master_Transmit (SPI_handler *spiHandler,char* pTxBuffer,uint8_t dataLength)
+void SPI_Master_Transmit (SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength)
 {
 	for(int i=0;i<dataLength;i++)
 	{
@@ -62,7 +66,7 @@ while(spiHandler->SSIx->SR & 0x10);
 	}
 }
 
-void SPI_Master_Receive  (SPI_handler *spiHandler,char* pRxBuffer,uint8_t dataLength)
+void SPI_Master_Receive  (SPI_handler *spiHandler,char* pRxBuffer,u8 dataLength)
 {
 for(int i=0;i<dataLength;i++)
 	{
@@ -76,7 +80,7 @@ spi_delay();
 }
 
 
-void SPI_Slave_Transmit  (SPI_handler *spiHandler,char* pTxBuffer,uint8_t dataLength)
+void SPI_Slave_Transmit  (SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength)
 {
 	for(int i=0;i<dataLength;i++)
 	{
@@ -86,7 +90,7 @@ while(spiHandler->SSIx->SR & 0x10);
 	}
 }
 
-void SPI_Slave_Receive   (SPI_handler *spiHandler,char* pRxBuffer,uint8_t dataLength)
+void SPI_Slave_Receive   (SPI_handler *spiHandler,char* pRxBuffer,u8 dataLength)
 {
 	for(int i=0;i<dataLength;i++)
 	{
@@ -103,7 +107,7 @@ void MastersendFromInterrupt(SPI_handler *spiHandler)
 {	
 	if(SPI_InterruptStatus(spiHandler->SSIx,SPI_TxFifo_InterruptStatus))
 	{
-	uint8_t remainingBits=spiHandler->Tx_length-spiHandler->Txcounter;
+	u8 remainingBits=spiHandler->Tx_length-spiHandler->Txcounter;
 	if(remainingBits!=0)
 	{
 	spiHandler->SSIx->DR=spiHandler->pTx[spiHandler->Txcounter];
@@ -120,7 +124,7 @@ else if(remainingBits==0)
 }
 
 
-void SPI_Master_Start_Trasnmit(SPI_handler *spiHandler,char* pTxBuffer,uint8_t dataLength)
+void SPI_Master_Start_Trasnmit(SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength)
 {
 	spiHandler->pTx=pTxBuffer;
 	spiHandler->Tx_length=dataLength;
@@ -148,8 +152,8 @@ SPI_InterruptUnMask(spiHandler->SSIx,SPI_TxFifo_bit);
 
 
 void MasterReceiveFromInterrupt(SPI_handler *spiHandler)
-{  uint8_t remainingBits;
-	 uint8_t bit2Rx;
+{  u8 remainingBits;
+	 u8 bit2Rx;
 	if( ( ((spiHandler->SSIx->RIS&(1<<2))>>2) |  ((spiHandler->SSIx->RIS&(1<<3))>>3) )  )
 	{//tx fifo is all trasnmited or rx fifo is half full
 
@@ -207,7 +211,7 @@ else if(remainingBits==0)
 
 
 
-void SPI_Master_Start_Receive (SPI_handler *spiHandler,char* pRxBuffer,uint8_t dataLength)
+void SPI_Master_Start_Receive (SPI_handler *spiHandler,char* pRxBuffer,u8 dataLength)
 {
   spiHandler->pRx=pRxBuffer;
 	spiHandler->Rx_length=dataLength;
@@ -229,7 +233,7 @@ SPI_Interrupt_Enable(spiHandler);
 
 void SlaveTransmitFromInterrupt(SPI_handler *spiHandler)
 { 
-	uint8_t remainingBits=spiHandler->Tx_length-spiHandler->Txcounter;
+	u8 remainingBits=spiHandler->Tx_length-spiHandler->Txcounter;
 	if(remainingBits>=FifoSize)
 	{
 		for(int i=0;i<FifoSize;i++)
@@ -256,7 +260,7 @@ else if(remainingBits==0)
 
 
 
-void SPI_Slave_Start_Transmit (SPI_handler *spiHandler,char* pTxBuffer,uint8_t dataLength)
+void SPI_Slave_Start_Transmit (SPI_handler *spiHandler,char* pTxBuffer,u8 dataLength)
 { 
   spiHandler->pTx=pTxBuffer;
 	spiHandler->Tx_length=dataLength;
@@ -286,7 +290,7 @@ void SlaveReceiveFromInterrupt(SPI_handler *spiHandler)
 {
  if(SPI_InterruptStatus(spiHandler->SSIx,SPI_RxFifo_InterruptStatus))
  {
-	uint8_t bit2Rx;
+	u8 bit2Rx;
 	//rx fifo half full 
   for(int i=0;i<FifoSize/2;i++)
   {	
@@ -304,7 +308,7 @@ bit2Rx=spiHandler->Rx_length-spiHandler->RxCounter;
 }
 }
 
-void SPI_Slave_Start_Receive  (SPI_handler *spiHandler,char* pRxBuffer,uint8_t dataLength)
+void SPI_Slave_Start_Receive  (SPI_handler *spiHandler,char* pRxBuffer,u8 dataLength)
 {
   spiHandler->pRx=pRxBuffer;
 	spiHandler->Rx_length=dataLength;
@@ -364,7 +368,7 @@ spiHandler->DataReceived_CallBack=( (void*)0);
 //************************************************************
 //                   Helper Functions
 //************************************************************
-static void SPI_MasterSlave_Set(SSI0_Type* SSIx,uint8_t MasterSlaveMode)
+static void SPI_MasterSlave_Set(SSI0_Type* SSIx,u8 MasterSlaveMode)
 {
 if(MasterSlaveMode==SPI_Mode_Master)
 {
@@ -376,12 +380,12 @@ SSIx->CR1=0x00000004;
 }
 }
 
-static uint8_t SPI_MasterSlave_Get(SSI0_Type* SSIx)
+static u8 SPI_MasterSlave_Get(SSI0_Type* SSIx)
 {
 return (SSIx->CR1&SPI_MasterSlave_Bit);
 }
 
-static void SPI_FrameFormat_Set(SSI0_Type* SSIx,uint8_t FrameFormat)
+static void SPI_FrameFormat_Set(SSI0_Type* SSIx,u8 FrameFormat)
 {
 switch(FrameFormat)
 {
@@ -405,7 +409,7 @@ default:
 }
 }
 
-static void SPI_ClockPolarityPhase_set(SSI0_Type* SSIx,uint8_t clockPolarityPhaseMode)
+static void SPI_ClockPolarityPhase_set(SSI0_Type* SSIx,u8 clockPolarityPhaseMode)
 {
 switch(clockPolarityPhaseMode)
 {
@@ -434,13 +438,13 @@ switch(clockPolarityPhaseMode)
 		break;
 }
 }
-static void SPI_DataSize_set(SSI0_Type* SSIx,uint8_t datasize)
+static void SPI_DataSize_set(SSI0_Type* SSIx,u8 datasize)
 {
 SSIx->CR0&=~(0x0000000F);
 SSIx->CR0|=datasize;	
 }
 
-static void SPI_ClockSource_Set (SSI0_Type* SSIx,uint8_t source)
+static void SPI_ClockSource_Set (SSI0_Type* SSIx,u8 source)
 {
 if(source==SPI_sysclk_Source)
 {
@@ -452,7 +456,7 @@ SSIx->CC=SPI_Piosc_Source;
 }
 }
 
-static void SPI_ClockDivider_Set (SSI0_Type* SSIx,uint8_t PrescalerValue)
+static void SPI_ClockDivider_Set (SSI0_Type* SSIx,u8 PrescalerValue)
 {
  if((PrescalerValue&0x1)==0)
  {
@@ -474,7 +478,7 @@ else
  }
 }
 
-static uint8_t SPI_ClockDivider_Get(SSI0_Type* SSIx)
+static u8 SPI_ClockDivider_Get(SSI0_Type* SSIx)
 {
 return (SSIx->CPSR&(0xf));
 }
@@ -482,51 +486,63 @@ return (SSIx->CPSR&(0xf));
 
 	
 
-
-static void SPI_Gpio_configure (uint8_t spiNumber)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+static void SPI_Gpio_configure (u8 spiNumber)
 {	
 	switch(spiNumber)
 	{
 		case SPI_0:
 			//gpio pins is set by default as spi
-		  gpio_clk_enable(portA);	
-		  gpio_digital_enable(GPIOA,pin2|pin3|pin4|pin5);
+			SYSCTL_RCGCGPIO_R |= 0x1;
+    		while ((SYSCTL_PRGPIO_R & 0x1) == 0);
+    		GPIO_PORTA_LOCK_R = key_lock;
+			GPIO_PORTA_CR_R |= 0xFF;
+			GPIO_PORTA_AMSEL_R &= 0x00;
+			GPIO_PORTA_AFSEL_R &= 0x3f;
+			GPIO_PORTA_PCTL_R &= 0x00222211;
+			GPIO_PORTA_DEN_R |= 0x3f;
+
+
 			break;
 	
-		case SPI_1:
-			gpio_clk_enable(portD);
-		  gpio_set_mode(GPIOD,pin0|pin3|pin1|pin2,gpio_pin_alternateMode);
-      gpio_set_alternateFunction(GPIOD,0,2);
-		  gpio_set_alternateFunction(GPIOD,1,2);
-		  gpio_set_alternateFunction(GPIOD,2,2);
-      gpio_set_alternateFunction(GPIOD,3,2);	
-		  gpio_digital_enable(GPIOD,pin0|pin1|pin3|pin2);
-			break;
+	// 	case SPI_1:
+	// 		SYSCTL_RCGCGPIO_R |= 0x1;
+    // 		while ((SYSCTL_PRGPIO_R & 0x1) == 0);
+    // 		GPIO_PORTD_LOCK_R = key_lock;
+	// 		GPIO_PORTD_AFSEL_R &= 0xf;
+	// 	  	gpio_set_mode(GPIOD,pin0|pin3|pin1|pin2,gpio_pin_alternateMode);
+    //   		gpio_set_alternateFunction(GPIOD,0,2);
+	// 	  	gpio_set_alternateFunction(GPIOD,1,2);
+	// 	  	gpio_set_alternateFunction(GPIOD,2,2);
+    //   		gpio_set_alternateFunction(GPIOD,3,2);	
+	// 	  	gpio_digital_enable(GPIOD,pin0|pin1|pin3|pin2);
+	// 		break;
 	
-		case SPI_2:
-		gpio_clk_enable(portB);
-		  gpio_set_mode(GPIOB,pin4|pin5|pin6|pin7,gpio_pin_alternateMode);
-      gpio_set_alternateFunction(GPIOB,4,2);
-		  gpio_set_alternateFunction(GPIOB,5,2);
-		  gpio_set_alternateFunction(GPIOB,6,2);
-      gpio_set_alternateFunction(GPIOB,7,2);		
-		  gpio_digital_enable(GPIOB,pin4|pin5|pin3|pin6|pin7);
-			break;
+	// 	case SPI_2:
+	// 	gpio_clk_enable(portB);
+	// 	  gpio_set_mode(GPIOB,pin4|pin5|pin6|pin7,gpio_pin_alternateMode);
+    //   gpio_set_alternateFunction(GPIOB,4,2);
+	// 	  gpio_set_alternateFunction(GPIOB,5,2);
+	// 	  gpio_set_alternateFunction(GPIOB,6,2);
+    //   gpio_set_alternateFunction(GPIOB,7,2);		
+	// 	  gpio_digital_enable(GPIOB,pin4|pin5|pin3|pin6|pin7);
+	// 		break;
 		
-		case SPI_3:
-			gpio_clk_enable(portD);
-		  gpio_set_mode(GPIOD,pin0|pin3|pin1|pin2,gpio_pin_alternateMode);
-      gpio_set_alternateFunction(GPIOD,0,1);
-		  gpio_set_alternateFunction(GPIOD,1,1);
-		  gpio_set_alternateFunction(GPIOD,2,1);
-      gpio_set_alternateFunction(GPIOD,3,1);		
-		  gpio_digital_enable(GPIOD,pin0|pin1|pin3|pin2);
-			break;
+	// 	case SPI_3:
+	// 		gpio_clk_enable(portD);
+	// 	  gpio_set_mode(GPIOD,pin0|pin3|pin1|pin2,gpio_pin_alternateMode);
+    //   gpio_set_alternateFunction(GPIOD,0,1);
+	// 	  gpio_set_alternateFunction(GPIOD,1,1);
+	// 	  gpio_set_alternateFunction(GPIOD,2,1);
+    //   gpio_set_alternateFunction(GPIOD,3,1);		
+	// 	  gpio_digital_enable(GPIOD,pin0|pin1|pin3|pin2);
+	// 		break;
 		
 		default:
 			break;
 	}
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 static SPI_Bus_State SPI_Bustate_get(SSI0_Type* SSIx)
 {
@@ -579,27 +595,27 @@ else
 }
 }
 
-static uint8_t SPI_InterruptStatus(SSI0_Type* SSIx,uint8_t interrupt)
+static u8 SPI_InterruptStatus(SSI0_Type* SSIx,u8 interrupt)
 {
 return (SSIx->RIS&interrupt);
 }
-static void SPI_InterruptClear(SSI0_Type* SSIx,uint8_t interrupt)
+static void SPI_InterruptClear(SSI0_Type* SSIx,u8 interrupt)
 {
 SSIx->ICR&=~interrupt;
 }
 
-static void SPI_InterruptMask(SSI0_Type* SSIx,uint8_t interrupt)
+static void SPI_InterruptMask(SSI0_Type* SSIx,u8 interrupt)
 {
 SSIx->IM&=~interrupt;  /*mask interrupt*/
 }
 
-static void SPI_InterruptUnMask(SSI0_Type* SSIx,uint8_t interrupt)
+static void SPI_InterruptUnMask(SSI0_Type* SSIx,u8 interrupt)
 {
 SSIx->IM|=interrupt;  /*mask interrupt*/
 }
 
 
-static uint8_t SPI_MaskedInterruptStatus(SSI0_Type* SSIx,uint8_t interrupt)
+static u8 SPI_MaskedInterruptStatus(SSI0_Type* SSIx,u8 interrupt)
 {
 
 return (SSIx->MIS&interrupt);

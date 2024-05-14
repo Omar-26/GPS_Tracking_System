@@ -60,7 +60,9 @@
     "tm4c123gh6pm.h": "c",
     "bit_math.h": "c",
     "uart_interface.h": "c",
-    "gpio_interface.h": "c"
+    "gpio_interface.h": "c",
+    "math.h": "c",
+    "std_types.h": "c"
   },
   "cSpell.words": [
     "PORTA"
