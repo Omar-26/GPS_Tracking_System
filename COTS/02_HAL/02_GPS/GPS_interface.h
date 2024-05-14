@@ -7,12 +7,11 @@ void GPS_Read();
 
 void GPS_format();
 
-double Value_to_Degree(double value){return value}
+double Value_to_Degree(double value) { return value; }
 
-#define DEG_TO_RAD(DEG)((DEG*PI/180))
+#define DEG_TO_RAD(DEG) ((DEG * PI / 180))
 
 const double EARTH_RADIUS = 6371000;
 const double PI = 3.14159265358979323846264338327950;
 
-
-#endif 
+#endif
