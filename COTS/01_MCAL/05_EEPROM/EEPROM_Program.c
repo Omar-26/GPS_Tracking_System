@@ -47,3 +47,33 @@ uint32_t read_EEPROM(uint16_t address)
 
     return EEPROM_EERDWR_R;
 }
+
+void write_Array_EEPROM(f32 latitude[], f32 longitude[], uint32_t count)
+{
+    uint32_t i, address = 0;
+    for (i = 0; i < count; i++)
+    {
+        write_EEPROM(address, latitude[i]);
+        address++;
+    }
+    for (i = 0; i < count; i++)
+    {
+        write_EEPROM(address, longitude[i]);
+        address++;
+    }
+}
+
+void read_Array_EEPROM(f32 latitude[], f32 longitude[], uint32_t count)
+{
+    uint32_t i, address = 0;
+    for (i = 0; i < count; i++)
+    {
+        latitude[i] = read_EEPROM(address);
+        address++;
+    }
+    for (i = 0; i < count; i++)
+    {
+        longitude[i] = read_EEPROM(address);
+        address++;
+    }
+}

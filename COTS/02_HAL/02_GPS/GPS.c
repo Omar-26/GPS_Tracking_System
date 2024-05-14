@@ -18,7 +18,7 @@ u8 GPS_Formatted[12][20];
 u8 *token;
 u8 GPS[80];
 
-f64 currentLat, currentLong;
+f32 currentLat, currentLong;
 
 void GPS_Read()
 {

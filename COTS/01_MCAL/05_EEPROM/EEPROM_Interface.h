@@ -16,6 +16,10 @@ void write_EEPROM(uint16_t address, uint32_t data);
 
 uint32_t read_EEPROM(uint16_t address);
 
+void write_Array_EEPROM(f32 latitude[], f32 longitude[], uint32_t count);
+
+void read_Array_EEPROM(f32 latitude[], f32 longitude[], uint32_t count);
+
 #define Activate_eeprom (0x01)
 
 #endif /* EEPROM_INTERFACE_H_ */
