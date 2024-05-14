@@ -209,7 +209,7 @@ void Toggle_pin(u8 port, u8 pin)
     }
 }
 
-u8 Get_Pin_Value(u8 port, u8 pin, u8 *pin_value)
+void Get_Pin_Value(u8 port, u8 pin, u8 *pin_value)
 {
     switch (port)
     {

@@ -106,6 +106,7 @@ u8 UART_u8RecieveByte(u8 copy_u8UARTNo);
 
 u8 UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8SentString);
 
-u8 UART_u8ReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer);
+// void UART_u8ReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer);
+void UART_voidReceiveString(u8 copy_u8UARTNo,u8 *copy_pu8Buffer);
 
 #endif /**< _MCAL_UART_INTERFACE_H_ */

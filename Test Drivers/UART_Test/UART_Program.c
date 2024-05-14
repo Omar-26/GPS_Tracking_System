@@ -615,101 +615,43 @@ Std_ReturnType UART_u8SendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
 /***************************************< Receive_BYTE_FUNCTION_IMPLEMENTATION **************************************/
 u8 UART_u8RecieveByte(u8 copy_u8UARTNo)
 {
-    // We May Use Busy Waiting but If Condition is more time friendly
-    Std_ReturnType Local_u8ErrorStatus = E_OK;
-	  u8 copy_pu8ReceivedData;
+	  u8 local_u8ReceivedData;
     switch (copy_u8UARTNo)
     {
     case UART0:
-        
         while(GET_BIT(UART0_FR_R, UART_FR_RXFE));
-           copy_pu8ReceivedData = UART0_DR_R;
+           local_u8ReceivedData = UART0_DR_R;
         break;
-		    /* while(UART0_FR_R & UART_FR_RXFE);
-				copy_pu8ReceivedData = UART0_DR_R;
-				break;*/
     case UART1:
-			
-        if (!GET_BIT(UART1_RSR_R, UART_RSR_OE) && !GET_BIT(UART1_RSR_R, UART_RSR_BE) && !GET_BIT(UART1_RSR_R, UART_RSR_FE))
-        {
-            if (!GET_BIT(UART1_FR_R, UART_FR_RXFE))
-                copy_pu8ReceivedData = UART1_DR_R;
-        }
-        else
-        {
-            Local_u8ErrorStatus = E_NOT_OK;
-        }
+        while(GET_BIT(UART1_FR_R, UART_FR_RXFE));
+           local_u8ReceivedData = UART1_DR_R;
         break;
     case UART2:
-        if (!GET_BIT(UART2_RSR_R, UART_RSR_OE) && !GET_BIT(UART2_RSR_R, UART_RSR_BE) && !GET_BIT(UART2_RSR_R, UART_RSR_FE))
-        {
-            if (!GET_BIT(UART2_FR_R, UART_FR_RXFE))
-                copy_pu8ReceivedData = UART2_DR_R;
-        }
-        else
-        {
-            Local_u8ErrorStatus = E_NOT_OK;
-        }
+        while(GET_BIT(UART2_FR_R, UART_FR_RXFE));
+           local_u8ReceivedData = UART2_DR_R;
         break;
     case UART3:
-        if (!GET_BIT(UART3_RSR_R, UART_RSR_OE) && !GET_BIT(UART3_RSR_R, UART_RSR_BE) && !GET_BIT(UART3_RSR_R, UART_RSR_FE))
-        {
-            if (!GET_BIT(UART3_FR_R, UART_FR_RXFE))
-                copy_pu8ReceivedData = UART3_DR_R;
-        }
-        else
-        {
-            Local_u8ErrorStatus = E_NOT_OK;
-        }
+        while(GET_BIT(UART3_FR_R, UART_FR_RXFE));
+           local_u8ReceivedData = UART3_DR_R;
         break;
     case UART4:
-        if (!GET_BIT(UART4_RSR_R, UART_RSR_OE) && !GET_BIT(UART4_RSR_R, UART_RSR_BE) && !GET_BIT(UART4_RSR_R, UART_RSR_FE))
-        {
-            if (!GET_BIT(UART4_FR_R, UART_FR_RXFE))
-                copy_pu8ReceivedData = UART4_DR_R;
-        }
-        else
-        {
-            Local_u8ErrorStatus = E_NOT_OK;
-        }
+         while(GET_BIT(UART4_FR_R, UART_FR_RXFE));
+           local_u8ReceivedData = UART4_DR_R;
         break;
     case UART5:
-        if (!GET_BIT(UART5_RSR_R, UART_RSR_OE) && !GET_BIT(UART5_RSR_R, UART_RSR_BE) && !GET_BIT(UART5_RSR_R, UART_RSR_FE))
-        {
-            if (!GET_BIT(UART5_FR_R, UART_FR_RXFE))
-                copy_pu8ReceivedData = UART5_DR_R;
-        }
-        else
-        {
-            Local_u8ErrorStatus = E_NOT_OK;
-        }
+        while(GET_BIT(UART5_FR_R, UART_FR_RXFE));
+           local_u8ReceivedData = UART5_DR_R;
         break;
     case UART6:
-        if (!GET_BIT(UART6_RSR_R, UART_RSR_OE) && !GET_BIT(UART6_RSR_R, UART_RSR_BE) && !GET_BIT(UART6_RSR_R, UART_RSR_FE))
-        {
-            if (!GET_BIT(UART6_FR_R, UART_FR_RXFE))
-                copy_pu8ReceivedData = UART6_DR_R;
-        }
-        else
-        {
-            Local_u8ErrorStatus = E_NOT_OK;
-        }
+        while(GET_BIT(UART6_FR_R, UART_FR_RXFE));
+           local_u8ReceivedData = UART6_DR_R;
         break;
     case UART7:
-        if (!GET_BIT(UART7_RSR_R, UART_RSR_OE) && !GET_BIT(UART7_RSR_R, UART_RSR_BE) && !GET_BIT(UART7_RSR_R, UART_RSR_FE))
-        {
-            if (!GET_BIT(UART7_FR_R, UART_FR_RXFE))
-                copy_pu8ReceivedData = UART7_DR_R;
-        }
-        else
-        {
-            Local_u8ErrorStatus = E_NOT_OK;
-        }
+        while(GET_BIT(UART7_FR_R, UART_FR_RXFE));
+           local_u8ReceivedData = UART7_DR_R;
         break;
-    default:
-        Local_u8ErrorStatus = E_NOT_OK;
     }
-    return copy_pu8ReceivedData ;
+    return local_u8ReceivedData ;
 }
 /****************************************< SEND_STRING_FUNCTION_IMPLEMENTATION **************************************/
 Std_ReturnType UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
@@ -779,70 +721,105 @@ Std_ReturnType UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
     return Local_u8ErrorStatus;
 }
 /**************************************< Receive_STRING_FUNCTION_IMPLEMENTATION *************************************/
-Std_ReturnType UART_u8ReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer)
+/* void UART_u8ReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer)
 {
-    // you can use null terminator
-    Std_ReturnType Local_u8ErrorStatus = E_OK;
+	  u32 i = 0;
     switch (copy_u8UARTNo)
     {
     case UART0:
-        while (!GET_BIT(UART0_FR_R, UART_FR_RXFE))
+				copy_pu8StringBuffer[i] = UART_u8RecieveByte(UART0);
+        while (!GET_BIT(UART1_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART0);
-            copy_pu8StringBuffer++;
+					  i++;
+					  // copy_pu8StringBuffer++;
+            copy_pu8StringBuffer[i] =  UART_u8RecieveByte(UART0);
         }
-        break;
     case UART1:
         while (!GET_BIT(UART1_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART1);
+           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART1);
             copy_pu8StringBuffer++;
         }
         break;
     case UART2:
         while (!GET_BIT(UART2_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART2);
+           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART2);
             copy_pu8StringBuffer++;
         }
         break;
     case UART3:
         while (!GET_BIT(UART3_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART3);
+           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART3);
             copy_pu8StringBuffer++;
         }
         break;
     case UART4:
         while (!GET_BIT(UART4_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART4);
+           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART4);
             copy_pu8StringBuffer++;
         }
         break;
     case UART5:
         while (!GET_BIT(UART5_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART5);
+           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART5);
             copy_pu8StringBuffer++;
         }
         break;
     case UART6:
         while (!GET_BIT(UART6_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART6);
+           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART6);
             copy_pu8StringBuffer++;
         }
         break;
     case UART7:
         while (!GET_BIT(UART7_FR_R, UART_FR_RXFE))
         {
-            UART_u8RecieveByte(UART7);
+           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART7);
             copy_pu8StringBuffer++;
         }
         break;
-    default:
-        Local_u8ErrorStatus = E_NOT_OK;
     }
-    return Local_u8ErrorStatus;
+}
+*/
+/*
+void UART_u8ReceiveString( u8 copy_u8UARTNo , u8 *str , uint32_t len){
+     uint32_t i;
+     u8 endString;
+	for(i = 0 ; i < len ; i++){
+	  endString = UART_u8RecieveByte(copy_u8UARTNo);
+		if( endString != '*'){ /
+		/*
+		*str = endString ;
+		 str++;
+		 UART_u8SendByte(copy_u8UARTNo ,endString);
+		}
+		else if(endString == '*' || i==len ) break;
+	}	
+}*/
+
+
+void UART_voidReceiveString(u8 copy_u8UARTNo,u8 *copy_pu8Buffer)
+{
+    u32 i = 0;
+    copy_pu8Buffer[i] = UART_u8RecieveByte(copy_u8UARTNo);
+    if(copy_pu8Buffer[i] >= '0')
+    {
+        while(copy_pu8Buffer[i] != 0x02A)
+            {
+                i++;
+                copy_pu8Buffer[i] = UART_u8RecieveByte(copy_u8UARTNo);
+            }
+    }
+    else
+    {
+        copy_pu8Buffer[i-1] = 0;
+        copy_pu8Buffer[i] = 0;
+        i--;
+    }
+    copy_pu8Buffer[i] = '\0';
 }

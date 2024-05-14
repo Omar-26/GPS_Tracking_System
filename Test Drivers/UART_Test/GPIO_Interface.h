@@ -4,6 +4,7 @@
 * @Author : Abdulrahman Ezz Eldin
 * @Version : 1.0
 ********************************************************************/
+#include "STD_TYPES.h"
 /*
                                                 Enable Port F Clock:
 SYSCTL_RCGCGPIO_R |= 0x20; sets the bit corresponding to Port F in the System Control General-Purpose Input/Output (GPIO) Run Mode Clock Gating Control Register.
@@ -148,4 +149,4 @@ This function allows you to read the state of individual pins on the Tiva C Seri
 The specific GPIO port and pin are determined by the input arguments.
 Ensure that the GPIO_PORTx_DATA_R registers are correctly mapped according to your hardware platform
 */
-u8 Get_Pin_Value(u8 port, u8 pin, u8 *pin_value);
+void Get_Pin_Value(u8 port, u8 pin, u8 *pin_value);
