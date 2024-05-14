@@ -15,7 +15,7 @@ u8 GPS_Formatted[12][20];
 u8 *token;
 u8 GPS[80];
 
-f64 currentLat, currentLong;
+f64 currentLatitude, currentLongitude;
 u16 length (u8* arr)
 {return sizeof(arr)/sizeof(arr[0]);
 }

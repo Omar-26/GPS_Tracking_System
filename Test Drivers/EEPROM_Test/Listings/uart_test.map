@@ -11,17 +11,17 @@ Section Cross References
     uart_program.o(.ARM.exidx.text.UART_u8SendString) refers to uart_program.o(.text.UART_u8SendString) for [Anonymous Symbol]
     uart_program.o(.text.UART_u8ReceiveString) refers to uart_program.o(.text.UART_u8RecieveByte) for UART_u8RecieveByte
     uart_program.o(.ARM.exidx.text.UART_u8ReceiveString) refers to uart_program.o(.text.UART_u8ReceiveString) for [Anonymous Symbol]
-    main.o(.ARM.exidx.text.RGBLED_Init) refers to main.o(.text.RGBLED_Init) for [Anonymous Symbol]
-    main.o(.ARM.exidx.text.LEDS_output) refers to main.o(.text.LEDS_output) for [Anonymous Symbol]
-    main.o(.text.main) refers to main.o(.text.RGBLED_Init) for RGBLED_Init
+    main.o(.ARM.exidx.text.init_RGBLEDs) refers to main.o(.text.init_RGBLEDs) for [Anonymous Symbol]
+    main.o(.ARM.exidx.text.LEDs_output) refers to main.o(.text.LEDs_output) for [Anonymous Symbol]
+    main.o(.text.main) refers to main.o(.text.init_RGBLEDs) for init_RGBLEDs
+    main.o(.text.main) refers to eeprom_program.o(.text.init_EEPROM) for init_EEPROM
     main.o(.text.main) refers to main.o(.bss.write_latitude) for write_latitude
     main.o(.text.main) refers to main.o(.bss.write_longitude) for write_longitude
-    main.o(.text.main) refers to eeprom_program.o(.text.init_EEPROM) for init_EEPROM
     main.o(.text.main) refers to eeprom_program.o(.text.write_Array_EEPROM) for write_Array_EEPROM
     main.o(.text.main) refers to main.o(.bss.read_latitude) for read_latitude
     main.o(.text.main) refers to main.o(.bss.read_longitude) for read_longitude
     main.o(.text.main) refers to eeprom_program.o(.text.read_Array_EEPROM) for read_Array_EEPROM
-    main.o(.text.main) refers to main.o(.text.LEDS_output) for LEDS_output
+    main.o(.text.main) refers to main.o(.text.LEDs_output) for LEDs_output
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     gpio_program.o(.ARM.exidx.text.init_port_f) refers to gpio_program.o(.text.init_port_f) for [Anonymous Symbol]
     gpio_program.o(.ARM.exidx.text.init_port_A) refers to gpio_program.o(.text.init_port_A) for [Anonymous Symbol]
@@ -80,8 +80,8 @@ Removing Unused input sections from the image.
     Removing uart_program.o(.text.UART_u8ReceiveString), (410 bytes).
     Removing uart_program.o(.ARM.exidx.text.UART_u8ReceiveString), (8 bytes).
     Removing main.o(.text), (0 bytes).
-    Removing main.o(.ARM.exidx.text.RGBLED_Init), (8 bytes).
-    Removing main.o(.ARM.exidx.text.LEDS_output), (8 bytes).
+    Removing main.o(.ARM.exidx.text.init_RGBLEDs), (8 bytes).
+    Removing main.o(.ARM.exidx.text.LEDs_output), (8 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
     Removing main.o(.bss.i), (4 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
@@ -163,18 +163,18 @@ Image Symbol Table
     $v0                                      0x00000280   Number         0  startup_tm4c123.o(.text)
     .text                                    0x00000280   Section      252  startup_tm4c123.o(.text)
     .text                                    0x0000037c   Section       48  init.o(.text)
-    [Anonymous Symbol]                       0x000003ac   Section        0  main.o(.text.LEDS_output)
-    [Anonymous Symbol]                       0x000003d0   Section        0  main.o(.text.RGBLED_Init)
-    [Anonymous Symbol]                       0x0000048c   Section        0  system_tm4c123.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x00000598   Section        0  eeprom_program.o(.text.init_EEPROM)
+    [Anonymous Symbol]                       0x000003ac   Section        0  main.o(.text.LEDs_output)
+    [Anonymous Symbol]                       0x000003d0   Section        0  system_tm4c123.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x000004dc   Section        0  eeprom_program.o(.text.init_EEPROM)
+    [Anonymous Symbol]                       0x00000544   Section        0  main.o(.text.init_RGBLEDs)
     [Anonymous Symbol]                       0x00000600   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x000006cc   Section        0  eeprom_program.o(.text.read_Array_EEPROM)
-    [Anonymous Symbol]                       0x00000754   Section        0  eeprom_program.o(.text.read_EEPROM)
-    [Anonymous Symbol]                       0x0000078c   Section        0  eeprom_program.o(.text.write_Array_EEPROM)
-    [Anonymous Symbol]                       0x00000814   Section        0  eeprom_program.o(.text.write_EEPROM)
-    i.__scatterload_copy                     0x00000862   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00000870   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000872   Section       14  handlers.o(i.__scatterload_zeroinit)
+    [Anonymous Symbol]                       0x000006c4   Section        0  eeprom_program.o(.text.read_Array_EEPROM)
+    [Anonymous Symbol]                       0x0000074c   Section        0  eeprom_program.o(.text.read_EEPROM)
+    [Anonymous Symbol]                       0x00000784   Section        0  eeprom_program.o(.text.write_Array_EEPROM)
+    [Anonymous Symbol]                       0x0000080c   Section        0  eeprom_program.o(.text.write_EEPROM)
+    i.__scatterload_copy                     0x0000085a   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000868   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0000086a   Section       14  handlers.o(i.__scatterload_zeroinit)
     STACK                                    0x20000320   Section      512  startup_tm4c123.o(STACK)
 
     Global Symbols
@@ -319,20 +319,20 @@ Image Symbol Table
     PWM1_FAULT_Handler                       0x00000371   Thumb Code     2  startup_tm4c123.o(.text)
     __scatterload                            0x0000037d   Thumb Code    38  init.o(.text)
     __scatterload_rt2                        0x0000037d   Thumb Code     0  init.o(.text)
-    LEDS_output                              0x000003ad   Thumb Code    36  main.o(.text.LEDS_output)
-    RGBLED_Init                              0x000003d1   Thumb Code   186  main.o(.text.RGBLED_Init)
-    SystemInit                               0x0000048d   Thumb Code   268  system_tm4c123.o(.text.SystemInit)
-    init_EEPROM                              0x00000599   Thumb Code   102  eeprom_program.o(.text.init_EEPROM)
-    main                                     0x00000601   Thumb Code   204  main.o(.text.main)
-    read_Array_EEPROM                        0x000006cd   Thumb Code   136  eeprom_program.o(.text.read_Array_EEPROM)
-    read_EEPROM                              0x00000755   Thumb Code    54  eeprom_program.o(.text.read_EEPROM)
-    write_Array_EEPROM                       0x0000078d   Thumb Code   136  eeprom_program.o(.text.write_Array_EEPROM)
-    write_EEPROM                             0x00000815   Thumb Code    78  eeprom_program.o(.text.write_EEPROM)
-    __scatterload_copy                       0x00000863   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00000871   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000873   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x00000880   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000890   Number         0  anon$$obj.o(Region$$Table)
+    LEDs_output                              0x000003ad   Thumb Code    36  main.o(.text.LEDs_output)
+    SystemInit                               0x000003d1   Thumb Code   268  system_tm4c123.o(.text.SystemInit)
+    init_EEPROM                              0x000004dd   Thumb Code   102  eeprom_program.o(.text.init_EEPROM)
+    init_RGBLEDs                             0x00000545   Thumb Code   186  main.o(.text.init_RGBLEDs)
+    main                                     0x00000601   Thumb Code   196  main.o(.text.main)
+    read_Array_EEPROM                        0x000006c5   Thumb Code   136  eeprom_program.o(.text.read_Array_EEPROM)
+    read_EEPROM                              0x0000074d   Thumb Code    54  eeprom_program.o(.text.read_EEPROM)
+    write_Array_EEPROM                       0x00000785   Thumb Code   136  eeprom_program.o(.text.write_Array_EEPROM)
+    write_EEPROM                             0x0000080d   Thumb Code    78  eeprom_program.o(.text.write_EEPROM)
+    __scatterload_copy                       0x0000085b   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000869   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0000086b   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00000878   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000888   Number         0  anon$$obj.o(Region$$Table)
     read_latitude                            0x20000000   Data         200  main.o(.bss.read_latitude)
     read_longitude                           0x200000c8   Data         200  main.o(.bss.read_longitude)
     write_latitude                           0x20000190   Data         200  main.o(.bss.write_latitude)
@@ -347,9 +347,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000281
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000890, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000888, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000890, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000888, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -365,30 +365,30 @@ Memory Map of the image
     0x0000027c   0x0000027c   0x00000004   Code   RO          104    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x00000280   0x00000280   0x000000fc   Code   RO           80  * .text               startup_tm4c123.o
     0x0000037c   0x0000037c   0x00000030   Code   RO          117    .text               mc_w.l(init.o)
-    0x000003ac   0x000003ac   0x00000024   Code   RO           21    .text.LEDS_output   main.o
-    0x000003d0   0x000003d0   0x000000ba   Code   RO           19    .text.RGBLED_Init   main.o
-    0x0000048a   0x0000048a   0x00000002   PAD
-    0x0000048c   0x0000048c   0x0000010c   Code   RO           91    .text.SystemInit    system_tm4c123.o
-    0x00000598   0x00000598   0x00000066   Code   RO           61    .text.init_EEPROM   eeprom_program.o
+    0x000003ac   0x000003ac   0x00000024   Code   RO           21    .text.LEDs_output   main.o
+    0x000003d0   0x000003d0   0x0000010c   Code   RO           91    .text.SystemInit    system_tm4c123.o
+    0x000004dc   0x000004dc   0x00000066   Code   RO           61    .text.init_EEPROM   eeprom_program.o
+    0x00000542   0x00000542   0x00000002   PAD
+    0x00000544   0x00000544   0x000000ba   Code   RO           19    .text.init_RGBLEDs  main.o
     0x000005fe   0x000005fe   0x00000002   PAD
-    0x00000600   0x00000600   0x000000cc   Code   RO           23    .text.main          main.o
-    0x000006cc   0x000006cc   0x00000088   Code   RO           69    .text.read_Array_EEPROM  eeprom_program.o
-    0x00000754   0x00000754   0x00000036   Code   RO           65    .text.read_EEPROM   eeprom_program.o
-    0x0000078a   0x0000078a   0x00000002   PAD
-    0x0000078c   0x0000078c   0x00000088   Code   RO           67    .text.write_Array_EEPROM  eeprom_program.o
-    0x00000814   0x00000814   0x0000004e   Code   RO           63    .text.write_EEPROM  eeprom_program.o
-    0x00000862   0x00000862   0x0000000e   Code   RO          121    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000870   0x00000870   0x00000002   Code   RO          122    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000872   0x00000872   0x0000000e   Code   RO          123    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000880   0x00000880   0x00000010   Data   RO          120    Region$$Table       anon$$obj.o
+    0x00000600   0x00000600   0x000000c4   Code   RO           23    .text.main          main.o
+    0x000006c4   0x000006c4   0x00000088   Code   RO           69    .text.read_Array_EEPROM  eeprom_program.o
+    0x0000074c   0x0000074c   0x00000036   Code   RO           65    .text.read_EEPROM   eeprom_program.o
+    0x00000782   0x00000782   0x00000002   PAD
+    0x00000784   0x00000784   0x00000088   Code   RO           67    .text.write_Array_EEPROM  eeprom_program.o
+    0x0000080c   0x0000080c   0x0000004e   Code   RO           63    .text.write_EEPROM  eeprom_program.o
+    0x0000085a   0x0000085a   0x0000000e   Code   RO          121    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000868   0x00000868   0x00000002   Code   RO          122    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0000086a   0x0000086a   0x0000000e   Code   RO          123    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000878   0x00000878   0x00000010   Data   RO          120    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00000890, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00000888, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x00000890, Size: 0x00000520, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x00000888, Size: 0x00000520, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -407,12 +407,12 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
        506          0          0          0          0       1721   eeprom_program.o
-       426          0          0          0        800       1239   main.o
+       418          0          0          0        800       1240   main.o
        252         10        620          0        512       5444   startup_tm4c123.o
        268          0          0          0          0       6804   system_tm4c123.o
 
     ----------------------------------------------------------------------
-      1458         10        636          0       1312      15208   Object Totals
+      1450         10        636          0       1312      15209   Object Totals
          0          0         16          0          0          0   (incl. Generated)
          6          0          0          0          0          0   (incl. Padding)
 
@@ -451,15 +451,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1556         28        636          0       1312      15440   Grand Totals
-      1556         28        636          0       1312      15440   ELF Image Totals
-      1556         28        636          0          0          0   ROM Totals
+      1548         28        636          0       1312      15441   Grand Totals
+      1548         28        636          0       1312      15441   ELF Image Totals
+      1548         28        636          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2192 (   2.14kB)
+    Total RO  Size (Code + RO Data)                 2184 (   2.13kB)
     Total RW  Size (RW Data + ZI Data)              1312 (   1.28kB)
-    Total ROM Size (Code + RO Data + RW Data)       2192 (   2.14kB)
+    Total ROM Size (Code + RO Data + RW Data)       2184 (   2.13kB)
 
 ==============================================================================
 

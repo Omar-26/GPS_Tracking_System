@@ -11,8 +11,11 @@ Section Cross References
     uart_program.o(.ARM.exidx.text.UART_u8SendString) refers to uart_program.o(.text.UART_u8SendString) for [Anonymous Symbol]
     uart_program.o(.text.UART_u8ReceiveString) refers to uart_program.o(.text.UART_u8RecieveByte) for UART_u8RecieveByte
     uart_program.o(.ARM.exidx.text.UART_u8ReceiveString) refers to uart_program.o(.text.UART_u8ReceiveString) for [Anonymous Symbol]
+    main.o(.ARM.exidx.text.RGBLED_Init) refers to main.o(.text.RGBLED_Init) for [Anonymous Symbol]
+    main.o(.ARM.exidx.text.LEDS_output) refers to main.o(.text.LEDS_output) for [Anonymous Symbol]
+    main.o(.text.main) refers to main.o(.text.RGBLED_Init) for RGBLED_Init
     main.o(.text.main) refers to uart_program.o(.text.UART_u8Init) for UART_u8Init
-    main.o(.text.main) refers to uart_program.o(.text.UART_u8SendByte) for UART_u8SendByte
+    main.o(.text.main) refers to uart_program.o(.text.UART_u8RecieveByte) for UART_u8RecieveByte
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     gpio_program.o(.ARM.exidx.text.init_port_f) refers to gpio_program.o(.text.init_port_f) for [Anonymous Symbol]
     gpio_program.o(.ARM.exidx.text.init_port_A) refers to gpio_program.o(.text.init_port_A) for [Anonymous Symbol]
@@ -54,14 +57,17 @@ Removing Unused input sections from the image.
 
     Removing uart_program.o(.text), (0 bytes).
     Removing uart_program.o(.ARM.exidx.text.UART_u8Init), (8 bytes).
+    Removing uart_program.o(.text.UART_u8SendByte), (228 bytes).
     Removing uart_program.o(.ARM.exidx.text.UART_u8SendByte), (8 bytes).
-    Removing uart_program.o(.text.UART_u8RecieveByte), (986 bytes).
     Removing uart_program.o(.ARM.exidx.text.UART_u8RecieveByte), (8 bytes).
     Removing uart_program.o(.text.UART_u8SendString), (586 bytes).
     Removing uart_program.o(.ARM.exidx.text.UART_u8SendString), (8 bytes).
-    Removing uart_program.o(.text.UART_u8ReceiveString), (410 bytes).
+    Removing uart_program.o(.text.UART_u8ReceiveString), (394 bytes).
     Removing uart_program.o(.ARM.exidx.text.UART_u8ReceiveString), (8 bytes).
     Removing main.o(.text), (0 bytes).
+    Removing main.o(.ARM.exidx.text.RGBLED_Init), (8 bytes).
+    Removing main.o(.text.LEDS_output), (36 bytes).
+    Removing main.o(.ARM.exidx.text.LEDS_output), (8 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
     Removing gpio_program.o(.text), (0 bytes).
@@ -90,7 +96,7 @@ Removing Unused input sections from the image.
     Removing system_tm4c123.o(.ARM.exidx.text.SystemInit), (8 bytes).
     Removing system_tm4c123.o(.data.SystemCoreClock), (4 bytes).
 
-37 unused section(s) (total 4582 bytes) removed from the image.
+40 unused section(s) (total 3860 bytes) removed from the image.
 
 ==============================================================================
 
@@ -135,13 +141,14 @@ Image Symbol Table
     $v0                                      0x00000280   Number         0  startup_tm4c123.o(.text)
     .text                                    0x00000280   Section      252  startup_tm4c123.o(.text)
     .text                                    0x0000037c   Section       48  init.o(.text)
-    [Anonymous Symbol]                       0x000003ac   Section        0  system_tm4c123.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x000004b8   Section        0  uart_program.o(.text.UART_u8Init)
-    [Anonymous Symbol]                       0x00001510   Section        0  uart_program.o(.text.UART_u8SendByte)
-    [Anonymous Symbol]                       0x000015f4   Section        0  main.o(.text.main)
-    i.__scatterload_copy                     0x00001626   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00001634   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00001636   Section       14  handlers.o(i.__scatterload_zeroinit)
+    [Anonymous Symbol]                       0x000003ac   Section        0  main.o(.text.RGBLED_Init)
+    [Anonymous Symbol]                       0x00000468   Section        0  system_tm4c123.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x00000574   Section        0  uart_program.o(.text.UART_u8Init)
+    [Anonymous Symbol]                       0x000015cc   Section        0  uart_program.o(.text.UART_u8RecieveByte)
+    [Anonymous Symbol]                       0x0000195c   Section        0  main.o(.text.main)
+    i.__scatterload_copy                     0x000019aa   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x000019b8   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x000019ba   Section       14  handlers.o(i.__scatterload_zeroinit)
     STACK                                    0x20000000   Section      512  startup_tm4c123.o(STACK)
 
     Global Symbols
@@ -286,15 +293,16 @@ Image Symbol Table
     PWM1_FAULT_Handler                       0x00000371   Thumb Code     2  startup_tm4c123.o(.text)
     __scatterload                            0x0000037d   Thumb Code    38  init.o(.text)
     __scatterload_rt2                        0x0000037d   Thumb Code     0  init.o(.text)
-    SystemInit                               0x000003ad   Thumb Code   268  system_tm4c123.o(.text.SystemInit)
-    UART_u8Init                              0x000004b9   Thumb Code  4184  uart_program.o(.text.UART_u8Init)
-    UART_u8SendByte                          0x00001511   Thumb Code   228  uart_program.o(.text.UART_u8SendByte)
-    main                                     0x000015f5   Thumb Code    50  main.o(.text.main)
-    __scatterload_copy                       0x00001627   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00001635   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00001637   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x00001644   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00001654   Number         0  anon$$obj.o(Region$$Table)
+    RGBLED_Init                              0x000003ad   Thumb Code   186  main.o(.text.RGBLED_Init)
+    SystemInit                               0x00000469   Thumb Code   268  system_tm4c123.o(.text.SystemInit)
+    UART_u8Init                              0x00000575   Thumb Code  4184  uart_program.o(.text.UART_u8Init)
+    UART_u8RecieveByte                       0x000015cd   Thumb Code   910  uart_program.o(.text.UART_u8RecieveByte)
+    main                                     0x0000195d   Thumb Code    78  main.o(.text.main)
+    __scatterload_copy                       0x000019ab   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x000019b9   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x000019bb   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x000019c8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000019d8   Number         0  anon$$obj.o(Region$$Table)
     __initial_sp                             0x20000200   Data           0  startup_tm4c123.o(STACK)
 
 
@@ -305,44 +313,47 @@ Memory Map of the image
 
   Image Entry point : 0x00000281
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00001654, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000019d8, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001654, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000019d8, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x0000026c   Data   RO           52    RESET               startup_tm4c123.o
-    0x0000026c   0x0000026c   0x00000000   Code   RO           73  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x0000026c   0x0000026c   0x00000004   Code   RO           76    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x00000270   0x00000270   0x00000004   Code   RO           79    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x00000274   0x00000274   0x00000000   Code   RO           81    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x00000274   0x00000274   0x00000000   Code   RO           83    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x00000274   0x00000274   0x00000008   Code   RO           84    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x0000027c   0x0000027c   0x00000000   Code   RO           86    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x0000027c   0x0000027c   0x00000000   Code   RO           88    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x0000027c   0x0000027c   0x00000004   Code   RO           77    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x00000280   0x00000280   0x000000fc   Code   RO           53  * .text               startup_tm4c123.o
-    0x0000037c   0x0000037c   0x00000030   Code   RO           90    .text               mc_w.l(init.o)
-    0x000003ac   0x000003ac   0x0000010c   Code   RO           64    .text.SystemInit    system_tm4c123.o
-    0x000004b8   0x000004b8   0x00001058   Code   RO            2    .text.UART_u8Init   uart_program.o
-    0x00001510   0x00001510   0x000000e4   Code   RO            4    .text.UART_u8SendByte  uart_program.o
-    0x000015f4   0x000015f4   0x00000032   Code   RO           19    .text.main          main.o
-    0x00001626   0x00001626   0x0000000e   Code   RO           94    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00001634   0x00001634   0x00000002   Code   RO           95    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00001636   0x00001636   0x0000000e   Code   RO           96    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00001644   0x00001644   0x00000010   Data   RO           93    Region$$Table       anon$$obj.o
+    0x00000000   0x00000000   0x0000026c   Data   RO           57    RESET               startup_tm4c123.o
+    0x0000026c   0x0000026c   0x00000000   Code   RO           78  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x0000026c   0x0000026c   0x00000004   Code   RO           81    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000270   0x00000270   0x00000004   Code   RO           84    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x00000274   0x00000274   0x00000000   Code   RO           86    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x00000274   0x00000274   0x00000000   Code   RO           88    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x00000274   0x00000274   0x00000008   Code   RO           89    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x0000027c   0x0000027c   0x00000000   Code   RO           91    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x0000027c   0x0000027c   0x00000000   Code   RO           93    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x0000027c   0x0000027c   0x00000004   Code   RO           82    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000280   0x00000280   0x000000fc   Code   RO           58  * .text               startup_tm4c123.o
+    0x0000037c   0x0000037c   0x00000030   Code   RO           95    .text               mc_w.l(init.o)
+    0x000003ac   0x000003ac   0x000000ba   Code   RO           19    .text.RGBLED_Init   main.o
+    0x00000466   0x00000466   0x00000002   PAD
+    0x00000468   0x00000468   0x0000010c   Code   RO           69    .text.SystemInit    system_tm4c123.o
+    0x00000574   0x00000574   0x00001058   Code   RO            2    .text.UART_u8Init   uart_program.o
+    0x000015cc   0x000015cc   0x0000038e   Code   RO            6    .text.UART_u8RecieveByte  uart_program.o
+    0x0000195a   0x0000195a   0x00000002   PAD
+    0x0000195c   0x0000195c   0x0000004e   Code   RO           23    .text.main          main.o
+    0x000019aa   0x000019aa   0x0000000e   Code   RO           99    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x000019b8   0x000019b8   0x00000002   Code   RO          100    i.__scatterload_null  mc_w.l(handlers.o)
+    0x000019ba   0x000019ba   0x0000000e   Code   RO          101    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x000019c8   0x000019c8   0x00000010   Data   RO           98    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00001654, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x000019d8, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x00001654, Size: 0x00000200, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x000019d8, Size: 0x00000200, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000        -       0x00000200   Zero   RW           50    STACK               startup_tm4c123.o
+    0x20000000        -       0x00000200   Zero   RW           55    STACK               startup_tm4c123.o
 
 
 ==============================================================================
@@ -352,15 +363,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        50          0          0          0          0        534   main.o
+       264          0          0          0          0        950   main.o
        252         10        620          0        512       5444   startup_tm4c123.o
-       268          0          0          0          0       6779   system_tm4c123.o
-      4412         24          0          0          0       5134   uart_program.o
+       268          0          0          0          0       6802   system_tm4c123.o
+      5094         32          0          0          0       5102   uart_program.o
 
     ----------------------------------------------------------------------
-      4982         34        636          0        512      17891   Object Totals
+      5882         42        636          0        512      18298   Object Totals
          0          0         16          0          0          0   (incl. Generated)
-         0          0          0          0          0          0   (incl. Padding)
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -397,15 +408,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5080         52        636          0        512      18123   Grand Totals
-      5080         52        636          0        512      18123   ELF Image Totals
-      5080         52        636          0          0          0   ROM Totals
+      5980         60        636          0        512      18530   Grand Totals
+      5980         60        636          0        512      18530   ELF Image Totals
+      5980         60        636          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5716 (   5.58kB)
+    Total RO  Size (Code + RO Data)                 6616 (   6.46kB)
     Total RW  Size (RW Data + ZI Data)               512 (   0.50kB)
-    Total ROM Size (Code + RO Data + RW Data)       5716 (   5.58kB)
+    Total ROM Size (Code + RO Data + RW Data)       6616 (   6.46kB)
 
 ==============================================================================
 
