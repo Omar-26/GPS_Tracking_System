@@ -81,14 +81,14 @@ void GPS_format()
 }
 double Value_to_Degree(double value) { return value; }
 // double degree = (int)value/100 ;
-// doub
-// 
+// double minutes = value - 	(double)degree*100;
+// return (degree + (minutes/60));
 // }
 
-double calcDistance(volatile double latitude_1, volatile double longitude_1, volatile double latitude_2, volatile double longitude_2)
+f32 calcDistance(volatile f32 latitude_1, volatile f32 longitude_1, volatile f32 latitude_2, volatile f32 longitude_2)
 {
 
-    volatile double phi1, phi2, delta_phi, delta_lmbda, a, c, d;
+    volatile f32 phi1, phi2, delta_phi, delta_lmbda, a, c, d;
 
     phi1 = DEG_TO_RAD(Value_to_Degree(latitude_1));
     phi2 = DEG_TO_RAD(Value_to_Degree(latitude_2));
