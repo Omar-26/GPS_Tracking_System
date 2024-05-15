@@ -32,7 +32,7 @@ void GPS_Read()
         flag = 0;
         for (u8 i = 0; i < length(GPS_Log_Check); i++)
         {
-            UART_u8ReceiveByte(UART0, &Local_u8ReceivedChar);
+            Local_u8ReceivedChar=UART_u8ReceiveByte(UART0);
             if (Local_u8ReceivedChar != GPS_Log_Check[i])
                 flag = 1;
             break;
@@ -44,7 +44,7 @@ void GPS_Read()
     do
     {
         u8 GPS_Counter = 0;
-        UART_u8ReceiveByte(UART0, &Local_u8ReceivedChar);
+        Local_u8ReceivedChar=UART_u8ReceiveByte(UART0);
         Received_Char = Local_u8ReceivedChar;
         GPS[GPS_Counter++] = Received_Char;
     } while (Received_Char != '*');
@@ -79,7 +79,7 @@ void GPS_format()
             currentLong = -atof(GPS_Formatted[4]);
     }
 }
-double Value_to_Degree(double value) { return value; }
+f32 Value_to_Degree(f32 value) { return value; }
 // double degree = (int)value/100 ;
 // double minutes = value - 	(double)degree*100;
 // return (degree + (minutes/60));
