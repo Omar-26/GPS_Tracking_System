@@ -1,0 +1,100 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: ahmed Sallam, srudnet, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\embedded\project\repo 2\GPS_Tracking_System\Test Drivers\TFT_Test\TFT_TEST4(final)\tft_test.uvprojx
+Project File Date:  05/15/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+compiling port.c...
+compiling ssi_lcfg.c...
+compiling mcu_hw.c...
+compiling port_lcfg.c...
+compiling SysCtr_cfg.c...
+compiling processor.c...
+mcal/ssi/ssi.c(53): warning: non-void function does not return a value [-Wreturn-type]
+   53 |  }
+      |  ^
+1 warning generated.
+compiling ssi.c...
+compiling nvic_lcfg.c...
+compiling Delay_ms.c...
+compiling nvic.c...
+compiling SysCtr.c...
+compiling dio.c...
+TFT/ST7735.c(354): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
+  354 |   Dio_WriteChannel(Port_Channel_A6,STD_low);
+      |   ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
+TFT/ST7735.c(362): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
+  362 |   Dio_WriteChannel(Port_Channel_A6,STD_high);
+      |   ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
+TFT/ST7735.c(367): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
+  367 |   Dio_WriteChannel(Port_Channel_A6,STD_high);
+      |   ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
+TFT/ST7735.c(374): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
+  374 |       Dio_WriteChannel(Port_Channel_A7,STD_low);
+      |       ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
+TFT/ST7735.c(376): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
+  376 |       Dio_WriteChannel(Port_Channel_A7,STD_high);
+      |       ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
+5 warnings generated.
+compiling ST7735.c...
+compiling system_TM4C123.c...
+assembling startup_TM4C123.s...
+compiling main.c...
+linking...
+Program Size: Code=3314 RO-data=1958 RW-data=160 ZI-data=512  
+".\Objects\tft_test.axf" - 0 Error(s), 6 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil::TM4C_DFP@1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: Keil::Device:Startup@1.0.1
+      Include file:  Device/Include/TM4C123/TM4C123.h
+      Source file:   Device/Source/ARM/startup_TM4C123.s
+      Source file:   Device/Source/system_TM4C123.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>

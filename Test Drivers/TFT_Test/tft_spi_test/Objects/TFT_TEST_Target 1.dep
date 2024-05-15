@@ -1,0 +1,82 @@
+Dependencies for Project 'TFT_TEST', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6210000::V6.21::ARMCLANG
+F (.\BIT_MATH.h)(0x6640D143)()
+F (.\EEPROM_Interface.h)(0x6640D143)()
+F (.\fonts.h)(0x6640D5A8)()
+F (.\GPIO_config.h)(0x6640D144)()
+F (.\GPIO_Interface.h)(0x6640E211)()
+F (.\GPIO_Private.h)(0x6640D144)()
+F (.\GPS_interface.h)(0x6640EED0)()
+F (.\GPS_params.h)(0x6640EC58)()
+F (.\IO.h)(0x6640D144)()
+F (.\iota.h)(0x6640D144)()
+F (.\SPI_Interface.h)(0x6643A1EE)()
+F (.\STD_TYPES.h)(0x6640D144)()
+F (.\Sys_Tick.h)(0x664354E3)()
+F (.\TFT_config.h)(0x6640D144)()
+F (.\TFT_interface.h)(0x6643CB9D)()
+F (.\TFT_private.h)(0x6643CB21)()
+F (.\tm4c123gh6pm.h)(0x6640D145)()
+F (.\UART_Config.h)(0x6640D145)()
+F (.\UART_Interface.h)(0x6640D145)()
+F (.\UART_Private.h)(0x6640D145)()
+F (.\EEPROM_Program.c)(0x6640D143)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/eeprom_program.o -MD)
+I (STD_TYPES.hr:\Keil_v5\ARM\ARMCLANG\include\stdint.hm4c123gh6pm.h)(0x00000000)
+F (.\fonts.c)(0x6640D5F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/fonts.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.hdTD_TYPES.h)(0x00000000)
+F (.\GPIO_Program.c)(0x6640D9DD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/gpio_program.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.hdIT_MATH.hhm4c123gh6pm.h)(0x00000000)
+I (GPIO_Private.h\PIO_Interface.hePIO_Config.h)(0x00000000)
+F (.\GPS.c)(0x6640F2B6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/gps.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.hgPS_interface.h)(0x00000000)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x656A0472)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x656A0472)
+I (C:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x656A0472)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x656A0472)
+F (.\main.c)(0x6643D425)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/main.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x656A0472)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x656A0472)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x656A0472)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x656A0472)
+I (GPIO_Private.h\m4c123gh6pm.huys_Tick.h.IT_MATH.heART_Interface.h)(0x00000000)
+I (SPI_Interface.hmPI.h3ata_types.hTPS_interface.hhFT_interface.h)(0x00000000)
+I (fonts.heota.h)(0x00000000)
+F (.\SPI_Program.c)(0x6643C105)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/spi_program.o -MD)
+I (STD_TYPES.h.:\Keil_v5\ARM\ARMCLANG\include\stdint.hiPIO_Private.h)(0x00000000)
+I (tm4c123gh6pm.h)(0x6640D145)
+F (.\Sys_Tick.c)(0x664354E3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/sys_tick.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.hdTD_TYPES.hiIT_MATH.h)(0x00000000)
+I (tm4c123gh6pm.h)(0x6640D145)
+F (.\TFT_program.c)(0x6643CB9D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/tft_program.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.hdIT_MATH.h)(0x00000000)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.hdPIO_interface.h)(0x00000000)
+I (GPIO_Private.h\m4c123gh6pm.huPI_interface.hOys_Tick.hePI.h)(0x00000000)
+I (data_types.h.onts.h2FT_interface.htFT_private.hTFT_config.h)(0x00000000)
+F (.\UART_Program.c)(0x6640DB39)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/uart_program.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.hiIT_MATH.h_m4c123gh6pm.h)(0x00000000)
+I (UART_private.h\ART_interface.heART_config.h)(0x00000000)
+F (.\delay.c)(0x6643C062)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/delay.o -MD)
+F (.\GPIO_SPI.c)(0x6643C062)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/gpio_spi.o -MD)
+I (SysCtrl.h)(0x6643C232)
+F (.\SPI.c)(0x6643C062)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/spi.o -MD)
+F (.\SysCtrl.c)(0x6643C232)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/sysctrl.o -MD)
+F (.\data_types.h)(0x6643C062)()
+F (.\delay.h)(0x6643C062)()
+F (.\GPIO_SPI.h)(0x6643C062)()
+F (.\HW_gpio.h)(0x6643C062)()
+F (.\HW_SPI.h)(0x6643C062)()
+F (.\README.md)(0x6643C062)()
+F (.\SPI.h)(0x6643C062)()
+F (.\SysCtrl.h)(0x6643C232)()
+F (RTE/Device/TM4C123GH6PM/startup_TM4C123.s)(0x65E06EA2)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-Wa,armasm,--pd,"__UVISION_VERSION SETA 539" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"TM4C123GH6PM SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_tm4c123.o)
+F (RTE/Device/TM4C123GH6PM/system_TM4C123.c)(0x65E06EA2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="539" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/system_tm4c123.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x656A0472)
+I (C:\Users\ahmed\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123.h)(0x65E06EA2)
+I (C:\Users\ahmed\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123GH6PM.h)(0x65E06EA2)
+I (C:\Users\ahmed\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x65D3B79B)
+I (C:\Users\ahmed\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x65D3B79B)
+I (C:\Users\ahmed\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x65D3B79B)
+I (C:\Users\ahmed\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x65D3B79B)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
+I (C:\Users\ahmed\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x65D3B79B)
+I (C:\Users\ahmed\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\system_TM4C123.h)(0x65E06EA2)
