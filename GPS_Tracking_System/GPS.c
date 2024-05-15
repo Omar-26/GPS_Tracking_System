@@ -79,7 +79,7 @@ void GPS_format()
             currentLong = -atof(GPS_Formatted[4]);
     }
 }
-f64 Value_to_Degree(double value) { return value; }
+f64 Value_to_Degree(double value) {return value;}
 // double degree = (int)value/100 ;
 // double minutes = value - 	(double)degree*100;
 // return (degree + (minutes/60));

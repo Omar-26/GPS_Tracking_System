@@ -105,6 +105,12 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTB))
             ;
+        /**< Commit Changes */
+        GPIO_PORTA_CR_R |= 0xFF;
+        GPIO_PORTA_AMSEL_R &= 0x00;
+        /**< Commit Changes */
+        GPIO_PORTA_CR_R |= 0xFF;
+        GPIO_PORTA_AMSEL_R &= 0x00;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTB_AFSEL_R, GPIO_PB0_U1RX);
         SET_BIT(GPIO_PORTB_AFSEL_R, GPIO_PB1_U1TX);
@@ -173,6 +179,9 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTD))
             ;
+        /**< Commit Changes */
+        GPIO_PORTA_CR_R |= 0xFF;
+        GPIO_PORTA_AMSEL_R &= 0x00;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD6_U2RX);
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD7_U2TX);
@@ -241,6 +250,9 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTC))
             ;
+        /**< Commit Changes */
+        GPIO_PORTA_CR_R |= 0xFF;
+        GPIO_PORTA_AMSEL_R &= 0x00;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC6_U3RX);
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC7_U3TX);
@@ -309,6 +321,9 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTC))
             ;
+        /**< Commit Changes */
+        GPIO_PORTA_CR_R |= 0xFF;
+        GPIO_PORTA_AMSEL_R &= 0x00;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC4_U4RX);
         SET_BIT(GPIO_PORTC_AFSEL_R, GPIO_PC5_U4TX);
@@ -377,6 +392,9 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTE))
             ;
+        /**< Commit Changes */
+        GPIO_PORTA_CR_R |= 0xFF;
+        GPIO_PORTA_AMSEL_R &= 0x00;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE4_U5RX);
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE5_U5TX);
@@ -445,6 +463,9 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTD))
             ;
+        /**< Commit Changes */
+        GPIO_PORTA_CR_R |= 0xFF;
+        GPIO_PORTA_AMSEL_R &= 0x00;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD4_U6RX);
         SET_BIT(GPIO_PORTD_AFSEL_R, GPIO_PD5_U6TX);
@@ -513,6 +534,9 @@ Std_ReturnType UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8Wor
         /**< Wait for UART Clock Stabilization */
         while (!GET_BIT(SYSCTL_PRGPIO_R, UART_PORTE))
             ;
+        /**< Commit Changes */
+        GPIO_PORTA_CR_R |= 0xFF;
+        GPIO_PORTA_AMSEL_R &= 0x00;
         /**< Set Alternate Function */
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE0_U7RX);
         SET_BIT(GPIO_PORTE_AFSEL_R, GPIO_PE1_U7TX);
@@ -613,45 +637,53 @@ Std_ReturnType UART_u8SendByte(u8 copy_u8UARTNo, u8 copy_u8Data)
     return Local_u8ErrorState;
 }
 /***************************************< Receive_BYTE_FUNCTION_IMPLEMENTATION **************************************/
-u8 UART_u8RecieveByte(u8 copy_u8UARTNo)
+u8 UART_u8ReceiveByte(u8 copy_u8UARTNo)
 {
-	  u8 local_u8ReceivedData;
+    u8 local_u8ReceivedData;
     switch (copy_u8UARTNo)
     {
     case UART0:
-        while(GET_BIT(UART0_FR_R, UART_FR_RXFE));
-           local_u8ReceivedData = UART0_DR_R;
+        while (GET_BIT(UART0_FR_R, UART_FR_RXFE))
+            ;
+        local_u8ReceivedData = UART0_DR_R;
         break;
     case UART1:
-        while(GET_BIT(UART1_FR_R, UART_FR_RXFE));
-           local_u8ReceivedData = UART1_DR_R;
+        while (GET_BIT(UART1_FR_R, UART_FR_RXFE))
+            ;
+        local_u8ReceivedData = UART1_DR_R;
         break;
     case UART2:
-        while(GET_BIT(UART2_FR_R, UART_FR_RXFE));
-           local_u8ReceivedData = UART2_DR_R;
+        while (GET_BIT(UART2_FR_R, UART_FR_RXFE))
+            ;
+        local_u8ReceivedData = UART2_DR_R;
         break;
     case UART3:
-        while(GET_BIT(UART3_FR_R, UART_FR_RXFE));
-           local_u8ReceivedData = UART3_DR_R;
+        while (GET_BIT(UART3_FR_R, UART_FR_RXFE))
+            ;
+        local_u8ReceivedData = UART3_DR_R;
         break;
     case UART4:
-         while(GET_BIT(UART4_FR_R, UART_FR_RXFE));
-           local_u8ReceivedData = UART4_DR_R;
+        while (GET_BIT(UART4_FR_R, UART_FR_RXFE))
+            ;
+        local_u8ReceivedData = UART4_DR_R;
         break;
     case UART5:
-        while(GET_BIT(UART5_FR_R, UART_FR_RXFE));
-           local_u8ReceivedData = UART5_DR_R;
+        while (GET_BIT(UART5_FR_R, UART_FR_RXFE))
+            ;
+        local_u8ReceivedData = UART5_DR_R;
         break;
     case UART6:
-        while(GET_BIT(UART6_FR_R, UART_FR_RXFE));
-           local_u8ReceivedData = UART6_DR_R;
+        while (GET_BIT(UART6_FR_R, UART_FR_RXFE))
+            ;
+        local_u8ReceivedData = UART6_DR_R;
         break;
     case UART7:
-        while(GET_BIT(UART7_FR_R, UART_FR_RXFE));
-           local_u8ReceivedData = UART7_DR_R;
+        while (GET_BIT(UART7_FR_R, UART_FR_RXFE))
+            ;
+        local_u8ReceivedData = UART7_DR_R;
         break;
     }
-    return local_u8ReceivedData ;
+    return local_u8ReceivedData;
 }
 /****************************************< SEND_STRING_FUNCTION_IMPLEMENTATION **************************************/
 Std_ReturnType UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
@@ -721,39 +753,19 @@ Std_ReturnType UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
     return Local_u8ErrorStatus;
 }
 /**************************************< Receive_STRING_FUNCTION_IMPLEMENTATION *************************************/
-void UART_u8ReceiveString( u8 copy_u8UARTNo , u8 *string , uint32_t length){
-    u8 local_u8receivedByte ;
-	  uint32_t i;
-	  for(i = 0 ; i < length ; i++){
-		local_u8receivedByte = UART_u8RecieveByte(copy_u8UARTNo);
-		 if( local_u8receivedByte == '*') // Delemiter
-			break;
-		 else{
-		   string[i] = local_u8receivedByte;
-		   UART_u8SendByte(copy_u8UARTNo ,local_u8receivedByte);
-		 }
-	}	
-}
-
-/*
-void UART_voidReceiveString(u8 copy_u8UARTNo,u8 *copy_pu8Buffer)
+void UART_u8ReceiveString(u8 copy_u8UARTNo, u8 *string, uint32_t length)
 {
-    u32 i = 0;
-    copy_pu8Buffer[i] = UART_u8RecieveByte(copy_u8UARTNo);
-    if(copy_pu8Buffer[i] >= '0')
+    u8 local_u8receivedByte;
+    uint32_t i;
+    for (i = 0; i < length; i++)
     {
-        while(copy_pu8Buffer[i] != 0x0D)
-            {
-                i++;
-                copy_pu8Buffer[i] = UART_u8RecieveByte(copy_u8UARTNo);
-            }
+        local_u8receivedByte = UART_u8ReceiveByte(copy_u8UARTNo);
+        if (local_u8receivedByte == '*')
+            break;
+        else
+        {
+            string[i] = local_u8receivedByte;
+            UART_u8SendByte(copy_u8UARTNo, local_u8receivedByte);
+        }
     }
-    else
-    {
-        copy_pu8Buffer[i-1] = 0;
-        copy_pu8Buffer[i] = 0;
-        i--;
-    }
-    copy_pu8Buffer[i] = '\0';
 }
-*/

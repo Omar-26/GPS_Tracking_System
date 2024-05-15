@@ -24,7 +24,8 @@ extern u8  flag , GPS_Counter , GPS[80];
 /******************************< main *****************************/
 int main(){
 	/******************************< init *****************************/
-	f64 destintaion = 0 , destinationLatitude = 0 , destinationLongitude = 0 , previousLatitude = 0 , previousLongitude = 0;
+	f64 destintaion = 0 , destinationLatitude = 0 , destinationLongitude = 0 ;
+	f64 previousLatitude = 0 , previousLongitude = 0;
 	f64 walkedDistance = 0 , deltaDistance = 0, remainingDistance = 0;
 	f32 latitude[50] , longitude[50]; 
 	u8 Int_walkedDistance = 0;
@@ -36,26 +37,26 @@ int main(){
 	// SPI_Init();
 	
 	while(1){
-		Int_walkedDistance = (u8)walkedDistance;
-		itoa(Int_walkedDistance,string_totalDistance,10);
 		//TFT_WriteString(string_totalDistance);
 		deltaDistance = Calc_Distance(previousLatitude , previousLongitude ,currentLatitude ,currentLongitude);
 		walkedDistance += deltaDistance;
 		currentLatitude = previousLatitude;
 		currentLongitude = previousLongitude;
-		remainingDistance = 100 - walkedDistance;
-		if (walkedDistance < 100){
+		// remainingDistance = 100 - walkedDistance;
+		if (walkedDistance < 101){
+			// Time Delay with Systick
 			GPS_Read();
 			GPS_format();
 		}
 		else{
-		  GPIO_voidRGB_LED( BLUE_LED , LED_OFF);
+		  GPIO_voidRGB_LED(BLUE_LED , LED_ON);
 			write_Array_EEPROM(latitude,longitude ,GPS_Counter);
+			GPIO_voidRGB_LED(GREEN_LED , LED_ON);
 		}
 		while(1){ 
 			if(UART_u8RecieveByte(UART0) == 'U'){
 				// Send Data to the PC
 			}
-		}		
+		}
 	}
 }

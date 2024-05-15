@@ -33,6 +33,7 @@ int main(void)
 {
 	RGBLED_Init();
 	UART_u8Init(UART0, UART_BDR_9600, UART_DATA_8, UART_PARITY_NONE, UART_STOP_BIT_1);
+	// GPIO_PORTF_DATA_R |= 0x0E;
 	// u8 ch[] = "ABC";
 	// UART_u8SendString(UART0,ch);
 	/*u8 local_u8ReceivedCommand = UART_u8RecieveByte(UART0);
@@ -41,21 +42,21 @@ int main(void)
 		LEDS_output(GREEN);
 	   //GPIO_PORTF_DATA_R |= 0x0E;
 		}*/
-	u8 ch[10];
+	u8 ch[10] = "AB";
 	// UART_u8ReceiveString (UART0, &ch[0]);
 	UART_u8ReceiveString( UART0 , ch , 10);
 	
   UART_u8SendByte(UART0, ch[0]);
-	UART_u8SendByte(UART0, ch[2]);
+	UART_u8SendByte(UART0, ch[1]);
 	 
 	if( ch[0] == 'A' ) // A
 		{ 
-		//LEDS_output(GREEN);
-	  GPIO_PORTF_DATA_R |= 0x0E;
+		LEDS_output(GREEN);
+	  // GPIO_PORTF_DATA_R |= 0x0E;
 		}
 	if( ch[1] == 'B' ) // A
-		{ 
-		LEDS_output(RED);
+		{
+		// LEDS_output(RED);
 	  //GPIO_PORTF_DATA_R |= 0x0E;
 		}
   return 0;
