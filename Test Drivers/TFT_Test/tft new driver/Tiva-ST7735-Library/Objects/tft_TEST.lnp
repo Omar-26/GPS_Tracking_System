@@ -1,0 +1,9 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\st7735.o"
+".\objects\icons.o"
+".\objects\startup_rvmdk.o"
+".\TivaWare_C_Series-2.2.0.295\driverlib\rvmdk\driverlib.lib"
+--strict --scatter ".\Objects\tft_test.sct"
+--entry Reset_Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\tft_test.map" -o .\Objects\tft_test.axf
