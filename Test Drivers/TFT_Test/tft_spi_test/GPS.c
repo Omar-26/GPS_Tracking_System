@@ -1,5 +1,5 @@
-#include "GPS_interface.h"
 #include "UART_Interface.h"
+#include "GPS_interface.h"
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
@@ -11,16 +11,13 @@
 
 u8 GPS_Log_Check[] = "$GPRMC,";
 u8 GPS_Formatted[12][20];
-u8 GPS_Counter = 0;
-u8 flag = 0;
 
 u8 *token;
 u8 GPS[80];
 
-f64 currentLatitude, currentLongitude;
-
+f64 currentLat, currentLong;
 u16 length (u8* arr)
-{return sizeof(*arr)/sizeof(arr[0]);
+{return sizeof(arr)/sizeof(arr[0]);
 }
 
 void GPS_Read()
@@ -29,13 +26,13 @@ void GPS_Read()
     u8 Received_Char;
     u8 Local_u8ReceivedChar;
 
-    
+    u8 flag = 0;
     do
     {
         flag = 0;
         for (u8 i = 0; i < length(GPS_Log_Check); i++)
         {
-            Local_u8ReceivedChar = UART_u8RecieveByte(UART0);
+            UART_u8ReceiveByte(UART0, &Local_u8ReceivedChar);
             if (Local_u8ReceivedChar != GPS_Log_Check[i])
                 flag = 1;
             break;
@@ -46,7 +43,8 @@ void GPS_Read()
 
     do
     {
-        Local_u8ReceivedChar = UART_u8RecieveByte(UART0);
+        u8 GPS_Counter = 0;
+        UART_u8ReceiveByte(UART0, &Local_u8ReceivedChar);
         Received_Char = Local_u8ReceivedChar;
         GPS[GPS_Counter++] = Received_Char;
     } while (Received_Char != '*');

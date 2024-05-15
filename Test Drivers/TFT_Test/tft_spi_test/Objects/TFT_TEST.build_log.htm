@@ -1,0 +1,1925 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: ahmed Sallam, srudnet, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\embedded\tft_spi_test\TFT_TEST.uvprojx
+Project File Date:  05/14/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+fonts.c(2): warning: In file included from...
+./fonts.h(6): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+fonts.c(2): warning: In file included from...
+./fonts.h(10): warning: padding struct 'FontDef' with 2 bytes to align 'data' [-Wpadded]
+   10 |     const u16 *data;
+      |                ^
+2 warnings generated.
+compiling fonts.c...
+EEPROM_Program.c(1): warning: In file included from...
+./EEPROM_Interface.h(11): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+EEPROM_Program.c(1): warning: In file included from...
+./EEPROM_Interface.h(21): warning: no newline at end of file [-Wnewline-eof]
+   21 | #endif /* EEPROM_INTERFACE_H_ */
+      |                                 ^
+EEPROM_Program.c(49): warning: no newline at end of file [-Wnewline-eof]
+   49 | }
+      |  ^
+3 warnings generated.
+compiling EEPROM_Program.c...
+RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  298 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(338): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  338 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(357): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  357 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(713): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  713 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(729): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  729 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(774): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  774 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(779): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  779 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(872): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  872 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(885): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  885 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(892): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  892 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(897): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  897 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(904): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  904 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(910): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  910 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(917): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  917 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(924): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  924 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(929): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  929 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(936): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  936 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(942): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  942 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(949): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  949 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(956): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  956 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(961): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  961 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(968): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  968 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(974): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  974 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(981): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  981 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(988): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  988 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(993): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  993 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1000): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1000 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1006): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1006 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1013): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1013 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1020): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1020 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1025): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1025 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1032): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1032 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1038): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1038 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1045): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1045 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1052): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1052 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1057): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1057 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1064): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1064 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1070): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1070 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1077): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1077 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1084): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1084 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1089): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1089 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1096): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1096 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1102): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1102 |   union {
+      |   ^
+C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1251): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1251 |   union {
+      |   ^
+44 warnings generated.
+compiling system_TM4C123.c...
+GPIO_SPI.c(26): warning: implicit conversion changes signedness: 'int' to 'U32_t' (aka 'unsigned long') [-Wsign-conversion]
+   26 |         GPIO_PORTA_DATA&=~(1<<3); // In binary: 1 to 1000
+      |                        ~~^~~~~~~
+1 warning generated.
+compiling GPIO_SPI.c...
+GPIO_Program.c(2): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+GPIO_Program.c(3): warning: In file included from...
+./BIT_MATH.h(51): warning: no newline at end of file [-Wnewline-eof]
+   51 | #endif /* BIT_MATH_H_ */
+      |                         ^
+GPIO_Program.c(6): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+GPIO_Program.c(7): warning: In file included from...
+./GPIO_Interface.h(8): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+GPIO_Program.c(7): warning: In file included from...
+./GPIO_Interface.h(29): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   29 | void GPIO_voidInit_port_F();
+      |                          ^
+      |                           void
+./GPIO_Interface.h(49): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   49 | void GPIO_voidInit_port_A();
+      |                          ^
+      |                           void
+./GPIO_Interface.h(153): warning: no newline at end of file [-Wnewline-eof]
+  153 | void GPIO_voidGet_Pin_Value(u8 port, u8 pin, u8 *pin_value);
+      |                                                             ^
+GPIO_Program.c(8): warning: non-portable path to file '"GPIO_config.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+    8 | #include "GPIO_Config.h"
+      |          ^~~~~~~~~~~~~~~
+      |          "GPIO_config.h"
+GPIO_Program.c(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    9 | void GPIO_voidInit_port_F()
+      |                          ^
+      |                           void
+GPIO_Program.c(9): warning: no previous prototype for function 'GPIO_voidInit_port_F' [-Wmissing-prototypes]
+    9 | void GPIO_voidInit_port_F()
+      |      ^
+./GPIO_Interface.h(29): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+   29 | void GPIO_voidInit_port_F();
+      |      ^                    
+      |                           void
+GPIO_Program.c(24): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   24 | void GPIO_voidInit_port_A()
+      |                          ^
+      |                           void
+GPIO_Program.c(24): warning: no previous prototype for function 'GPIO_voidInit_port_A' [-Wmissing-prototypes]
+   24 | void GPIO_voidInit_port_A()
+      |      ^
+./GPIO_Interface.h(49): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+   49 | void GPIO_voidInit_port_A();
+      |      ^                    
+      |                           void
+GPIO_Program.c(53): warning: 'break' will never be executed [-Wunreachable-code-break]
+   53 |         break;
+      |         ^~~~~
+GPIO_Program.c(49): warning: 'break' will never be executed [-Wunreachable-code-break]
+   49 |         break;
+      |         ^~~~~
+GPIO_Program.c(45): warning: 'break' will never be executed [-Wunreachable-code-break]
+   45 |         break;
+      |         ^~~~~
+GPIO_Program.c(65): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   65 |             GPIO_PORTF_DATA_R &= ~0x02;
+      |                               ~~ ^~~~~
+GPIO_Program.c(72): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   72 |             GPIO_PORTF_DATA_R &= ~0x04;
+      |                               ~~ ^~~~~
+GPIO_Program.c(79): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   79 |             GPIO_PORTF_DATA_R &= ~0x08;
+      |                               ~~ ^~~~~
+GPIO_Program.c(57): warning: no previous prototype for function 'Led_controlled' [-Wmissing-prototypes]
+   57 | void Led_controlled(u8 Switch_state, u8 led_color)
+      |      ^
+GPIO_Program.c(57): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   57 | void Led_controlled(u8 Switch_state, u8 led_color)
+      | ^
+      | static 
+GPIO_Program.c(99): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   99 |             GPIO_PORTF_DATA_R &= ~0x02;
+      |                               ~~ ^~~~~
+GPIO_Program.c(112): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  112 |             GPIO_PORTF_DATA_R &= ~0x04;
+      |                               ~~ ^~~~~
+GPIO_Program.c(126): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  126 |             GPIO_PORTF_DATA_R &= ~0x08;
+      |                               ~~ ^~~~~
+GPIO_Program.c(101): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  101 |         default:
+      |         ^
+GPIO_Program.c(101): note: insert 'break;' to avoid fall-through
+  101 |         default:
+      |         ^
+      |         break; 
+GPIO_Program.c(114): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  114 |         default:
+      |         ^
+GPIO_Program.c(114): note: insert 'break;' to avoid fall-through
+  114 |         default:
+      |         ^
+      |         break; 
+GPIO_Program.c(128): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  128 |         default:
+      |         ^
+GPIO_Program.c(128): note: insert 'break;' to avoid fall-through
+  128 |         default:
+      |         ^
+      |         break; 
+GPIO_Program.c(217): warning: implicit conversion loses integer precision: 'unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  217 |         *pin_value = (GPIO_PORTA_DATA_R & (1 << pin)) >> pin;
+      |                    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+GPIO_Program.c(220): warning: implicit conversion loses integer precision: 'unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  220 |         *pin_value = (GPIO_PORTB_DATA_R & (1 << pin)) >> pin;
+      |                    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+GPIO_Program.c(223): warning: implicit conversion loses integer precision: 'unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  223 |         *pin_value = (GPIO_PORTC_DATA_R & (1 << pin)) >> pin;
+      |                    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+GPIO_Program.c(226): warning: implicit conversion loses integer precision: 'unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  226 |         *pin_value = (GPIO_PORTD_DATA_R & (1 << pin)) >> pin;
+      |                    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+GPIO_Program.c(229): warning: implicit conversion loses integer precision: 'unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  229 |         *pin_value = (GPIO_PORTE_DATA_R & (1 << pin)) >> pin;
+      |                    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+GPIO_Program.c(232): warning: implicit conversion loses integer precision: 'unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  232 |         *pin_value = (GPIO_PORTF_DATA_R & (1 << pin)) >> pin;
+      |                    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+31 warnings generated.
+compiling GPIO_Program.c...
+SysCtrl.c(14): warning: variable 'delay' set but not used [-Wunused-but-set-variable]
+   14 |         U32_t delay=0;
+      |               ^
+SysCtrl.c(24): warning: variable 'delay' set but not used [-Wunused-but-set-variable]
+   24 |         U32_t delay=0;
+      |               ^
+2 warnings generated.
+compiling SysCtrl.c...
+compiling delay.c...
+SPI.c(14): warning: implicit conversion changes signedness: 'int' to 'U32_t' (aka 'unsigned long') [-Wsign-conversion]
+   14 |         SSICR1&=~(1<<1);
+      |               ~~^~~~~~~
+SPI.c(16): warning: implicit conversion changes signedness: 'int' to 'U32_t' (aka 'unsigned long') [-Wsign-conversion]
+   16 |         SSICR1&=~(1<<2);
+      |               ~~^~~~~~~
+SPI.c(23): warning: implicit conversion changes signedness: 'int' to 'U32_t' (aka 'unsigned long') [-Wsign-conversion]
+   23 |         SSICR0&=~(1<<7);
+      |               ~~^~~~~~~
+SPI.c(25): warning: implicit conversion changes signedness: 'int' to 'U32_t' (aka 'unsigned long') [-Wsign-conversion]
+   25 |         SSICR0&=~(1<<6);
+      |               ~~^~~~~~~
+SPI.c(27): warning: implicit conversion changes signedness: 'int' to 'U32_t' (aka 'unsigned long') [-Wsign-conversion]
+   27 |         SSICR0&=~((1<<4)|(1<<5));
+      |               ~~^~~~~~~~~~~~~~~~
+SPI.c(62): warning: implicit conversion loses integer precision: 'volatile U32_t' (aka 'volatile unsigned long') to 'U16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   62 |         return SSIDR;
+      |         ~~~~~~ ^~~~~
+./HW_SPI.h(12): note: expanded from macro 'SSIDR'
+   12 | #define  SSIDR     (*((volatile U32_t*)0x40008008))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+compiling SPI.c...
+Sys_Tick.c(8): warning: In file included from...
+./Sys_Tick.h(11): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+Sys_Tick.c(8): warning: In file included from...
+./Sys_Tick.h(12): warning: In file included from...
+./BIT_MATH.h(51): warning: no newline at end of file [-Wnewline-eof]
+   51 | #endif /* BIT_MATH_H_ */
+      |                         ^
+Sys_Tick.c(8): warning: In file included from...
+./Sys_Tick.h(72): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   72 | void SysTick_Init();
+      |                  ^
+      |                   void
+Sys_Tick.c(28): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   28 |         uint32_t SysTick_Ticks = ( (16000000 * ( Time_ms / 1000 ) ) - 1 ) ;     //16MHz Clock
+      |                  ~~~~~~~~~~~~~     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+Sys_Tick.c(33): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   33 | void SysTick_Init(){
+      |                  ^
+      |                   void
+Sys_Tick.c(33): warning: no previous prototype for function 'SysTick_Init' [-Wmissing-prototypes]
+   33 | void SysTick_Init(){
+      |      ^
+./Sys_Tick.h(72): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+   72 | void SysTick_Init();
+      |      ^            
+      |                   void
+6 warnings generated.
+compiling Sys_Tick.c...
+main.c(8): warning: In file included from...
+./STD_TYPES.h(30): warning: 'NULL' macro redefined [-Wmacro-redefined]
+   30 | #define     NULL        ((void *)0x0)   /**< Null pointer definition */
+      |             ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(76): note: previous definition is here
+   76 | #define NULL 0                   /* see <stddef.h> */
+      |         ^
+main.c(8): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+main.c(10): warning: In file included from...
+./GPIO_Interface.h(8): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+main.c(10): warning: In file included from...
+./GPIO_Interface.h(29): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   29 | void GPIO_voidInit_port_F();
+      |                          ^
+      |                           void
+./GPIO_Interface.h(49): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   49 | void GPIO_voidInit_port_A();
+      |                          ^
+      |                           void
+./GPIO_Interface.h(153): warning: no newline at end of file [-Wnewline-eof]
+  153 | void GPIO_voidGet_Pin_Value(u8 port, u8 pin, u8 *pin_value);
+      |                                                             ^
+main.c(11): warning: In file included from...
+./Sys_Tick.h(12): warning: In file included from...
+./BIT_MATH.h(51): warning: no newline at end of file [-Wnewline-eof]
+   51 | #endif /* BIT_MATH_H_ */
+      |                         ^
+main.c(11): warning: In file included from...
+./Sys_Tick.h(72): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   72 | void SysTick_Init();
+      |                  ^
+      |                   void
+main.c(13): warning: In file included from...
+./SPI_Interface.h(10): warning: non-portable path to file '"GPIO_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+   10 | #include "GPIO_interface.h"
+      |          ^~~~~~~~~~~~~~~~~~
+      |          "GPIO_Interface.h"
+main.c(13): warning: In file included from...
+./SPI_Interface.h(10): warning: In file included from...
+./GPIO_Interface.h(8): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+main.c(13): warning: In file included from...
+./SPI_Interface.h(10): warning: In file included from...
+./GPIO_Interface.h(29): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   29 | void GPIO_voidInit_port_F();
+      |                          ^
+      |                           void
+./GPIO_Interface.h(49): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   49 | void GPIO_voidInit_port_A();
+      |                          ^
+      |                           void
+./GPIO_Interface.h(153): warning: no newline at end of file [-Wnewline-eof]
+  153 | void GPIO_voidGet_Pin_Value(u8 port, u8 pin, u8 *pin_value);
+      |                                                             ^
+main.c(13): warning: In file included from...
+./SPI_Interface.h(230): warning: no newline at end of file [-Wnewline-eof]
+  230 | #endif
+      |       ^
+main.c(16): warning: In file included from...
+./GPS_interface.h(6): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    6 | void GPS_Read();
+      |              ^
+      |               void
+./GPS_interface.h(8): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    8 | void GPS_format();
+      |                ^
+      |                 void
+./GPS_interface.h(18): warning: no newline at end of file [-Wnewline-eof]
+   18 | #endif
+      |       ^
+main.c(20): warning: In file included from...
+./iota.h(4): warning: no previous prototype for function 'reverse' [-Wmissing-prototypes]
+    4 | void reverse(char str[], int length) {
+      |      ^
+./iota.h(4): note: declare 'static' if the function is not intended to be used outside of this translation unit
+    4 | void reverse(char str[], int length) {
+      | ^
+      | static 
+./iota.h(37): warning: implicit conversion loses integer precision: 'int' to 'char' [-Wimplicit-int-conversion]
+   37 |         str[i++] = (rem > 9)? (rem - 10) + 'a' : rem + '0';
+      |                  ~            ~~~~~~~~~~~^~~~~
+./iota.h(37): warning: implicit conversion loses integer precision: 'int' to 'char' [-Wimplicit-int-conversion]
+   37 |         str[i++] = (rem > 9)? (rem - 10) + 'a' : rem + '0';
+      |                  ~                               ~~~~^~~~~
+./iota.h(16): warning: no previous prototype for function 'itoa' [-Wmissing-prototypes]
+   16 | char* itoa(int num, char* str, int base) {
+      |       ^
+./iota.h(16): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   16 | char* itoa(int num, char* str, int base) {
+      | ^
+      | static 
+main.c(27): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   27 | int main(){
+      |         ^
+      |          void
+main.c(58): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   58 |         TFT_Config_t tft_1;     
+      |                      ^
+main.c(20): warning: In file included from...
+./iota.h(8): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+    8 |         char temp = str[start];
+      |                     ^~~
+./iota.h(9): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+    9 |         str[start] = str[end];
+      |         ^~~
+./iota.h(9): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+    9 |         str[start] = str[end];
+      |                      ^~~
+./iota.h(10): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   10 |         str[end] = temp;
+      |         ^~~
+./iota.h(22): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   22 |         str[i++] = '0';
+      |         ^~~
+./iota.h(23): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   23 |         str[i] = '\0';
+      |         ^~~
+./iota.h(37): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   37 |         str[i++] = (rem > 9)? (rem - 10) + 'a' : rem + '0';
+      |         ^~~
+./iota.h(43): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   43 |         str[i++] = '-';
+      |         ^~~
+./iota.h(45): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   45 |     str[i] = '\0'; // Null-terminate string
+      |     ^~~
+32 warnings generated.
+compiling main.c...
+assembling startup_TM4C123.s...
+GPS.c(1): warning: In file included from...
+./UART_Interface.h(9): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+GPS.c(2): warning: In file included from...
+./GPS_interface.h(6): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    6 | void GPS_Read();
+      |              ^
+      |               void
+./GPS_interface.h(8): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    8 | void GPS_format();
+      |                ^
+      |                 void
+./GPS_interface.h(18): warning: no newline at end of file [-Wnewline-eof]
+   18 | #endif
+      |       ^
+GPS.c(8): warning: In file included from...
+./BIT_MATH.h(51): warning: no newline at end of file [-Wnewline-eof]
+   51 | #endif /* BIT_MATH_H_ */
+      |                         ^
+GPS.c(12): warning: no previous extern declaration for non-static variable 'GPS_Log_Check' [-Wmissing-variable-declarations]
+   12 | u8 GPS_Log_Check[] = "$GPRMC,";
+      |    ^
+GPS.c(12): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   12 | u8 GPS_Log_Check[] = "$GPRMC,";
+      | ^
+GPS.c(20): warning: 'sizeof (arr)' will return the size of the pointer, not the array itself [-Wsizeof-pointer-div]
+   20 | {return sizeof(arr)/sizeof(arr[0]);
+      |         ~~~~~~~~~~~^
+GPS.c(19): note: pointer 'arr' declared here
+   19 | u16 length (u8* arr)
+      |                 ^
+GPS.c(19): warning: no previous prototype for function 'length' [-Wmissing-prototypes]
+   19 | u16 length (u8* arr)
+      |     ^
+GPS.c(19): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   19 | u16 length (u8* arr)
+      | ^
+      | static 
+GPS.c(23): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   23 | void GPS_Read()
+      |              ^
+      |               void
+GPS.c(42): warning: passing 'u8[80]' (aka 'unsigned char[80]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   42 |     strcpy(GPS, "");
+      |            ^~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                     ^
+GPS.c(23): warning: no previous prototype for function 'GPS_Read' [-Wmissing-prototypes]
+   23 | void GPS_Read()
+      |      ^
+./GPS_interface.h(6): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+    6 | void GPS_Read();
+      |      ^        
+      |               void
+GPS.c(33): warning: loop will run at most once (loop increment never executed) [-Wunreachable-code-loop-increment]
+   33 |         for (u8 i = 0; i < length(GPS_Log_Check); i++)
+      |                                                   ^~~
+GPS.c(53): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   53 | void GPS_format()
+      |                ^
+      |                 void
+GPS.c(58): warning: passing 'u8[80]' (aka 'unsigned char[80]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   58 |     token = strtok(GPS, ",");
+      |                    ^~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(280): note: passing argument to parameter here
+  280 | extern _ARMABI char *strtok(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(2)));
+      |                                                     ^
+GPS.c(58): warning: assigning to 'u8 *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   58 |     token = strtok(GPS, ",");
+      |           ^ ~~~~~~~~~~~~~~~~
+GPS.c(62): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   62 |         strcpy(GPS_Formatted[No_Of_Token_Strings++], token);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                     ^
+GPS.c(62): warning: passing 'u8 *' (aka 'unsigned char *') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   62 |         strcpy(GPS_Formatted[No_Of_Token_Strings++], token);
+      |                                                      ^~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                                                     ^
+GPS.c(63): warning: assigning to 'u8 *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   63 |         token = strtok(NULL, ",");
+      |               ^ ~~~~~~~~~~~~~~~~~
+GPS.c(66): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   66 |     if (strcmp(GPS_Formatted[1], "A") == 0)
+      |                ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+GPS.c(69): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   69 |         if (strcmp(GPS_Formatted[3], "N") == 0)
+      |                    ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+GPS.c(70): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   70 |             currentLat = atof(GPS_Formatted[2]);
+      |                               ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(158): note: passing argument to parameter here
+  158 | extern _ARMABI double atof(const char * /*nptr*/) __attribute__((__nonnull__(1)));
+      |                                                 ^
+GPS.c(72): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   72 |             currentLat = -atof(GPS_Formatted[2]);
+      |                                ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(158): note: passing argument to parameter here
+  158 | extern _ARMABI double atof(const char * /*nptr*/) __attribute__((__nonnull__(1)));
+      |                                                 ^
+GPS.c(74): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   74 |         if (strcmp(GPS_Formatted[5], "E") == 0)
+      |                    ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(125): note: passing argument to parameter here
+  125 | extern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                              ^
+GPS.c(75): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   75 |             currentLong = atof(GPS_Formatted[4]);
+      |                                ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(158): note: passing argument to parameter here
+  158 | extern _ARMABI double atof(const char * /*nptr*/) __attribute__((__nonnull__(1)));
+      |                                                 ^
+GPS.c(77): warning: passing 'u8[20]' (aka 'unsigned char[20]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   77 |             currentLong = -atof(GPS_Formatted[4]);
+      |                                 ^~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(158): note: passing argument to parameter here
+  158 | extern _ARMABI double atof(const char * /*nptr*/) __attribute__((__nonnull__(1)));
+      |                                                 ^
+GPS.c(53): warning: no previous prototype for function 'GPS_format' [-Wmissing-prototypes]
+   53 | void GPS_format()
+      |      ^
+./GPS_interface.h(8): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+    8 | void GPS_format();
+      |      ^          
+      |                 void
+GPS.c(13): warning: no previous extern declaration for non-static variable 'GPS_Formatted' [-Wmissing-variable-declarations]
+   13 | u8 GPS_Formatted[12][20];
+      |    ^
+GPS.c(13): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   13 | u8 GPS_Formatted[12][20];
+      | ^
+GPS.c(15): warning: no previous extern declaration for non-static variable 'token' [-Wmissing-variable-declarations]
+   15 | u8 *token;
+      |     ^
+GPS.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   15 | u8 *token;
+      | ^
+GPS.c(16): warning: no previous extern declaration for non-static variable 'GPS' [-Wmissing-variable-declarations]
+   16 | u8 GPS[80];
+      |    ^
+GPS.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   16 | u8 GPS[80];
+      | ^
+GPS.c(18): warning: no previous extern declaration for non-static variable 'currentLat' [-Wmissing-variable-declarations]
+   18 | f64 currentLat, currentLong;
+      |     ^
+GPS.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   18 | f64 currentLat, currentLong;
+      | ^
+GPS.c(18): warning: no previous extern declaration for non-static variable 'currentLong' [-Wmissing-variable-declarations]
+   18 | f64 currentLat, currentLong;
+      |                 ^
+GPS.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   18 | f64 currentLat, currentLong;
+      | ^
+GPS.c(36): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   36 |             if (Local_u8ReceivedChar != GPS_Log_Check[i])
+      |                                         ^~~~~~~~~~~~~
+GPS.c(49): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   49 |         GPS[GPS_Counter++] = Received_Char;
+      |         ^~~
+GPS.c(62): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   62 |         strcpy(GPS_Formatted[No_Of_Token_Strings++], token);
+      |                ^~~~~~~~~~~~~
+GPS.c(66): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   66 |     if (strcmp(GPS_Formatted[1], "A") == 0)
+      |                ^~~~~~~~~~~~~
+GPS.c(69): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   69 |         if (strcmp(GPS_Formatted[3], "N") == 0)
+      |                    ^~~~~~~~~~~~~
+GPS.c(70): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   70 |             currentLat = atof(GPS_Formatted[2]);
+      |                               ^~~~~~~~~~~~~
+GPS.c(72): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   72 |             currentLat = -atof(GPS_Formatted[2]);
+      |                                ^~~~~~~~~~~~~
+GPS.c(74): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   74 |         if (strcmp(GPS_Formatted[5], "E") == 0)
+      |                    ^~~~~~~~~~~~~
+GPS.c(75): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   75 |             currentLong = atof(GPS_Formatted[4]);
+      |                                ^~~~~~~~~~~~~
+GPS.c(77): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   77 |             currentLong = -atof(GPS_Formatted[4]);
+      |                                 ^~~~~~~~~~~~~
+41 warnings generated.
+compiling GPS.c...
+TFT_program.c(22): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+TFT_program.c(23): warning: In file included from...
+./BIT_MATH.h(51): warning: no newline at end of file [-Wnewline-eof]
+   51 | #endif /* BIT_MATH_H_ */
+      |                         ^
+TFT_program.c(28): warning: non-portable path to file '"GPIO_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+   28 | #include "GPIO_interface.h"
+      |          ^~~~~~~~~~~~~~~~~~
+      |          "GPIO_Interface.h"
+TFT_program.c(28): warning: In file included from...
+./GPIO_interface.h(8): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+TFT_program.c(28): warning: In file included from...
+./GPIO_interface.h(29): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   29 | void GPIO_voidInit_port_F();
+      |                          ^
+      |                           void
+./GPIO_interface.h(49): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   49 | void GPIO_voidInit_port_A();
+      |                          ^
+      |                           void
+./GPIO_interface.h(153): warning: no newline at end of file [-Wnewline-eof]
+  153 | void GPIO_voidGet_Pin_Value(u8 port, u8 pin, u8 *pin_value);
+      |                                                             ^
+TFT_program.c(29): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+TFT_program.c(30): warning: non-portable path to file '"SPI_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+   30 | #include "SPI_interface.h"
+      |          ^~~~~~~~~~~~~~~~~
+      |          "SPI_Interface.h"
+TFT_program.c(30): warning: In file included from...
+./SPI_interface.h(10): warning: non-portable path to file '"GPIO_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+   10 | #include "GPIO_interface.h"
+      |          ^~~~~~~~~~~~~~~~~~
+      |          "GPIO_Interface.h"
+TFT_program.c(30): warning: In file included from...
+./SPI_interface.h(10): warning: In file included from...
+./GPIO_interface.h(8): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+TFT_program.c(30): warning: In file included from...
+./SPI_interface.h(10): warning: In file included from...
+./GPIO_interface.h(29): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   29 | void GPIO_voidInit_port_F();
+      |                          ^
+      |                           void
+./GPIO_interface.h(49): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   49 | void GPIO_voidInit_port_A();
+      |                          ^
+      |                           void
+./GPIO_interface.h(153): warning: no newline at end of file [-Wnewline-eof]
+  153 | void GPIO_voidGet_Pin_Value(u8 port, u8 pin, u8 *pin_value);
+      |                                                             ^
+TFT_program.c(30): warning: In file included from...
+./SPI_interface.h(230): warning: no newline at end of file [-Wnewline-eof]
+  230 | #endif
+      |       ^
+TFT_program.c(31): warning: In file included from...
+./Sys_Tick.h(72): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   72 | void SysTick_Init();
+      |                  ^
+      |                   void
+TFT_program.c(147): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  147 |     u8 yEndHigh = ((TFT_DISPLAY_HEIGHT-1) >> 8) & 0xFF;
+      |        ^
+TFT_program.c(200): warning: unused variable 'Local_u8ReceivedData' [-Wunused-variable]
+  200 |     u8 Local_u8ReceivedData = 0;
+      |        ^~~~~~~~~~~~~~~~~~~~
+TFT_program.c(219): warning: unused variable 'Local_u8ReceivedData' [-Wunused-variable]
+  219 |     u8 Local_u8ReceivedData = 0;
+      |        ^~~~~~~~~~~~~~~~~~~~
+TFT_program.c(37): warning: In file included from...
+./fonts.h(10): warning: padding struct 'FontDef' with 2 bytes to align 'data' [-Wpadded]
+   10 |     const u16 *data;
+      |                ^
+TFT_program.c(457): warning: no previous prototype for function 'TFT_Unselect' [-Wmissing-prototypes]
+  457 | void TFT_Unselect(const TFT_Config_t *Copy_TftDisplay) {
+      |      ^
+TFT_program.c(457): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  457 | void TFT_Unselect(const TFT_Config_t *Copy_TftDisplay) {
+      | ^
+      | static 
+TFT_program.c(482): warning: implicit conversion loses integer precision: 'uint16_t' (aka 'unsigned short') to 'char' [-Wimplicit-int-conversion]
+  482 |         TFT_WriteChar(Copy_TftDisplay,   Copy_XPosition,*str, Copy_YPosition,font, color, bgcolor);
+      |         ~~~~~~~~~~~~~                                         ^~~~~~~~~~~~~~
+TFT_program.c(247): warning: unused function 'TFT_SetXAddress' [-Wunused-function]
+  247 | static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay,     u16 Copy_XPosition)
+      |             ^~~~~~~~~~~~~~~
+TFT_program.c(259): warning: unused function 'TFT_SetYAddress' [-Wunused-function]
+  259 | static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay,     u16 Copy_YPosition) 
+      |             ^~~~~~~~~~~~~~~
+TFT_program.c(165): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  165 |                 TFT_SendData(Copy_TftDisplay,   (Copy_Image[Local_Counter] >> 8) & 0xFF); /**< High byte of color */
+      |                                                  ^~~~~~~~~~
+TFT_program.c(166): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  166 |                 TFT_SendData(Copy_TftDisplay,   Copy_Image[Local_Counter] & 0xFF);        /**< Low byte of color */
+      |                                                 ^~~~~~~~~~
+TFT_program.c(445): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  445 |         b = font.data[(ch - 32) * font.height + i];
+      |             ^~~~~~~~~
+TFT_program.c(477): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  477 |                 str++;
+      |                 ^~~
+TFT_program.c(484): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  484 |         str++;
+      |         ^~~
+29 warnings generated.
+compiling TFT_program.c...
+SPI_Program.c(2): warning: In file included from...
+./SPI_Interface.h(10): warning: non-portable path to file '"GPIO_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+   10 | #include "GPIO_interface.h"
+      |          ^~~~~~~~~~~~~~~~~~
+      |          "GPIO_Interface.h"
+SPI_Program.c(2): warning: In file included from...
+./SPI_Interface.h(10): warning: In file included from...
+./GPIO_interface.h(7): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+SPI_Program.c(2): warning: In file included from...
+./SPI_Interface.h(10): warning: In file included from...
+./GPIO_interface.h(8): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+SPI_Program.c(2): warning: In file included from...
+./SPI_Interface.h(10): warning: In file included from...
+./GPIO_interface.h(29): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   29 | void GPIO_voidInit_port_F();
+      |                          ^
+      |                           void
+./GPIO_interface.h(49): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   49 | void GPIO_voidInit_port_A();
+      |                          ^
+      |                           void
+./GPIO_interface.h(153): warning: no newline at end of file [-Wnewline-eof]
+  153 | void GPIO_voidGet_Pin_Value(u8 port, u8 pin, u8 *pin_value);
+      |                                                             ^
+SPI_Program.c(2): warning: In file included from...
+./SPI_Interface.h(230): warning: no newline at end of file [-Wnewline-eof]
+  230 | #endif
+      |       ^
+SPI_Program.c(3): warning: non-portable path to file '"GPIO_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+    3 | #include "GPIO_interface.h"
+      |          ^~~~~~~~~~~~~~~~~~
+      |          "GPIO_Interface.h"
+SPI_Program.c(3): warning: In file included from...
+./GPIO_interface.h(8): warning: In file included from...
+./GPIO_Private.h(46): warning: no newline at end of file [-Wnewline-eof]
+   46 | #define Uart_Spi_PortA 0x3F
+      |                            ^
+SPI_Program.c(3): warning: In file included from...
+./GPIO_interface.h(29): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   29 | void GPIO_voidInit_port_F();
+      |                          ^
+      |                           void
+./GPIO_interface.h(49): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   49 | void GPIO_voidInit_port_A();
+      |                          ^
+      |                           void
+./GPIO_interface.h(153): warning: no newline at end of file [-Wnewline-eof]
+  153 | void GPIO_voidGet_Pin_Value(u8 port, u8 pin, u8 *pin_value);
+      |                                                             ^
+SPI_Program.c(2): warning: In file included from...
+./SPI_Interface.h(176): warning: padding struct 'SPI_handler' with 1 byte to align 'pTx' [-Wpadded]
+  176 | char *pTx;
+      |       ^
+./SPI_Interface.h(179): warning: padding struct 'SPI_handler' with 2 bytes to align 'pRx' [-Wpadded]
+  179 | char *pRx;
+      |       ^
+./SPI_Interface.h(182): warning: padding struct 'SPI_handler' with 2 bytes to align 'DataTransmitted_CallBack' [-Wpadded]
+  182 | void (*DataTransmitted_CallBack) (void* spihandler,char* txBuff);
+      |        ^
+SPI_Program.c(75): warning: implicit conversion loses integer precision: 'volatile u32' (aka 'volatile unsigned int') to 'char' [-Wimplicit-int-conversion]
+   75 | pRxBuffer[i]=spiHandler->SSIx->DR;
+      |             ~~~~~~~~~~~~~~~~~~~^~
+SPI_Program.c(72): warning: while loop has empty body [-Wempty-body]
+   72 | while(((spiHandler->SSIx->SR & (1<<0) ) == 0));       
+      |                                               ^
+SPI_Program.c(72): note: put the semicolon on a separate line to silence this warning
+SPI_Program.c(97): warning: implicit conversion loses integer precision: 'volatile u32' (aka 'volatile unsigned int') to 'char' [-Wimplicit-int-conversion]
+   97 | pRxBuffer[spiHandler->RxCounter]=spiHandler->SSIx->DR;
+      |                                 ~~~~~~~~~~~~~~~~~~~^~
+SPI_Program.c(165): warning: implicit conversion loses integer precision: 'volatile u32' (aka 'volatile unsigned int') to 'char' [-Wimplicit-int-conversion]
+  165 |         spiHandler->pRx[spiHandler->RxCounter]=spiHandler->SSIx->DR;
+      |                                               ~~~~~~~~~~~~~~~~~~~^~
+SPI_Program.c(174): warning: implicit conversion loses integer precision: 'volatile u32' (aka 'volatile unsigned int') to 'char' [-Wimplicit-int-conversion]
+  174 |         spiHandler->pRx[spiHandler->RxCounter]=spiHandler->SSIx->DR;
+      |                                               ~~~~~~~~~~~~~~~~~~~^~
+SPI_Program.c(296): warning: implicit conversion loses integer precision: 'volatile u32' (aka 'volatile unsigned int') to 'char' [-Wimplicit-int-conversion]
+  296 |         spiHandler->pRx[spiHandler->RxCounter]=spiHandler->SSIx->DR;
+      |                                               ~~~~~~~~~~~~~~~~~~~^~
+SPI_Program.c(338): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  338 | spiHandler->SSIx->CR1&=~SPI_EnableDisable_Bit;
+      |                      ~~^~~~~~~~~~~~~~~~~~~~~~
+SPI_Program.c(392): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  392 |                 SSIx->CR0&=~SPI_Format_Bits;
+      |                          ~~^~~~~~~~~~~~~~~~
+SPI_Program.c(397): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  397 |           SSIx->CR0&=~SPI_Format_Bits;
+      |                    ~~^~~~~~~~~~~~~~~~
+SPI_Program.c(402): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  402 |         SSIx->CR0&=~SPI_Format_Bits;
+      |                  ~~^~~~~~~~~~~~~~~~
+SPI_Program.c(417): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  417 |                 SSIx->CR0&=~(SPI_ClockPhase_Bit|SPI_ClockPolarity_Bit);
+      |                          ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SPI_Program.c(422): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  422 |         SSIx->CR0&=~(SPI_ClockPhase_Bit|SPI_ClockPolarity_Bit);
+      |                  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SPI_Program.c(427): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  427 |         SSIx->CR0&=~(SPI_ClockPhase_Bit|SPI_ClockPolarity_Bit);
+      |                  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SPI_Program.c(432): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  432 |         SSIx->CR0&=~(SPI_ClockPhase_Bit|SPI_ClockPolarity_Bit);
+      |                  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SPI_Program.c(442): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+  442 | SSIx->CR0&=~(0x0000000F);
+      |          ~~^~~~~~~~~~~~~
+SPI_Program.c(556): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  556 | }
+      | ^
+SPI_Program.c(575): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  575 | }
+      | ^
+SPI_Program.c(595): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  595 | }
+      | ^
+SPI_Program.c(629): warning: declaration shadows a local variable [-Wshadow]
+  629 |         for(int i=0;i<100;i++)
+      |                 ^
+SPI_Program.c(627): note: previous declaration is here
+  627 | for(int i=0;i<500;i++)
+      |         ^
+SPI_Program.c(642): warning: no previous prototype for function 'SSI0_Handler' [-Wmissing-prototypes]
+  642 | void SSI0_Handler (void)
+      |      ^
+SPI_Program.c(642): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  642 | void SSI0_Handler (void)
+      | ^
+      | static 
+SPI_Program.c(679): warning: no previous prototype for function 'SSI1_Handler' [-Wmissing-prototypes]
+  679 | void SSI1_Handler (void)
+      |      ^
+SPI_Program.c(679): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  679 | void SSI1_Handler (void)
+      | ^
+      | static 
+SPI_Program.c(716): warning: no previous prototype for function 'SSI2_Handler' [-Wmissing-prototypes]
+  716 | void SSI2_Handler (void)
+      |      ^
+SPI_Program.c(716): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  716 | void SSI2_Handler (void)
+      | ^
+      | static 
+SPI_Program.c(754): warning: no previous prototype for function 'SSI3_Handler' [-Wmissing-prototypes]
+  754 | void SSI3_Handler (void)
+      |      ^
+SPI_Program.c(754): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  754 | void SSI3_Handler (void)
+      | ^
+      | static 
+SPI_Program.c(9): warning: unused variable 'interruptHandler' [-Wunused-variable]
+    9 | static u8 interruptHandler[4]={7,34,57,58};
+      |           ^~~~~~~~~~~~~~~~
+SPI_Program.c(546): warning: unused function 'SPI_Bustate_get' [-Wunused-function]
+  546 | static SPI_Bus_State SPI_Bustate_get(SSI0_Type* SSIx)
+      |                      ^~~~~~~~~~~~~~~
+SPI_Program.c(558): warning: unused function 'SPI_TxFifoState_get' [-Wunused-function]
+  558 | static SPI_Fifo_State SPI_TxFifoState_get(SSI0_Type* SSIx)
+      |                       ^~~~~~~~~~~~~~~~~~~
+SPI_Program.c(578): warning: unused function 'SPI_RxFifoState_get' [-Wunused-function]
+  578 | static SPI_Fifo_State SPI_RxFifoState_get(SSI0_Type* SSIx)
+      |                       ^~~~~~~~~~~~~~~~~~~
+SPI_Program.c(480): warning: unused function 'SPI_ClockDivider_Get' [-Wunused-function]
+  480 | static u8 SPI_ClockDivider_Get(SSI0_Type* SSIx)
+      |           ^~~~~~~~~~~~~~~~~~~~
+SPI_Program.c(382): warning: unused function 'SPI_MasterSlave_Get' [-Wunused-function]
+  382 | static u8 SPI_MasterSlave_Get(SSI0_Type* SSIx)
+      |           ^~~~~~~~~~~~~~~~~~~
+SPI_Program.c(617): warning: unused function 'SPI_MaskedInterruptStatus' [-Wunused-function]
+  617 | static u8 SPI_MaskedInterruptStatus(SSI0_Type* SSIx,u8 interrupt)
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+SPI_Program.c(601): warning: unused function 'SPI_InterruptClear' [-Wunused-function]
+  601 | static void SPI_InterruptClear(SSI0_Type* SSIx,u8 interrupt)
+      |             ^~~~~~~~~~~~~~~~~~
+SPI_Program.c(611): warning: unused function 'SPI_InterruptUnMask' [-Wunused-function]
+  611 | static void SPI_InterruptUnMask(SSI0_Type* SSIx,u8 interrupt)
+      |             ^~~~~~~~~~~~~~~~~~~
+SPI_Program.c(54): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   54 | spihandler[spiHandler->PeripherlaNumber]=spiHandler;
+      | ^~~~~~~~~~
+SPI_Program.c(63): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   63 | spiHandler->SSIx->DR =pTxBuffer[i];                  
+      |                       ^~~~~~~~~
+SPI_Program.c(75): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   75 | pRxBuffer[i]=spiHandler->SSIx->DR;
+      | ^~~~~~~~~
+SPI_Program.c(87): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   87 | spiHandler->SSIx->DR =pTxBuffer[i];                  
+      |                       ^~~~~~~~~
+SPI_Program.c(97): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   97 | pRxBuffer[spiHandler->RxCounter]=spiHandler->SSIx->DR;
+      | ^~~~~~~~~
+SPI_Program.c(112): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  112 |         spiHandler->SSIx->DR=spiHandler->pTx[spiHandler->Txcounter];
+      |                              ^~~~~~~~~~~~~~~
+SPI_Program.c(165): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  165 |         spiHandler->pRx[spiHandler->RxCounter]=spiHandler->SSIx->DR;
+      |         ^~~~~~~~~~~~~~~
+SPI_Program.c(174): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  174 |         spiHandler->pRx[spiHandler->RxCounter]=spiHandler->SSIx->DR;
+      |         ^~~~~~~~~~~~~~~
+SPI_Program.c(240): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  240 |         spiHandler->SSIx->DR=spiHandler->pTx[spiHandler->Txcounter];
+      |                              ^~~~~~~~~~~~~~~
+SPI_Program.c(248): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  248 |         spiHandler->SSIx->DR=spiHandler->pTx[spiHandler->Txcounter];
+      |                              ^~~~~~~~~~~~~~~
+SPI_Program.c(296): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  296 |         spiHandler->pRx[spiHandler->RxCounter]=spiHandler->SSIx->DR;
+      |         ^~~~~~~~~~~~~~~
+SPI_Program.c(681): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  681 | if(spihandler[1]->config.MasterSlaveMode==SPI_Mode_Master)
+      |    ^~~~~~~~~~
+SPI_Program.c(683): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  683 |         if(SPI_InterruptStatus(spihandler[1]->SSIx,SPI_TxFifo_InterruptStatus))
+      |                                ^~~~~~~~~~
+SPI_Program.c(685): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  685 |     MastersendFromInterrupt(spihandler[1]);     
+      |                             ^~~~~~~~~~
+SPI_Program.c(688): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  688 |         else if(SPI_InterruptStatus(spihandler[1]->SSIx,SPI_RxFifo_InterruptStatus))
+      |                                     ^~~~~~~~~~
+SPI_Program.c(690): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  690 | MasterReceiveFromInterrupt(spihandler[1]);      
+      |                            ^~~~~~~~~~
+SPI_Program.c(695): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  695 | else if(spihandler[1]->config.MasterSlaveMode==SPI_Mode_Slave)
+      |         ^~~~~~~~~~
+SPI_Program.c(697): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  697 |         if(SPI_InterruptStatus(spihandler[1]->SSIx,SPI_RxFifo_InterruptStatus))
+      |                                ^~~~~~~~~~
+SPI_Program.c(699): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  699 |         SlaveReceiveFromInterrupt(spihandler[1]);
+      |                                   ^~~~~~~~~~
+SPI_Program.c(702): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  702 |         else if(SPI_InterruptStatus(spihandler[1]->SSIx,SPI_TxFifo_InterruptStatus) )
+      |                                     ^~~~~~~~~~
+SPI_Program.c(704): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  704 |         SlaveTransmitFromInterrupt(spihandler[1]);
+      |                                    ^~~~~~~~~~
+SPI_Program.c(718): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  718 | if(spihandler[2]->config.MasterSlaveMode==SPI_Mode_Master)
+      |    ^~~~~~~~~~
+SPI_Program.c(720): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  720 |         if(SPI_InterruptStatus(spihandler[2]->SSIx,SPI_TxFifo_InterruptStatus))
+      |                                ^~~~~~~~~~
+SPI_Program.c(722): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  722 |     MastersendFromInterrupt(spihandler[2]);     
+      |                             ^~~~~~~~~~
+SPI_Program.c(725): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  725 |         else if(SPI_InterruptStatus(spihandler[2]->SSIx,SPI_RxFifo_InterruptStatus))
+      |                                     ^~~~~~~~~~
+SPI_Program.c(727): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  727 | MasterReceiveFromInterrupt(spihandler[2]);      
+      |                            ^~~~~~~~~~
+SPI_Program.c(732): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  732 | else if(spihandler[1]->config.MasterSlaveMode==SPI_Mode_Slave)
+      |         ^~~~~~~~~~
+SPI_Program.c(734): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  734 |         if(SPI_InterruptStatus(spihandler[2]->SSIx,SPI_RxFifo_InterruptStatus))
+      |                                ^~~~~~~~~~
+SPI_Program.c(736): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  736 |         SlaveReceiveFromInterrupt(spihandler[2]);
+      |                                   ^~~~~~~~~~
+SPI_Program.c(739): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  739 |         else if(SPI_InterruptStatus(spihandler[2]->SSIx,SPI_TxFifo_InterruptStatus) )
+      |                                     ^~~~~~~~~~
+SPI_Program.c(741): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  741 |         SlaveTransmitFromInterrupt(spihandler[2]);
+      |                                    ^~~~~~~~~~
+SPI_Program.c(756): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  756 | if(spihandler[3]->config.MasterSlaveMode==SPI_Mode_Master)
+      |    ^~~~~~~~~~
+SPI_Program.c(758): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  758 |         if(SPI_InterruptStatus(spihandler[3]->SSIx,SPI_TxFifo_InterruptStatus))
+      |                                ^~~~~~~~~~
+SPI_Program.c(760): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  760 |     MastersendFromInterrupt(spihandler[3]);     
+      |                             ^~~~~~~~~~
+SPI_Program.c(763): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  763 |         else if(SPI_InterruptStatus(spihandler[3]->SSIx,SPI_RxFifo_InterruptStatus))
+      |                                     ^~~~~~~~~~
+SPI_Program.c(765): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  765 | MasterReceiveFromInterrupt(spihandler[3]);      
+      |                            ^~~~~~~~~~
+SPI_Program.c(770): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  770 | else if(spihandler[3]->config.MasterSlaveMode==SPI_Mode_Slave)
+      |         ^~~~~~~~~~
+SPI_Program.c(772): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  772 |         if(SPI_InterruptStatus(spihandler[3]->SSIx,SPI_RxFifo_InterruptStatus))
+      |                                ^~~~~~~~~~
+SPI_Program.c(774): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  774 |         SlaveReceiveFromInterrupt(spihandler[3]);
+      |                                   ^~~~~~~~~~
+SPI_Program.c(777): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  777 |         else if(SPI_InterruptStatus(spihandler[3]->SSIx,SPI_TxFifo_InterruptStatus) )
+      |                                     ^~~~~~~~~~
+SPI_Program.c(779): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  779 |         SlaveTransmitFromInterrupt(spihandler[3]);
+      |                                    ^~~~~~~~~~
+88 warnings generated.
+compiling SPI_Program.c...
+UART_Program.c(8): warning: In file included from...
+./STD_TYPES.h(37): warning: no newline at end of file [-Wnewline-eof]
+   37 | #endif /* STD_TYPES_H_ */
+      |                          ^
+UART_Program.c(9): warning: In file included from...
+./BIT_MATH.h(51): warning: no newline at end of file [-Wnewline-eof]
+   51 | #endif /* BIT_MATH_H_ */
+      |                         ^
+UART_Program.c(12): warning: non-portable path to file '"UART_Private.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+   12 | #include "UART_private.h"
+      |          ^~~~~~~~~~~~~~~~
+      |          "UART_Private.h"
+UART_Program.c(12): warning: In file included from...
+./UART_private.h(55): warning: no newline at end of file [-Wnewline-eof]
+   55 | #endif /**< _MCAL_UART_PRIVATE_H_ */
+      |                                     ^
+UART_Program.c(13): warning: non-portable path to file '"UART_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+   13 | #include "UART_interface.h"
+      |          ^~~~~~~~~~~~~~~~~~
+      |          "UART_Interface.h"
+UART_Program.c(14): warning: non-portable path to file '"UART_Config.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+   14 | #include "UART_config.h"
+      |          ^~~~~~~~~~~~~~~
+      |          "UART_Config.h"
+UART_Program.c(14): warning: In file included from...
+./UART_config.h(10): warning: no newline at end of file [-Wnewline-eof]
+   10 | #endif /**< _MCAL_UART_CONFIG_H_ */
+      |                                    ^
+UART_Program.c(22): warning: implicit conversion from 'u32' (aka 'unsigned int') to 'f32' (aka 'float') may lose precision [-Wimplicit-int-float-conversion]
+   22 |         f32 Local_f32Divisor = UART_CLK / (16 * copy_u32BaudRate);
+      |             ~~~~~~~~~~~~~~~~   ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(23): warning: implicit conversion loses floating-point precision: 'double' to 'f32' (aka 'float') [-Wimplicit-float-conversion]
+   23 |         f32 Local_f32Fraction = (Local_f32Divisor - (u32)Local_f32Divisor) * 64 + 0.5;
+      |             ~~~~~~~~~~~~~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+UART_Program.c(23): warning: implicit conversion increases floating-point precision: 'f32' (aka 'float') to 'double' [-Wdouble-promotion]
+   23 |         f32 Local_f32Fraction = (Local_f32Divisor - (u32)Local_f32Divisor) * 64 + 0.5;
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~ ~
+UART_Program.c(23): warning: implicit conversion from 'u32' (aka 'unsigned int') to 'f32' (aka 'float') may lose precision [-Wimplicit-int-float-conversion]
+   23 |         f32 Local_f32Fraction = (Local_f32Divisor - (u32)Local_f32Divisor) * 64 + 0.5;
+      |                                                   ~ ^~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(47): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   47 |         CLR_BIT(GPIO_PORTA_DIR_R, GPIO_PA0_U0RX); // RX (Input)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(53): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   53 |         CLR_BIT(UART0_CTL_R, UART_CTL_UARTEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(60): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   60 |             CLR_BIT(UART0_LCRH_R, UART_LCRH_PEN);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(61): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   61 |             CLR_BIT(UART0_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(62): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   62 |             CLR_BIT(UART0_LCRH_R, UART_LCRH_SPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(73): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   73 |             CLR_BIT(UART0_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(81): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   81 |             CLR_BIT(UART0_LCRH_R, UART_LCRH_STP2);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(92): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   92 |         UART0_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+UART_Program.c(115): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  115 |         CLR_BIT(GPIO_PORTB_DIR_R, GPIO_PB0_U1RX); // RX (Input)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(121): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  121 |         CLR_BIT(UART1_CTL_R, UART_CTL_UARTEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(128): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  128 |             CLR_BIT(UART1_LCRH_R, UART_LCRH_PEN);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(129): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  129 |             CLR_BIT(UART1_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(130): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  130 |             CLR_BIT(UART1_LCRH_R, UART_LCRH_SPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(141): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  141 |             CLR_BIT(UART1_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(149): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  149 |             CLR_BIT(UART1_LCRH_R, UART_LCRH_STP2);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(160): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  160 |         UART1_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+UART_Program.c(183): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  183 |         CLR_BIT(GPIO_PORTD_DIR_R, GPIO_PD6_U2RX); // RX (Input)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(189): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  189 |         CLR_BIT(UART2_CTL_R, UART_CTL_UARTEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(196): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  196 |             CLR_BIT(UART2_LCRH_R, UART_LCRH_PEN);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(197): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  197 |             CLR_BIT(UART2_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(198): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  198 |             CLR_BIT(UART2_LCRH_R, UART_LCRH_SPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(209): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  209 |             CLR_BIT(UART2_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(217): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  217 |             CLR_BIT(UART2_LCRH_R, UART_LCRH_STP2);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(228): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  228 |         UART2_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+UART_Program.c(251): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  251 |         CLR_BIT(GPIO_PORTC_DIR_R, GPIO_PC6_U3RX); // RX (Input)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(257): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  257 |         CLR_BIT(UART3_CTL_R, UART_CTL_UARTEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(264): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  264 |             CLR_BIT(UART3_LCRH_R, UART_LCRH_PEN);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(265): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  265 |             CLR_BIT(UART3_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(266): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  266 |             CLR_BIT(UART3_LCRH_R, UART_LCRH_SPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(277): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  277 |             CLR_BIT(UART3_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(285): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  285 |             CLR_BIT(UART3_LCRH_R, UART_LCRH_STP2);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(296): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  296 |         UART3_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+UART_Program.c(319): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  319 |         CLR_BIT(GPIO_PORTC_DIR_R, GPIO_PC4_U4RX); // RX (Input)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(325): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  325 |         CLR_BIT(UART4_CTL_R, UART_CTL_UARTEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(332): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  332 |             CLR_BIT(UART4_LCRH_R, UART_LCRH_PEN);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(333): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  333 |             CLR_BIT(UART4_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(334): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  334 |             CLR_BIT(UART4_LCRH_R, UART_LCRH_SPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(345): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  345 |             CLR_BIT(UART4_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(353): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  353 |             CLR_BIT(UART4_LCRH_R, UART_LCRH_STP2);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(364): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  364 |         UART4_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+UART_Program.c(387): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  387 |         CLR_BIT(GPIO_PORTE_DIR_R, GPIO_PE4_U5RX); // RX (Input)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(393): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  393 |         CLR_BIT(UART5_CTL_R, UART_CTL_UARTEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(400): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  400 |             CLR_BIT(UART5_LCRH_R, UART_LCRH_PEN);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(401): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  401 |             CLR_BIT(UART5_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(402): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  402 |             CLR_BIT(UART5_LCRH_R, UART_LCRH_SPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(413): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  413 |             CLR_BIT(UART5_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(421): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  421 |             CLR_BIT(UART5_LCRH_R, UART_LCRH_STP2);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(432): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  432 |         UART5_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+UART_Program.c(455): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  455 |         CLR_BIT(GPIO_PORTD_DIR_R, GPIO_PD4_U6RX); // RX (Input)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(461): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  461 |         CLR_BIT(UART6_CTL_R, UART_CTL_UARTEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(468): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  468 |             CLR_BIT(UART6_LCRH_R, UART_LCRH_PEN);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(469): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  469 |             CLR_BIT(UART6_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(470): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  470 |             CLR_BIT(UART6_LCRH_R, UART_LCRH_SPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(481): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  481 |             CLR_BIT(UART6_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(489): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  489 |             CLR_BIT(UART6_LCRH_R, UART_LCRH_STP2);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(500): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  500 |         UART6_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+UART_Program.c(523): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  523 |         CLR_BIT(GPIO_PORTE_DIR_R, GPIO_PE0_U7RX); // RX (Input)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(529): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  529 |         CLR_BIT(UART7_CTL_R, UART_CTL_UARTEN);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(536): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  536 |             CLR_BIT(UART7_LCRH_R, UART_LCRH_PEN);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(537): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  537 |             CLR_BIT(UART7_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(538): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  538 |             CLR_BIT(UART7_LCRH_R, UART_LCRH_SPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(549): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  549 |             CLR_BIT(UART7_LCRH_R, UART_LCRH_EPS);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(557): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  557 |             CLR_BIT(UART7_LCRH_R, UART_LCRH_STP2);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(28): note: expanded from macro 'CLR_BIT'
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |                                      ~~ ^~~~~~~~~~~~~~~~~~
+UART_Program.c(568): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  568 |         UART7_LCRH_R = (copy_u8WordLength - 5) << UART_LCRH_WLEN;
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+UART_Program.c(55): warning: variable 'Local_f32Divisor' is uninitialized when used here [-Wuninitialized]
+   55 |         UART0_IBRD_R |= (u32)Local_f32Divisor;
+      |                              ^~~~~~~~~~~~~~~~
+UART_Program.c(22): note: variable 'Local_f32Divisor' is declared here
+   22 |         f32 Local_f32Divisor = UART_CLK / (16 * copy_u32BaudRate);
+      |         ^
+UART_Program.c(56): warning: variable 'Local_f32Fraction' is uninitialized when used here [-Wuninitialized]
+   56 |         UART0_FBRD_R |= (u32)Local_f32Fraction;
+      |                              ^~~~~~~~~~~~~~~~~
+UART_Program.c(23): note: variable 'Local_f32Fraction' is declared here
+   23 |         f32 Local_f32Fraction = (Local_f32Divisor - (u32)Local_f32Divisor) * 64 + 0.5;
+      |         ^
+UART_Program.c(589): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  589 |         if (!GET_BIT(UART0_FR_R, UART_FR_TXFF))
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(593): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  593 |         if (!GET_BIT(UART1_FR_R, UART_FR_TXFF))
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(597): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  597 |         if (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(601): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  601 |         if (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(605): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  605 |         if (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(589): warning: shift count >= width of type [-Wshift-count-overflow]
+  589 |         if (!GET_BIT(UART0_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(589): warning: shift count >= width of type [-Wshift-count-overflow]
+  589 |         if (!GET_BIT(UART0_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(593): warning: shift count >= width of type [-Wshift-count-overflow]
+  593 |         if (!GET_BIT(UART1_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(593): warning: shift count >= width of type [-Wshift-count-overflow]
+  593 |         if (!GET_BIT(UART1_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(597): warning: shift count >= width of type [-Wshift-count-overflow]
+  597 |         if (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(597): warning: shift count >= width of type [-Wshift-count-overflow]
+  597 |         if (!GET_BIT(UART2_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(601): warning: shift count >= width of type [-Wshift-count-overflow]
+  601 |         if (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(601): warning: shift count >= width of type [-Wshift-count-overflow]
+  601 |         if (!GET_BIT(UART6_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(605): warning: shift count >= width of type [-Wshift-count-overflow]
+  605 |         if (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(605): warning: shift count >= width of type [-Wshift-count-overflow]
+  605 |         if (!GET_BIT(UART7_FR_R, UART_FR_TXFF))
+      |              ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(626): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  626 |                 *copy_pu8ReceivedData = UART0_DR_R;
+      |                                       ~ ^~~~~~~~~~
+./tm4c123gh6pm.h(353): note: expanded from macro 'UART0_DR_R'
+  353 | #define UART0_DR_R (*((volatile unsigned long *)0x4000C000))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(638): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  638 |                 *copy_pu8ReceivedData = UART1_DR_R;
+      |                                       ~ ^~~~~~~~~~
+./tm4c123gh6pm.h(378): note: expanded from macro 'UART1_DR_R'
+  378 | #define UART1_DR_R (*((volatile unsigned long *)0x4000D000))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(649): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  649 |                 *copy_pu8ReceivedData = UART2_DR_R;
+      |                                       ~ ^~~~~~~~~~
+./tm4c123gh6pm.h(403): note: expanded from macro 'UART2_DR_R'
+  403 | #define UART2_DR_R (*((volatile unsigned long *)0x4000E000))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(660): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  660 |                 *copy_pu8ReceivedData = UART3_DR_R;
+      |                                       ~ ^~~~~~~~~~
+./tm4c123gh6pm.h(428): note: expanded from macro 'UART3_DR_R'
+  428 | #define UART3_DR_R (*((volatile unsigned long *)0x4000F000))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(671): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  671 |                 *copy_pu8ReceivedData = UART4_DR_R;
+      |                                       ~ ^~~~~~~~~~
+./tm4c123gh6pm.h(453): note: expanded from macro 'UART4_DR_R'
+  453 | #define UART4_DR_R (*((volatile unsigned long *)0x40010000))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(682): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  682 |                 *copy_pu8ReceivedData = UART5_DR_R;
+      |                                       ~ ^~~~~~~~~~
+./tm4c123gh6pm.h(478): note: expanded from macro 'UART5_DR_R'
+  478 | #define UART5_DR_R (*((volatile unsigned long *)0x40011000))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(693): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  693 |                 *copy_pu8ReceivedData = UART6_DR_R;
+      |                                       ~ ^~~~~~~~~~
+./tm4c123gh6pm.h(503): note: expanded from macro 'UART6_DR_R'
+  503 | #define UART6_DR_R (*((volatile unsigned long *)0x40012000))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(704): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  704 |                 *copy_pu8ReceivedData = UART7_DR_R;
+      |                                       ~ ^~~~~~~~~~
+./tm4c123gh6pm.h(528): note: expanded from macro 'UART7_DR_R'
+  528 | #define UART7_DR_R (*((volatile unsigned long *)0x40013000))
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UART_Program.c(723): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  723 |         while (!GET_BIT(UART0_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(730): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  730 |         while (!GET_BIT(UART1_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(737): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  737 |         while (!GET_BIT(UART2_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(744): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  744 |         while (!GET_BIT(UART3_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(751): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  751 |         while (!GET_BIT(UART4_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(758): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  758 |         while (!GET_BIT(UART5_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(765): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  765 |         while (!GET_BIT(UART6_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(772): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  772 |         while (!GET_BIT(UART7_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                        ~  ~~^~~~~~~~~~~~~
+UART_Program.c(723): warning: shift count >= width of type [-Wshift-count-overflow]
+  723 |         while (!GET_BIT(UART0_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(723): warning: shift count >= width of type [-Wshift-count-overflow]
+  723 |         while (!GET_BIT(UART0_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(730): warning: shift count >= width of type [-Wshift-count-overflow]
+  730 |         while (!GET_BIT(UART1_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(730): warning: shift count >= width of type [-Wshift-count-overflow]
+  730 |         while (!GET_BIT(UART1_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(737): warning: shift count >= width of type [-Wshift-count-overflow]
+  737 |         while (!GET_BIT(UART2_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(737): warning: shift count >= width of type [-Wshift-count-overflow]
+  737 |         while (!GET_BIT(UART2_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(744): warning: shift count >= width of type [-Wshift-count-overflow]
+  744 |         while (!GET_BIT(UART3_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(744): warning: shift count >= width of type [-Wshift-count-overflow]
+  744 |         while (!GET_BIT(UART3_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(751): warning: shift count >= width of type [-Wshift-count-overflow]
+  751 |         while (!GET_BIT(UART4_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(751): warning: shift count >= width of type [-Wshift-count-overflow]
+  751 |         while (!GET_BIT(UART4_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(758): warning: shift count >= width of type [-Wshift-count-overflow]
+  758 |         while (!GET_BIT(UART5_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(758): warning: shift count >= width of type [-Wshift-count-overflow]
+  758 |         while (!GET_BIT(UART5_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(765): warning: shift count >= width of type [-Wshift-count-overflow]
+  765 |         while (!GET_BIT(UART6_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(765): warning: shift count >= width of type [-Wshift-count-overflow]
+  765 |         while (!GET_BIT(UART6_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(772): warning: shift count >= width of type [-Wshift-count-overflow]
+  772 |         while (!GET_BIT(UART7_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                             ^  ~~~~~~~~~~
+UART_Program.c(772): warning: shift count >= width of type [-Wshift-count-overflow]
+  772 |         while (!GET_BIT(UART7_FR_R, UART_FR_TXFF) && *copy_pu8String != '\0')
+      |                 ^                   ~~~~~~~~~~~~
+./BIT_MATH.h(49): note: expanded from macro 'GET_BIT'
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |                                                             ^  ~~~~~~~~~~
+UART_Program.c(726): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  726 |             copy_pu8String++;
+      |             ^~~~~~~~~~~~~~
+UART_Program.c(733): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  733 |             copy_pu8String++;
+      |             ^~~~~~~~~~~~~~
+UART_Program.c(740): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  740 |             copy_pu8String++;
+      |             ^~~~~~~~~~~~~~
+UART_Program.c(747): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  747 |             copy_pu8String++;
+      |             ^~~~~~~~~~~~~~
+UART_Program.c(754): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  754 |             copy_pu8String++;
+      |             ^~~~~~~~~~~~~~
+UART_Program.c(761): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  761 |             copy_pu8String++;
+      |             ^~~~~~~~~~~~~~
+UART_Program.c(768): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  768 |             copy_pu8String++;
+      |             ^~~~~~~~~~~~~~
+UART_Program.c(775): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  775 |             copy_pu8String++;
+      |             ^~~~~~~~~~~~~~
+UART_Program.c(794): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  794 |             copy_pu8StringBuffer++;
+      |             ^~~~~~~~~~~~~~~~~~~~
+UART_Program.c(801): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  801 |             copy_pu8StringBuffer++;
+      |             ^~~~~~~~~~~~~~~~~~~~
+UART_Program.c(808): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  808 |             copy_pu8StringBuffer++;
+      |             ^~~~~~~~~~~~~~~~~~~~
+UART_Program.c(815): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  815 |             copy_pu8StringBuffer++;
+      |             ^~~~~~~~~~~~~~~~~~~~
+UART_Program.c(822): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  822 |             copy_pu8StringBuffer++;
+      |             ^~~~~~~~~~~~~~~~~~~~
+UART_Program.c(829): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  829 |             copy_pu8StringBuffer++;
+      |             ^~~~~~~~~~~~~~~~~~~~
+UART_Program.c(836): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  836 |             copy_pu8StringBuffer++;
+      |             ^~~~~~~~~~~~~~~~~~~~
+UART_Program.c(843): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  843 |             copy_pu8StringBuffer++;
+      |             ^~~~~~~~~~~~~~~~~~~~
+140 warnings generated.
+compiling UART_Program.c...
+linking...
+Program Size: Code=5348 RO-data=636 RW-data=0 ZI-data=624  
+".\Objects\TFT_TEST.axf" - 0 Error(s), 425 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil::TM4C_DFP@1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/ahmed/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  C:/Users/ahmed/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: Keil::Device:Startup@1.0.1
+      Include file:  Device/Include/TM4C123/TM4C123.h
+      Source file:   Device/Source/ARM/startup_TM4C123.s
+      Source file:   Device/Source/system_TM4C123.c
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>
