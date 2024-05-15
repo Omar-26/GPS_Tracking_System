@@ -50,6 +50,8 @@ void GPS_Read()
         Received_Char = Local_u8ReceivedChar;
         GPS[GPS_Counter++] = Received_Char;
     } while (Received_Char != '*');
+
+    GPS_format();
 }
 
 void GPS_format()
