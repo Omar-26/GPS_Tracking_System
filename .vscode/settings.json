@@ -62,7 +62,8 @@
     "uart_interface.h": "c",
     "gpio_interface.h": "c",
     "math.h": "c",
-    "std_types.h": "c"
+    "std_types.h": "c",
+    "uart_private.h": "c"
   },
   "cSpell.words": [
     "PORTA"
