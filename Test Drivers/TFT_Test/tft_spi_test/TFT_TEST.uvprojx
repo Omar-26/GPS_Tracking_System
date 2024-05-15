@@ -10,6 +10,7 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>6210000::V6.21::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -48,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>TFT_Test</OutputName>
+          <OutputName>TFT_TEST</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -259,17 +260,17 @@
                 <Size>0x0</Size>
               </XRAM>
               <OCR_RVCT1>
-                <Type>0</Type>
+                <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT1>
               <OCR_RVCT2>
-                <Type>0</Type>
+                <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT2>
               <OCR_RVCT3>
-                <Type>0</Type>
+                <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT3>
@@ -279,7 +280,7 @@
                 <Size>0x40000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
-                <Type>0</Type>
+                <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT5>
@@ -382,6 +383,213 @@
       <Groups>
         <Group>
           <GroupName>Source Group 1</GroupName>
+          <Files>
+            <File>
+              <FileName>BIT_MATH.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\BIT_MATH.h</FilePath>
+            </File>
+            <File>
+              <FileName>EEPROM_Interface.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EEPROM_Interface.h</FilePath>
+            </File>
+            <File>
+              <FileName>fonts.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\fonts.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPIO_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO_Interface.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPIO_Interface.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPIO_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPS_interface.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPS_interface.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPS_params.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPS_params.h</FilePath>
+            </File>
+            <File>
+              <FileName>IO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\IO.h</FilePath>
+            </File>
+            <File>
+              <FileName>iota.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\iota.h</FilePath>
+            </File>
+            <File>
+              <FileName>SPI_Interface.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SPI_Interface.h</FilePath>
+            </File>
+            <File>
+              <FileName>STD_TYPES.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\STD_TYPES.h</FilePath>
+            </File>
+            <File>
+              <FileName>Sys_Tick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sys_Tick.h</FilePath>
+            </File>
+            <File>
+              <FileName>TFT_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\TFT_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>TFT_interface.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\TFT_interface.h</FilePath>
+            </File>
+            <File>
+              <FileName>TFT_private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\TFT_private.h</FilePath>
+            </File>
+            <File>
+              <FileName>tm4c123gh6pm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tm4c123gh6pm.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART_Config.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Interface.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART_Interface.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>EEPROM_Program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\EEPROM_Program.c</FilePath>
+            </File>
+            <File>
+              <FileName>fonts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fonts.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO_Program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPIO_Program.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPS.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>SPI_Program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SPI_Program.c</FilePath>
+            </File>
+            <File>
+              <FileName>Sys_Tick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sys_Tick.c</FilePath>
+            </File>
+            <File>
+              <FileName>TFT_program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\TFT_program.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UART_Program.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO_SPI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPIO_SPI.c</FilePath>
+            </File>
+            <File>
+              <FileName>SPI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SPI.c</FilePath>
+            </File>
+            <File>
+              <FileName>SysCtrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SysCtrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>data_types.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\data_types.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO_SPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPIO_SPI.h</FilePath>
+            </File>
+            <File>
+              <FileName>HW_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\HW_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>HW_SPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\HW_SPI.h</FilePath>
+            </File>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\README.md</FilePath>
+            </File>
+            <File>
+              <FileName>SPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SPI.h</FilePath>
+            </File>
+            <File>
+              <FileName>SysCtrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SysCtrl.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>

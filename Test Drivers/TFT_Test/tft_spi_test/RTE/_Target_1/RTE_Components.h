@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'TFT_Test' 
+ * Project: 'TFT' 
  * Target:  'Target 1' 
  */
 
