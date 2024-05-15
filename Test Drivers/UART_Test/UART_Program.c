@@ -721,88 +721,21 @@ Std_ReturnType UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8String)
     return Local_u8ErrorStatus;
 }
 /**************************************< Receive_STRING_FUNCTION_IMPLEMENTATION *************************************/
-/* void UART_u8ReceiveString(u8 copy_u8UARTNo, u8 *copy_pu8StringBuffer)
-{
-	  u32 i = 0;
-    switch (copy_u8UARTNo)
-    {
-    case UART0:
-				copy_pu8StringBuffer[i] = UART_u8RecieveByte(UART0);
-        while (!GET_BIT(UART1_FR_R, UART_FR_RXFE))
-        {
-					  i++;
-					  // copy_pu8StringBuffer++;
-            copy_pu8StringBuffer[i] =  UART_u8RecieveByte(UART0);
-        }
-    case UART1:
-        while (!GET_BIT(UART1_FR_R, UART_FR_RXFE))
-        {
-           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART1);
-            copy_pu8StringBuffer++;
-        }
-        break;
-    case UART2:
-        while (!GET_BIT(UART2_FR_R, UART_FR_RXFE))
-        {
-           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART2);
-            copy_pu8StringBuffer++;
-        }
-        break;
-    case UART3:
-        while (!GET_BIT(UART3_FR_R, UART_FR_RXFE))
-        {
-           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART3);
-            copy_pu8StringBuffer++;
-        }
-        break;
-    case UART4:
-        while (!GET_BIT(UART4_FR_R, UART_FR_RXFE))
-        {
-           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART4);
-            copy_pu8StringBuffer++;
-        }
-        break;
-    case UART5:
-        while (!GET_BIT(UART5_FR_R, UART_FR_RXFE))
-        {
-           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART5);
-            copy_pu8StringBuffer++;
-        }
-        break;
-    case UART6:
-        while (!GET_BIT(UART6_FR_R, UART_FR_RXFE))
-        {
-           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART6);
-            copy_pu8StringBuffer++;
-        }
-        break;
-    case UART7:
-        while (!GET_BIT(UART7_FR_R, UART_FR_RXFE))
-        {
-           *copy_pu8StringBuffer =  UART_u8RecieveByte(UART7);
-            copy_pu8StringBuffer++;
-        }
-        break;
-    }
-}
-*/
-/*
-void UART_u8ReceiveString( u8 copy_u8UARTNo , u8 *str , uint32_t len){
-     uint32_t i;
-     u8 endString;
-	for(i = 0 ; i < len ; i++){
-	  endString = UART_u8RecieveByte(copy_u8UARTNo);
-		if( endString != '*'){ */
-		/*
-		*str = endString ;
-		 str++;
-		 UART_u8SendByte(copy_u8UARTNo ,endString);
-		}
-		else if(endString == '*' || i==len ) break;
+void UART_u8ReceiveString( u8 copy_u8UARTNo , u8 *string , uint32_t length){
+    u8 local_u8receivedByte ;
+	  uint32_t i;
+	  for(i = 0 ; i < length ; i++){
+		local_u8receivedByte = UART_u8RecieveByte(copy_u8UARTNo);
+		 if( local_u8receivedByte == '*') // Delemiter
+			break;
+		 else{
+		   string[i] = local_u8receivedByte;
+		   UART_u8SendByte(copy_u8UARTNo ,local_u8receivedByte);
+		 }
 	}	
-}*/
+}
 
-
+/*
 void UART_voidReceiveString(u8 copy_u8UARTNo,u8 *copy_pu8Buffer)
 {
     u32 i = 0;
@@ -823,3 +756,4 @@ void UART_voidReceiveString(u8 copy_u8UARTNo,u8 *copy_pu8Buffer)
     }
     copy_pu8Buffer[i] = '\0';
 }
+*/
