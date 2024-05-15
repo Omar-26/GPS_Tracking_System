@@ -9,12 +9,23 @@
 /******************************< MCAL *****************************/
 #include "GPIO_Interface.h"
 #include "Sys_Tick.h"
-#include "UART_Interface.h"
-#include "SPI_Interface.h" 
+//#include "UART_Interface.h"
+//#include "SPI_Interface.h" 
 #include "EEPROM_Interface.h"
 /******************************< HAL ******************************/
 #include "GPS_interface.h"
 #include "TFT_interface.h"
+#include "mcal/nvic/nvic.h"
+#include "mcal/SysCtr/SysCtr.h"
+#include "mcal/dio/dio_types.h"
+#include "mcal/PortDriver/port.h"
+#include "mcal/dio/dio.h"
+#include "mcal/mcu_hw.h"
+#include "Service/Delay_ms/Delay_ms.h"
+#include "mcal/ssi/ssi.h"
+#include "TFT/ST7735.h"
+#define LV_COLOR_DEPTH 16
+#define LV_COLOR_16_SWAP 1
 /******************************< APP ******************************/
 // #include "APP/APP.h"
 #include "iota.h"

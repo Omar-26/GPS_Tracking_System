@@ -67,7 +67,7 @@ volatile uint32_t CAL;
 
 void MCAL_STK_SetReloadValue(uint32_t Copy_ReloadValue);
 void SysTick_Delay10ms(uint32_t delay);
-void delay_ms(uint32_t delay);
+void SysTick_Delay_ms(uint32_t delay);
 uint32_t get_SysTick_Ticks(int Time_ms);
 void SysTick_Init();
 void SysTick_Delay(uint32_t delay);

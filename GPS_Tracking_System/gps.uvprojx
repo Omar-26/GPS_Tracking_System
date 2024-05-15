@@ -430,11 +430,6 @@
               <FilePath>.\SPI_Interface.h</FilePath>
             </File>
             <File>
-              <FileName>SPI_Program.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\SPI_Program.c</FilePath>
-            </File>
-            <File>
               <FileName>STD_TYPES.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\STD_TYPES.h</FilePath>
@@ -480,11 +475,6 @@
               <FilePath>.\fonts.h</FilePath>
             </File>
             <File>
-              <FileName>GPS.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\GPS.c</FilePath>
-            </File>
-            <File>
               <FileName>GPS_interface.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\GPS_interface.h</FilePath>
@@ -505,11 +495,6 @@
               <FilePath>.\TFT_private.h</FilePath>
             </File>
             <File>
-              <FileName>TFT_program.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\TFT_program.c</FilePath>
-            </File>
-            <File>
               <FileName>iota.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\iota.h</FilePath>
@@ -523,6 +508,11 @@
               <FileName>Sys_Tick.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Sys_Tick.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPS_Program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPS_Program.c</FilePath>
             </File>
           </Files>
         </Group>

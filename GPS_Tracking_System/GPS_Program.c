@@ -1,5 +1,4 @@
 #include "UART_Interface.h"
-#include "GPS_params.h"
 #include "GPS_interface.h"
 
 #include <string.h>
