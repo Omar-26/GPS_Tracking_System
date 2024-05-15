@@ -792,7 +792,7 @@ void UART_u8ReceiveString( u8 copy_u8UARTNo , u8 *str , uint32_t len){
      u8 endString;
 	for(i = 0 ; i < len ; i++){
 	  endString = UART_u8RecieveByte(copy_u8UARTNo);
-		if( endString != '*'){ /
+		if( endString != '*'){ */
 		/*
 		*str = endString ;
 		 str++;
@@ -809,7 +809,7 @@ void UART_voidReceiveString(u8 copy_u8UARTNo,u8 *copy_pu8Buffer)
     copy_pu8Buffer[i] = UART_u8RecieveByte(copy_u8UARTNo);
     if(copy_pu8Buffer[i] >= '0')
     {
-        while(copy_pu8Buffer[i] != 0x02A)
+        while(copy_pu8Buffer[i] != 0x0D)
             {
                 i++;
                 copy_pu8Buffer[i] = UART_u8RecieveByte(copy_u8UARTNo);

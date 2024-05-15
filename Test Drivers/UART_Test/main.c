@@ -45,9 +45,15 @@ int main(void)
 	// UART_u8ReceiveString (UART0, &ch[0]);
 	UART_voidReceiveString(UART0, &ch[10]);
 	
-  // UART_u8SendByte(UART0, ch[0]);
-	// UART_u8SendByte(UART0, ch[1]);
-	 if( ch[0] == 'A' ) // A
+  UART_u8SendByte(UART0, ch[0]);
+	UART_u8SendByte(UART0, ch[1]);
+	 
+	u8 flag = 0;
+	uint32_t i ;
+	for (i = 0 ; i < 3 ; i++)
+	{
+	}
+	if( ch[1] == 'B' ) // A
 		{ 
 		LEDS_output(GREEN);
 	   GPIO_PORTF_DATA_R |= 0x0E;
