@@ -81,8 +81,8 @@ void GPS_format()
 }
 double Value_to_Degree(double value) { return value; }
 // double degree = (int)value/100 ;
-// double minutes = value - 	(double)degree*100;
-// return (degree + (minutes/60));
+// doub
+// 
 // }
 
 double calcDistance(volatile double latitude_1, volatile double longitude_1, volatile double latitude_2, volatile double longitude_2)
