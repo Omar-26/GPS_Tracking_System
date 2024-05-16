@@ -197,7 +197,7 @@ For any inquiries or support, please contact:
 
 ## Video Demo
 
-You can find a video demonstration of the GPS Distance Tracking System at the following link: [Link to Video Demo]()
+You can find a video demonstration of the GPS Distance Tracking System at the following link: [Link to Video Demo](https://www.youtube.com/watch?v=8cY5F0Gdrfo)
 
 <!-- 
 ## Baseline Path
