@@ -54,6 +54,22 @@ u8 GPIO_u8Get_Switch(u8 sw)
     }
 }
 
+u8 GPIO_u8Set_Switch(u8 sw)
+{
+    switch (sw)
+    {
+    case SW_1:
+        return (GPIO_PORTF_DATA_R &= 0x10);
+        break;
+    case SW_2:
+        return (GPIO_PORTF_DATA_R &= 0x01);
+        break;
+    default:
+        return 0;
+        break;
+    }
+}
+
 void Led_controlled(u8 Switch_state, u8 led_color)
 {
     switch (led_color)

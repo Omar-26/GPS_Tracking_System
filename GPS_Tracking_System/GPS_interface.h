@@ -8,6 +8,8 @@ void GPS_Read();
 
 void GPS_format();
 
+double todegree(double angle);
+
 f32 Value_to_Degree(f32 value);
 
 #define DEG_TO_RAD(DEG) ((DEG * PI / 180))

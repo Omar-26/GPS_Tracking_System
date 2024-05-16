@@ -10,7 +10,8 @@
 #include "TFT/ST7735.h"
 #include "Sys_Tick.h"
 /*****<tft *******************/
-#include "UART_Interface.h"
+// #include "UART_Interface.h"
+#include "uart_.h"
 #include "GPS_interface.h"
 
 #include <string.h>
@@ -25,7 +26,7 @@
 
 u8 GPS_Counter = 0;
 
-f32 currentLatitude, currentLongitude;
+f32 currentLat, currentLong;
 
 void GPS_Read()
 {
@@ -41,7 +42,7 @@ void GPS_Read()
         for (i = 0; i < 7 ; i++)
         {
 					
-           if (UART_u8ReceiveByte(UART1) != GPS_Log_Check[i])
+           if (UART1_getChar() != GPS_Log_Check[i])
 					 {
 						 flag = 0;
              break;
@@ -53,7 +54,7 @@ void GPS_Read()
     strcpy(GPS, "");
     do
     {
-        Local_u8ReceivedChar = UART_u8ReceiveByte(UART1);
+        Local_u8ReceivedChar = UART1_getChar();;
         GPS[GPS_Counter++] = Local_u8ReceivedChar;
     } while (Local_u8ReceivedChar != '*');
 		ST7735_drawString("before format",4, 4,0X0000,0Xffff,1);
@@ -70,15 +71,15 @@ void GPS_Read()
     if (strcmp(GPS_Tokens[1], "A") == 0)
     { 
         if (strcmp(GPS_Tokens[3], "N") == 0)
-            currentLatitude = atof(GPS_Tokens[2]);
+            currentLat = atof(GPS_Tokens[2]);
 						
         else
-            currentLatitude = -atof(GPS_Tokens[2]);
+            currentLat = -atof(GPS_Tokens[2]);
 
         if (strcmp(GPS_Tokens[5], "E") == 0)
-            currentLongitude = atof(GPS_Tokens[4]);
+            currentLong = atof(GPS_Tokens[4]);
         else
-            currentLongitude = -atof(GPS_Tokens[4]);
+            currentLong = -atof(GPS_Tokens[4]);
     }
 }
 

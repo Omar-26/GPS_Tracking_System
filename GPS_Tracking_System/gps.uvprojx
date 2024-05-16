@@ -669,6 +669,31 @@
               <FileType>5</FileType>
               <FilePath>.\config\SysCtr_cfg.h</FilePath>
             </File>
+            <File>
+              <FileName>uart_.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\uart_.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart_.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\uart_.h</FilePath>
+            </File>
+            <File>
+              <FileName>FTOS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FTOS.c</FilePath>
+            </File>
+            <File>
+              <FileName>FTOS.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FTOS.h</FilePath>
+            </File>
+            <File>
+              <FileName>iota.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\iota.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

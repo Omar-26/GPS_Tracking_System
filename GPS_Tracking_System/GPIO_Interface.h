@@ -81,6 +81,11 @@ If led_state does not match either case, it returns 0.
 This function can be used to control an RGB LED connected to Port F pins on a Tiva C Series TM4C123GH6PM microcontroller.
 The specific LED color and state are determined by the input arguments
 */
+
+
+
+u8 GPIO_u8Set_Switch(u8 sw);
+
 void GPIO_voidRGB_LED(u8 led_color, u8 led_state);
 /*
                                                 Function Description:

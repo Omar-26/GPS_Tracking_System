@@ -104,7 +104,7 @@ void UART_u8SendByte(u8 copy_u8UARTNo, u8 copy_u8Data);
 
 char UART_u8ReceiveByte(u8 copy_u8UARTNo);
 
-void UART_u8SendString(u8 copy_u8UARTNo, u8 *copy_pu8SentString);
+void UART_u8SendString(u8 copy_u8UARTNo, char *copy_pu8SentString);
 
 void UART_u8ReceiveString(u8 copy_u8UARTNo, u8 * string, uint32_t length);
 

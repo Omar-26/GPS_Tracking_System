@@ -214,7 +214,7 @@ void UART_u8Init(u8 copy_u8UARTNo, u32 copy_u32BaudRate, u8 copy_u8WordLength, u
         return (char) local_u8ReceivedData;
     }
     /****************************************< SEND_STRING_FUNCTION_IMPLEMENTATION **************************************/
-    void UART_u8SendString(u8 copy_u8UARTNo, u8 * copy_pu8String)
+    void UART_u8SendString(u8 copy_u8UARTNo, char * copy_pu8String)
     {
         switch (copy_u8UARTNo)
         {

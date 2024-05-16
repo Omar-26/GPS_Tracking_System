@@ -26,11 +26,11 @@ Project File Date:  05/16/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Target 1'
-compiling GPIO_Program.c...
+Build target 'Target 1'
+compiling SysCtr.c...
 compiling Sys_Tick.c...
+compiling GPIO_Program.c...
 compiling fonts.c...
-compiling EEPROM_Program.c...
 UART_Program.c(21): warning: In file included from...
 ./mcal/mcu_hw.h(13): warning: In file included from...
 ./mcal/../utils/Bit_Math.h(13): warning: 'SET_BIT' macro redefined [-Wmacro-redefined]
@@ -342,245 +342,245 @@ GPS_Program.c(11): warning: In file included from...
 ./mcal/../utils/Bit_Math.h(17): note: previous definition is here
    17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(378): warning: 'UART1_DR_R' macro redefined [-Wmacro-redefined]
   378 | #define UART1_DR_R (*((volatile unsigned long *)0x4000D000))
       |         ^
 ./mcal/mcu_hw.h(421): note: previous definition is here
   421 | #define UART1_DR_R                                 (*((volatile uint32 *)0x4000D000))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(379): warning: 'UART1_RSR_R' macro redefined [-Wmacro-redefined]
   379 | #define UART1_RSR_R (*((volatile unsigned long *)0x4000D004))
       |         ^
 ./mcal/mcu_hw.h(422): note: previous definition is here
   422 | #define UART1_RSR_R                                (*((volatile uint32 *)0x4000D004))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(380): warning: 'UART1_ECR_R' macro redefined [-Wmacro-redefined]
   380 | #define UART1_ECR_R (*((volatile unsigned long *)0x4000D004))
       |         ^
 ./mcal/mcu_hw.h(423): note: previous definition is here
   423 | #define UART1_ECR_R                                (*((volatile uint32 *)0x4000D004))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(382): warning: 'UART1_ILPR_R' macro redefined [-Wmacro-redefined]
   382 | #define UART1_ILPR_R (*((volatile unsigned long *)0x4000D020))
       |         ^
 ./mcal/mcu_hw.h(425): note: previous definition is here
   425 | #define UART1_ILPR_R                               (*((volatile uint32 *)0x4000D020))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(383): warning: 'UART1_IBRD_R' macro redefined [-Wmacro-redefined]
   383 | #define UART1_IBRD_R (*((volatile unsigned long *)0x4000D024))
       |         ^
 ./mcal/mcu_hw.h(426): note: previous definition is here
   426 | #define UART1_IBRD_R                               (*((volatile uint32 *)0x4000D024))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(384): warning: 'UART1_FBRD_R' macro redefined [-Wmacro-redefined]
   384 | #define UART1_FBRD_R (*((volatile unsigned long *)0x4000D028))
       |         ^
 ./mcal/mcu_hw.h(427): note: previous definition is here
   427 | #define UART1_FBRD_R                               (*((volatile uint32 *)0x4000D028))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(387): warning: 'UART1_IFLS_R' macro redefined [-Wmacro-redefined]
   387 | #define UART1_IFLS_R (*((volatile unsigned long *)0x4000D034))
       |         ^
 ./mcal/mcu_hw.h(430): note: previous definition is here
   430 | #define UART1_IFLS_R                               (*((volatile uint32 *)0x4000D034))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(393): warning: 'UART1_9BITADDR_R' macro redefined [-Wmacro-redefined]
   393 | #define UART1_9BITADDR_R (*((volatile unsigned long *)0x4000D0A4))
       |         ^
 ./mcal/mcu_hw.h(436): note: previous definition is here
   436 | #define UART1_9BITADDR_R                           (*((volatile uint32 *)0x4000D0A4))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(394): warning: 'UART1_9BITAMASK_R' macro redefined [-Wmacro-redefined]
   394 | #define UART1_9BITAMASK_R (*((volatile unsigned long *)0x4000D0A8))
       |         ^
 ./mcal/mcu_hw.h(437): note: previous definition is here
   437 | #define UART1_9BITAMASK_R                          (*((volatile uint32 *)0x4000D0A8))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(395): warning: 'UART1_PP_R' macro redefined [-Wmacro-redefined]
   395 | #define UART1_PP_R (*((volatile unsigned long *)0x4000DFC0))
       |         ^
 ./mcal/mcu_hw.h(438): note: previous definition is here
   438 | #define UART1_PP_R                                 (*((volatile uint32 *)0x4000DFC0))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(396): warning: 'UART1_CC_R' macro redefined [-Wmacro-redefined]
   396 | #define UART1_CC_R (*((volatile unsigned long *)0x4000DFC8))
       |         ^
 ./mcal/mcu_hw.h(439): note: previous definition is here
   439 | #define UART1_CC_R                                 (*((volatile uint32 *)0x4000DFC8))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2002): warning: 'FLASH_FMA_R' macro redefined [-Wmacro-redefined]
  2002 | #define FLASH_FMA_R (*((volatile unsigned long *)0x400FD000))
       |         ^
 ./mcal/mcu_hw.h(123): note: previous definition is here
   123 | #define FLASH_FMA_R             (*((volatile uint32 *)0x400FD000))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2003): warning: 'FLASH_FMD_R' macro redefined [-Wmacro-redefined]
  2003 | #define FLASH_FMD_R (*((volatile unsigned long *)0x400FD004))
       |         ^
 ./mcal/mcu_hw.h(124): note: previous definition is here
   124 | #define FLASH_FMD_R             (*((volatile uint32 *)0x400FD004))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2004): warning: 'FLASH_FMC_R' macro redefined [-Wmacro-redefined]
  2004 | #define FLASH_FMC_R (*((volatile unsigned long *)0x400FD008))
       |         ^
 ./mcal/mcu_hw.h(125): note: previous definition is here
   125 | #define FLASH_FMC_R             (*((volatile uint32 *)0x400FD008))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2006): warning: 'FLASH_FCIM_R' macro redefined [-Wmacro-redefined]
  2006 | #define FLASH_FCIM_R (*((volatile unsigned long *)0x400FD010))
       |         ^
 ./mcal/mcu_hw.h(127): note: previous definition is here
   127 | #define FLASH_FCIM_R            (*((volatile uint32 *)0x400FD010))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2008): warning: 'FLASH_FMC2_R' macro redefined [-Wmacro-redefined]
  2008 | #define FLASH_FMC2_R (*((volatile unsigned long *)0x400FD020))
       |         ^
 ./mcal/mcu_hw.h(129): note: previous definition is here
   129 | #define FLASH_FMC2_R            (*((volatile uint32 *)0x400FD020))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2009): warning: 'FLASH_FWBVAL_R' macro redefined [-Wmacro-redefined]
  2009 | #define FLASH_FWBVAL_R (*((volatile unsigned long *)0x400FD030))
       |         ^
 ./mcal/mcu_hw.h(130): note: previous definition is here
   130 | #define FLASH_FWBVAL_R          (*((volatile uint32 *)0x400FD030))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2010): warning: 'FLASH_FWBN_R' macro redefined [-Wmacro-redefined]
  2010 | #define FLASH_FWBN_R (*((volatile unsigned long *)0x400FD100))
       |         ^
 ./mcal/mcu_hw.h(131): note: previous definition is here
   131 | #define FLASH_FWBN_R            (*((volatile uint32 *)0x400FD100))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2011): warning: 'FLASH_FSIZE_R' macro redefined [-Wmacro-redefined]
  2011 | #define FLASH_FSIZE_R (*((volatile unsigned long *)0x400FDFC0))
       |         ^
 ./mcal/mcu_hw.h(132): note: previous definition is here
   132 | #define FLASH_FSIZE_R           (*((volatile uint32 *)0x400FDFC0))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2012): warning: 'FLASH_SSIZE_R' macro redefined [-Wmacro-redefined]
  2012 | #define FLASH_SSIZE_R (*((volatile unsigned long *)0x400FDFC4))
       |         ^
 ./mcal/mcu_hw.h(133): note: previous definition is here
   133 | #define FLASH_SSIZE_R           (*((volatile uint32 *)0x400FDFC4))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2013): warning: 'FLASH_ROMSWMAP_R' macro redefined [-Wmacro-redefined]
  2013 | #define FLASH_ROMSWMAP_R (*((volatile unsigned long *)0x400FDFCC))
       |         ^
 ./mcal/mcu_hw.h(134): note: previous definition is here
   134 | #define FLASH_ROMSWMAP_R        (*((volatile uint32 *)0x400FDFCC))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2014): warning: 'FLASH_RMCTL_R' macro redefined [-Wmacro-redefined]
  2014 | #define FLASH_RMCTL_R (*((volatile unsigned long *)0x400FE0F0))
       |         ^
 ./mcal/mcu_hw.h(135): note: previous definition is here
   135 | #define FLASH_RMCTL_R           (*((volatile uint32 *)0x400FE0F0))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2015): warning: 'FLASH_BOOTCFG_R' macro redefined [-Wmacro-redefined]
  2015 | #define FLASH_BOOTCFG_R (*((volatile unsigned long *)0x400FE1D0))
       |         ^
 ./mcal/mcu_hw.h(136): note: previous definition is here
   136 | #define FLASH_BOOTCFG_R         (*((volatile uint32 *)0x400FE1D0))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2016): warning: 'FLASH_USERREG0_R' macro redefined [-Wmacro-redefined]
  2016 | #define FLASH_USERREG0_R (*((volatile unsigned long *)0x400FE1E0))
       |         ^
 ./mcal/mcu_hw.h(137): note: previous definition is here
   137 | #define FLASH_USERREG0_R        (*((volatile uint32 *)0x400FE1E0))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2017): warning: 'FLASH_USERREG1_R' macro redefined [-Wmacro-redefined]
  2017 | #define FLASH_USERREG1_R (*((volatile unsigned long *)0x400FE1E4))
       |         ^
 ./mcal/mcu_hw.h(138): note: previous definition is here
   138 | #define FLASH_USERREG1_R        (*((volatile uint32 *)0x400FE1E4))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2018): warning: 'FLASH_USERREG2_R' macro redefined [-Wmacro-redefined]
  2018 | #define FLASH_USERREG2_R (*((volatile unsigned long *)0x400FE1E8))
       |         ^
 ./mcal/mcu_hw.h(139): note: previous definition is here
   139 | #define FLASH_USERREG2_R        (*((volatile uint32 *)0x400FE1E8))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2019): warning: 'FLASH_USERREG3_R' macro redefined [-Wmacro-redefined]
  2019 | #define FLASH_USERREG3_R (*((volatile unsigned long *)0x400FE1EC))
       |         ^
 ./mcal/mcu_hw.h(140): note: previous definition is here
   140 | #define FLASH_USERREG3_R        (*((volatile uint32 *)0x400FE1EC))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2020): warning: 'FLASH_FMPRE0_R' macro redefined [-Wmacro-redefined]
  2020 | #define FLASH_FMPRE0_R (*((volatile unsigned long *)0x400FE200))
       |         ^
 ./mcal/mcu_hw.h(141): note: previous definition is here
   141 | #define FLASH_FMPRE0_R          (*((volatile uint32 *)0x400FE200))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2021): warning: 'FLASH_FMPRE1_R' macro redefined [-Wmacro-redefined]
  2021 | #define FLASH_FMPRE1_R (*((volatile unsigned long *)0x400FE204))
       |         ^
 ./mcal/mcu_hw.h(142): note: previous definition is here
   142 | #define FLASH_FMPRE1_R          (*((volatile uint32 *)0x400FE204))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2022): warning: 'FLASH_FMPRE2_R' macro redefined [-Wmacro-redefined]
  2022 | #define FLASH_FMPRE2_R (*((volatile unsigned long *)0x400FE208))
       |         ^
 ./mcal/mcu_hw.h(143): note: previous definition is here
   143 | #define FLASH_FMPRE2_R          (*((volatile uint32 *)0x400FE208))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2023): warning: 'FLASH_FMPRE3_R' macro redefined [-Wmacro-redefined]
  2023 | #define FLASH_FMPRE3_R (*((volatile unsigned long *)0x400FE20C))
       |         ^
 ./mcal/mcu_hw.h(144): note: previous definition is here
   144 | #define FLASH_FMPRE3_R          (*((volatile uint32 *)0x400FE20C))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2024): warning: 'FLASH_FMPPE0_R' macro redefined [-Wmacro-redefined]
  2024 | #define FLASH_FMPPE0_R (*((volatile unsigned long *)0x400FE400))
       |         ^
 ./mcal/mcu_hw.h(145): note: previous definition is here
   145 | #define FLASH_FMPPE0_R          (*((volatile uint32 *)0x400FE400))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2025): warning: 'FLASH_FMPPE1_R' macro redefined [-Wmacro-redefined]
  2025 | #define FLASH_FMPPE1_R (*((volatile unsigned long *)0x400FE404))
       |         ^
 ./mcal/mcu_hw.h(146): note: previous definition is here
   146 | #define FLASH_FMPPE1_R          (*((volatile uint32 *)0x400FE404))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2026): warning: 'FLASH_FMPPE2_R' macro redefined [-Wmacro-redefined]
  2026 | #define FLASH_FMPPE2_R (*((volatile unsigned long *)0x400FE408))
       |         ^
 ./mcal/mcu_hw.h(147): note: previous definition is here
   147 | #define FLASH_FMPPE2_R          (*((volatile uint32 *)0x400FE408))
       |         ^
-GPS_Program.c(23): warning: In file included from...
+GPS_Program.c(24): warning: In file included from...
 ./tm4c123gh6pm.h(2027): warning: 'FLASH_FMPPE3_R' macro redefined [-Wmacro-redefined]
  2027 | #define FLASH_FMPPE3_R (*((volatile unsigned long *)0x400FE40C))
       |         ^
@@ -589,14 +589,15 @@ GPS_Program.c(23): warning: In file included from...
       |         ^
 38 warnings generated.
 compiling GPS_Program.c...
-main.c(8): warning: In file included from...
+compiling SysCtr_cfg.c...
+main.c(6): warning: In file included from...
 ./STD_TYPES.h(30): warning: 'NULL' macro redefined [-Wmacro-redefined]
    30 | #define     NULL        ((void *)0x0)   /**< Null pointer definition */
       |             ^
 C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h(76): note: previous definition is here
    76 | #define NULL 0                   /* see <stddef.h> */
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(13): warning: In file included from...
 ./mcal/../utils/Bit_Math.h(13): warning: 'SET_BIT' macro redefined [-Wmacro-redefined]
    13 | #define SET_BIT(u32Var,BitNo)                                    u32Var |= ((uint32)1<<BitNo)
@@ -604,7 +605,7 @@ main.c(22): warning: In file included from...
 ./BIT_MATH.h(18): note: previous definition is here
    18 | #define SET_BIT(REG, BIT_NUMBER) (REG |= (1 << BIT_NUMBER))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(13): warning: In file included from...
 ./mcal/../utils/Bit_Math.h(14): warning: 'CLR_BIT' macro redefined [-Wmacro-redefined]
    14 | #define CLR_BIT(u32Var,BitNo)                                    u32Var &= ~((uint32)1<<BitNo)
@@ -612,7 +613,7 @@ main.c(22): warning: In file included from...
 ./BIT_MATH.h(28): note: previous definition is here
    28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(13): warning: In file included from...
 ./mcal/../utils/Bit_Math.h(17): warning: 'GET_BIT' macro redefined [-Wmacro-redefined]
    17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
@@ -620,327 +621,566 @@ main.c(22): warning: In file included from...
 ./BIT_MATH.h(49): note: previous definition is here
    49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(123): warning: 'FLASH_FMA_R' macro redefined [-Wmacro-redefined]
   123 | #define FLASH_FMA_R             (*((volatile uint32 *)0x400FD000))
       |         ^
 ./tm4c123gh6pm.h(2002): note: previous definition is here
  2002 | #define FLASH_FMA_R (*((volatile unsigned long *)0x400FD000))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(124): warning: 'FLASH_FMD_R' macro redefined [-Wmacro-redefined]
   124 | #define FLASH_FMD_R             (*((volatile uint32 *)0x400FD004))
       |         ^
 ./tm4c123gh6pm.h(2003): note: previous definition is here
  2003 | #define FLASH_FMD_R (*((volatile unsigned long *)0x400FD004))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(125): warning: 'FLASH_FMC_R' macro redefined [-Wmacro-redefined]
   125 | #define FLASH_FMC_R             (*((volatile uint32 *)0x400FD008))
       |         ^
 ./tm4c123gh6pm.h(2004): note: previous definition is here
  2004 | #define FLASH_FMC_R (*((volatile unsigned long *)0x400FD008))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(127): warning: 'FLASH_FCIM_R' macro redefined [-Wmacro-redefined]
   127 | #define FLASH_FCIM_R            (*((volatile uint32 *)0x400FD010))
       |         ^
 ./tm4c123gh6pm.h(2006): note: previous definition is here
  2006 | #define FLASH_FCIM_R (*((volatile unsigned long *)0x400FD010))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(129): warning: 'FLASH_FMC2_R' macro redefined [-Wmacro-redefined]
   129 | #define FLASH_FMC2_R            (*((volatile uint32 *)0x400FD020))
       |         ^
 ./tm4c123gh6pm.h(2008): note: previous definition is here
  2008 | #define FLASH_FMC2_R (*((volatile unsigned long *)0x400FD020))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(130): warning: 'FLASH_FWBVAL_R' macro redefined [-Wmacro-redefined]
   130 | #define FLASH_FWBVAL_R          (*((volatile uint32 *)0x400FD030))
       |         ^
 ./tm4c123gh6pm.h(2009): note: previous definition is here
  2009 | #define FLASH_FWBVAL_R (*((volatile unsigned long *)0x400FD030))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(131): warning: 'FLASH_FWBN_R' macro redefined [-Wmacro-redefined]
   131 | #define FLASH_FWBN_R            (*((volatile uint32 *)0x400FD100))
       |         ^
 ./tm4c123gh6pm.h(2010): note: previous definition is here
  2010 | #define FLASH_FWBN_R (*((volatile unsigned long *)0x400FD100))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(132): warning: 'FLASH_FSIZE_R' macro redefined [-Wmacro-redefined]
   132 | #define FLASH_FSIZE_R           (*((volatile uint32 *)0x400FDFC0))
       |         ^
 ./tm4c123gh6pm.h(2011): note: previous definition is here
  2011 | #define FLASH_FSIZE_R (*((volatile unsigned long *)0x400FDFC0))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(133): warning: 'FLASH_SSIZE_R' macro redefined [-Wmacro-redefined]
   133 | #define FLASH_SSIZE_R           (*((volatile uint32 *)0x400FDFC4))
       |         ^
 ./tm4c123gh6pm.h(2012): note: previous definition is here
  2012 | #define FLASH_SSIZE_R (*((volatile unsigned long *)0x400FDFC4))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(134): warning: 'FLASH_ROMSWMAP_R' macro redefined [-Wmacro-redefined]
   134 | #define FLASH_ROMSWMAP_R        (*((volatile uint32 *)0x400FDFCC))
       |         ^
 ./tm4c123gh6pm.h(2013): note: previous definition is here
  2013 | #define FLASH_ROMSWMAP_R (*((volatile unsigned long *)0x400FDFCC))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(135): warning: 'FLASH_RMCTL_R' macro redefined [-Wmacro-redefined]
   135 | #define FLASH_RMCTL_R           (*((volatile uint32 *)0x400FE0F0))
       |         ^
 ./tm4c123gh6pm.h(2014): note: previous definition is here
  2014 | #define FLASH_RMCTL_R (*((volatile unsigned long *)0x400FE0F0))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(136): warning: 'FLASH_BOOTCFG_R' macro redefined [-Wmacro-redefined]
   136 | #define FLASH_BOOTCFG_R         (*((volatile uint32 *)0x400FE1D0))
       |         ^
 ./tm4c123gh6pm.h(2015): note: previous definition is here
  2015 | #define FLASH_BOOTCFG_R (*((volatile unsigned long *)0x400FE1D0))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(137): warning: 'FLASH_USERREG0_R' macro redefined [-Wmacro-redefined]
   137 | #define FLASH_USERREG0_R        (*((volatile uint32 *)0x400FE1E0))
       |         ^
 ./tm4c123gh6pm.h(2016): note: previous definition is here
  2016 | #define FLASH_USERREG0_R (*((volatile unsigned long *)0x400FE1E0))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(138): warning: 'FLASH_USERREG1_R' macro redefined [-Wmacro-redefined]
   138 | #define FLASH_USERREG1_R        (*((volatile uint32 *)0x400FE1E4))
       |         ^
 ./tm4c123gh6pm.h(2017): note: previous definition is here
  2017 | #define FLASH_USERREG1_R (*((volatile unsigned long *)0x400FE1E4))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(139): warning: 'FLASH_USERREG2_R' macro redefined [-Wmacro-redefined]
   139 | #define FLASH_USERREG2_R        (*((volatile uint32 *)0x400FE1E8))
       |         ^
 ./tm4c123gh6pm.h(2018): note: previous definition is here
  2018 | #define FLASH_USERREG2_R (*((volatile unsigned long *)0x400FE1E8))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(140): warning: 'FLASH_USERREG3_R' macro redefined [-Wmacro-redefined]
   140 | #define FLASH_USERREG3_R        (*((volatile uint32 *)0x400FE1EC))
       |         ^
 ./tm4c123gh6pm.h(2019): note: previous definition is here
  2019 | #define FLASH_USERREG3_R (*((volatile unsigned long *)0x400FE1EC))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(141): warning: 'FLASH_FMPRE0_R' macro redefined [-Wmacro-redefined]
   141 | #define FLASH_FMPRE0_R          (*((volatile uint32 *)0x400FE200))
       |         ^
 ./tm4c123gh6pm.h(2020): note: previous definition is here
  2020 | #define FLASH_FMPRE0_R (*((volatile unsigned long *)0x400FE200))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(142): warning: 'FLASH_FMPRE1_R' macro redefined [-Wmacro-redefined]
   142 | #define FLASH_FMPRE1_R          (*((volatile uint32 *)0x400FE204))
       |         ^
 ./tm4c123gh6pm.h(2021): note: previous definition is here
  2021 | #define FLASH_FMPRE1_R (*((volatile unsigned long *)0x400FE204))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(143): warning: 'FLASH_FMPRE2_R' macro redefined [-Wmacro-redefined]
   143 | #define FLASH_FMPRE2_R          (*((volatile uint32 *)0x400FE208))
       |         ^
 ./tm4c123gh6pm.h(2022): note: previous definition is here
  2022 | #define FLASH_FMPRE2_R (*((volatile unsigned long *)0x400FE208))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(144): warning: 'FLASH_FMPRE3_R' macro redefined [-Wmacro-redefined]
   144 | #define FLASH_FMPRE3_R          (*((volatile uint32 *)0x400FE20C))
       |         ^
 ./tm4c123gh6pm.h(2023): note: previous definition is here
  2023 | #define FLASH_FMPRE3_R (*((volatile unsigned long *)0x400FE20C))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(145): warning: 'FLASH_FMPPE0_R' macro redefined [-Wmacro-redefined]
   145 | #define FLASH_FMPPE0_R          (*((volatile uint32 *)0x400FE400))
       |         ^
 ./tm4c123gh6pm.h(2024): note: previous definition is here
  2024 | #define FLASH_FMPPE0_R (*((volatile unsigned long *)0x400FE400))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(146): warning: 'FLASH_FMPPE1_R' macro redefined [-Wmacro-redefined]
   146 | #define FLASH_FMPPE1_R          (*((volatile uint32 *)0x400FE404))
       |         ^
 ./tm4c123gh6pm.h(2025): note: previous definition is here
  2025 | #define FLASH_FMPPE1_R (*((volatile unsigned long *)0x400FE404))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(147): warning: 'FLASH_FMPPE2_R' macro redefined [-Wmacro-redefined]
   147 | #define FLASH_FMPPE2_R          (*((volatile uint32 *)0x400FE408))
       |         ^
 ./tm4c123gh6pm.h(2026): note: previous definition is here
  2026 | #define FLASH_FMPPE2_R (*((volatile unsigned long *)0x400FE408))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(148): warning: 'FLASH_FMPPE3_R' macro redefined [-Wmacro-redefined]
   148 | #define FLASH_FMPPE3_R          (*((volatile uint32 *)0x400FE40C))
       |         ^
 ./tm4c123gh6pm.h(2027): note: previous definition is here
  2027 | #define FLASH_FMPPE3_R (*((volatile unsigned long *)0x400FE40C))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(421): warning: 'UART1_DR_R' macro redefined [-Wmacro-redefined]
   421 | #define UART1_DR_R                                 (*((volatile uint32 *)0x4000D000))
       |         ^
 ./tm4c123gh6pm.h(378): note: previous definition is here
   378 | #define UART1_DR_R (*((volatile unsigned long *)0x4000D000))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(422): warning: 'UART1_RSR_R' macro redefined [-Wmacro-redefined]
   422 | #define UART1_RSR_R                                (*((volatile uint32 *)0x4000D004))
       |         ^
 ./tm4c123gh6pm.h(379): note: previous definition is here
   379 | #define UART1_RSR_R (*((volatile unsigned long *)0x4000D004))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(423): warning: 'UART1_ECR_R' macro redefined [-Wmacro-redefined]
   423 | #define UART1_ECR_R                                (*((volatile uint32 *)0x4000D004))
       |         ^
 ./tm4c123gh6pm.h(380): note: previous definition is here
   380 | #define UART1_ECR_R (*((volatile unsigned long *)0x4000D004))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(425): warning: 'UART1_ILPR_R' macro redefined [-Wmacro-redefined]
   425 | #define UART1_ILPR_R                               (*((volatile uint32 *)0x4000D020))
       |         ^
 ./tm4c123gh6pm.h(382): note: previous definition is here
   382 | #define UART1_ILPR_R (*((volatile unsigned long *)0x4000D020))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(426): warning: 'UART1_IBRD_R' macro redefined [-Wmacro-redefined]
   426 | #define UART1_IBRD_R                               (*((volatile uint32 *)0x4000D024))
       |         ^
 ./tm4c123gh6pm.h(383): note: previous definition is here
   383 | #define UART1_IBRD_R (*((volatile unsigned long *)0x4000D024))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(427): warning: 'UART1_FBRD_R' macro redefined [-Wmacro-redefined]
   427 | #define UART1_FBRD_R                               (*((volatile uint32 *)0x4000D028))
       |         ^
 ./tm4c123gh6pm.h(384): note: previous definition is here
   384 | #define UART1_FBRD_R (*((volatile unsigned long *)0x4000D028))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(430): warning: 'UART1_IFLS_R' macro redefined [-Wmacro-redefined]
   430 | #define UART1_IFLS_R                               (*((volatile uint32 *)0x4000D034))
       |         ^
 ./tm4c123gh6pm.h(387): note: previous definition is here
   387 | #define UART1_IFLS_R (*((volatile unsigned long *)0x4000D034))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(436): warning: 'UART1_9BITADDR_R' macro redefined [-Wmacro-redefined]
   436 | #define UART1_9BITADDR_R                           (*((volatile uint32 *)0x4000D0A4))
       |         ^
 ./tm4c123gh6pm.h(393): note: previous definition is here
   393 | #define UART1_9BITADDR_R (*((volatile unsigned long *)0x4000D0A4))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(437): warning: 'UART1_9BITAMASK_R' macro redefined [-Wmacro-redefined]
   437 | #define UART1_9BITAMASK_R                          (*((volatile uint32 *)0x4000D0A8))
       |         ^
 ./tm4c123gh6pm.h(394): note: previous definition is here
   394 | #define UART1_9BITAMASK_R (*((volatile unsigned long *)0x4000D0A8))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(438): warning: 'UART1_PP_R' macro redefined [-Wmacro-redefined]
   438 | #define UART1_PP_R                                 (*((volatile uint32 *)0x4000DFC0))
       |         ^
 ./tm4c123gh6pm.h(395): note: previous definition is here
   395 | #define UART1_PP_R (*((volatile unsigned long *)0x4000DFC0))
       |         ^
-main.c(22): warning: In file included from...
+main.c(19): warning: In file included from...
 ./mcal/mcu_hw.h(439): warning: 'UART1_CC_R' macro redefined [-Wmacro-redefined]
   439 | #define UART1_CC_R                                 (*((volatile uint32 *)0x4000DFC8))
       |         ^
 ./tm4c123gh6pm.h(396): note: previous definition is here
   396 | #define UART1_CC_R (*((volatile unsigned long *)0x4000DFC8))
       |         ^
-main.c(44): warning: & has lower precedence than ==; == will be evaluated first [-Wparentheses]
-   44 |         while(GET_BIT(SYSCTL_PRGPIO_R,0)==0 );  
-      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
-   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
-      |                                                                                    ^
-main.c(44): note: place parentheses around the '==' expression to silence this warning
-   44 |         while(GET_BIT(SYSCTL_PRGPIO_R,0)==0 );  
-      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
-   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
-      |                                                                                    ^
-main.c(44): note: place parentheses around the & expression to evaluate it first
-   44 |         while(GET_BIT(SYSCTL_PRGPIO_R,0)==0 );  
-      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~
-./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
-   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
-      |                                                                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
-main.c(92): warning: & has lower precedence than ==; == will be evaluated first [-Wparentheses]
-   92 |         while(GET_BIT(SYSCTL_PRGPIO_R , 1)==0); //Check on the clock
-      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
-   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
-      |                                                                                    ^
-main.c(92): note: place parentheses around the '==' expression to silence this warning
-   92 |         while(GET_BIT(SYSCTL_PRGPIO_R , 1)==0); //Check on the clock
-      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
-   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
-      |                                                                                    ^
-main.c(92): note: place parentheses around the & expression to evaluate it first
-   92 |         while(GET_BIT(SYSCTL_PRGPIO_R , 1)==0); //Check on the clock
-      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
-   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
-      |                                                                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
-41 warnings generated.
+39 warnings generated.
 compiling main.c...
-mcal/ssi/ssi.c(53): warning: non-void function does not return a value [-Wreturn-type]
-   53 |  }
-      |  ^
-1 warning generated.
-compiling ssi.c...
-compiling dio.c...
-compiling nvic.c...
-compiling port.c...
-compiling SysCtr.c...
-TFT/ST7735.c(353): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
-  353 |   Dio_WriteChannel(Port_Channel_A6,STD_low);
-      |   ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
-TFT/ST7735.c(361): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
-  361 |   Dio_WriteChannel(Port_Channel_A6,STD_high);
-      |   ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
-TFT/ST7735.c(366): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
-  366 |   Dio_WriteChannel(Port_Channel_A6,STD_high);
-      |   ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
-TFT/ST7735.c(373): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
-  373 |       Dio_WriteChannel(Port_Channel_A7,STD_low);
-      |       ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
-TFT/ST7735.c(375): warning: implicit conversion from enumeration type 'Port_ChIdType' to different enumeration type 'Dio_ChannelType' [-Wenum-conversion]
-  375 |       Dio_WriteChannel(Port_Channel_A7,STD_high);
-      |       ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~~
-5 warnings generated.
-compiling ST7735.c...
-compiling processor.c...
-compiling mcu_hw.c...
-compiling Delay_ms.c...
-compiling port_lcfg.c...
-compiling ssi_lcfg.c...
-compiling nvic_lcfg.c...
-compiling SysCtr_cfg.c...
-assembling startup_TM4C123.s...
-compiling system_TM4C123.c...
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(13): warning: In file included from...
+./mcal/../utils/Bit_Math.h(13): warning: 'SET_BIT' macro redefined [-Wmacro-redefined]
+   13 | #define SET_BIT(u32Var,BitNo)                                    u32Var |= ((uint32)1<<BitNo)
+      |         ^
+./BIT_MATH.h(18): note: previous definition is here
+   18 | #define SET_BIT(REG, BIT_NUMBER) (REG |= (1 << BIT_NUMBER))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(13): warning: In file included from...
+./mcal/../utils/Bit_Math.h(14): warning: 'CLR_BIT' macro redefined [-Wmacro-redefined]
+   14 | #define CLR_BIT(u32Var,BitNo)                                    u32Var &= ~((uint32)1<<BitNo)
+      |         ^
+./BIT_MATH.h(28): note: previous definition is here
+   28 | #define CLR_BIT(REG, BIT_NUMBER) REG &= ~(1 << BIT_NUMBER)
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(13): warning: In file included from...
+./mcal/../utils/Bit_Math.h(17): warning: 'GET_BIT' macro redefined [-Wmacro-redefined]
+   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
+      |         ^
+./BIT_MATH.h(49): note: previous definition is here
+   49 | #define GET_BIT(REG, BIT_NUMBER) ((REG & (1 << BIT_NUMBER)) >> BIT_NUMBER)
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(123): warning: 'FLASH_FMA_R' macro redefined [-Wmacro-redefined]
+  123 | #define FLASH_FMA_R             (*((volatile uint32 *)0x400FD000))
+      |         ^
+./tm4c123gh6pm.h(2002): note: previous definition is here
+ 2002 | #define FLASH_FMA_R (*((volatile unsigned long *)0x400FD000))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(124): warning: 'FLASH_FMD_R' macro redefined [-Wmacro-redefined]
+  124 | #define FLASH_FMD_R             (*((volatile uint32 *)0x400FD004))
+      |         ^
+./tm4c123gh6pm.h(2003): note: previous definition is here
+ 2003 | #define FLASH_FMD_R (*((volatile unsigned long *)0x400FD004))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(125): warning: 'FLASH_FMC_R' macro redefined [-Wmacro-redefined]
+  125 | #define FLASH_FMC_R             (*((volatile uint32 *)0x400FD008))
+      |         ^
+./tm4c123gh6pm.h(2004): note: previous definition is here
+ 2004 | #define FLASH_FMC_R (*((volatile unsigned long *)0x400FD008))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(127): warning: 'FLASH_FCIM_R' macro redefined [-Wmacro-redefined]
+  127 | #define FLASH_FCIM_R            (*((volatile uint32 *)0x400FD010))
+      |         ^
+./tm4c123gh6pm.h(2006): note: previous definition is here
+ 2006 | #define FLASH_FCIM_R (*((volatile unsigned long *)0x400FD010))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(129): warning: 'FLASH_FMC2_R' macro redefined [-Wmacro-redefined]
+  129 | #define FLASH_FMC2_R            (*((volatile uint32 *)0x400FD020))
+      |         ^
+./tm4c123gh6pm.h(2008): note: previous definition is here
+ 2008 | #define FLASH_FMC2_R (*((volatile unsigned long *)0x400FD020))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(130): warning: 'FLASH_FWBVAL_R' macro redefined [-Wmacro-redefined]
+  130 | #define FLASH_FWBVAL_R          (*((volatile uint32 *)0x400FD030))
+      |         ^
+./tm4c123gh6pm.h(2009): note: previous definition is here
+ 2009 | #define FLASH_FWBVAL_R (*((volatile unsigned long *)0x400FD030))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(131): warning: 'FLASH_FWBN_R' macro redefined [-Wmacro-redefined]
+  131 | #define FLASH_FWBN_R            (*((volatile uint32 *)0x400FD100))
+      |         ^
+./tm4c123gh6pm.h(2010): note: previous definition is here
+ 2010 | #define FLASH_FWBN_R (*((volatile unsigned long *)0x400FD100))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(132): warning: 'FLASH_FSIZE_R' macro redefined [-Wmacro-redefined]
+  132 | #define FLASH_FSIZE_R           (*((volatile uint32 *)0x400FDFC0))
+      |         ^
+./tm4c123gh6pm.h(2011): note: previous definition is here
+ 2011 | #define FLASH_FSIZE_R (*((volatile unsigned long *)0x400FDFC0))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(133): warning: 'FLASH_SSIZE_R' macro redefined [-Wmacro-redefined]
+  133 | #define FLASH_SSIZE_R           (*((volatile uint32 *)0x400FDFC4))
+      |         ^
+./tm4c123gh6pm.h(2012): note: previous definition is here
+ 2012 | #define FLASH_SSIZE_R (*((volatile unsigned long *)0x400FDFC4))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(134): warning: 'FLASH_ROMSWMAP_R' macro redefined [-Wmacro-redefined]
+  134 | #define FLASH_ROMSWMAP_R        (*((volatile uint32 *)0x400FDFCC))
+      |         ^
+./tm4c123gh6pm.h(2013): note: previous definition is here
+ 2013 | #define FLASH_ROMSWMAP_R (*((volatile unsigned long *)0x400FDFCC))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(135): warning: 'FLASH_RMCTL_R' macro redefined [-Wmacro-redefined]
+  135 | #define FLASH_RMCTL_R           (*((volatile uint32 *)0x400FE0F0))
+      |         ^
+./tm4c123gh6pm.h(2014): note: previous definition is here
+ 2014 | #define FLASH_RMCTL_R (*((volatile unsigned long *)0x400FE0F0))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(136): warning: 'FLASH_BOOTCFG_R' macro redefined [-Wmacro-redefined]
+  136 | #define FLASH_BOOTCFG_R         (*((volatile uint32 *)0x400FE1D0))
+      |         ^
+./tm4c123gh6pm.h(2015): note: previous definition is here
+ 2015 | #define FLASH_BOOTCFG_R (*((volatile unsigned long *)0x400FE1D0))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(137): warning: 'FLASH_USERREG0_R' macro redefined [-Wmacro-redefined]
+  137 | #define FLASH_USERREG0_R        (*((volatile uint32 *)0x400FE1E0))
+      |         ^
+./tm4c123gh6pm.h(2016): note: previous definition is here
+ 2016 | #define FLASH_USERREG0_R (*((volatile unsigned long *)0x400FE1E0))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(138): warning: 'FLASH_USERREG1_R' macro redefined [-Wmacro-redefined]
+  138 | #define FLASH_USERREG1_R        (*((volatile uint32 *)0x400FE1E4))
+      |         ^
+./tm4c123gh6pm.h(2017): note: previous definition is here
+ 2017 | #define FLASH_USERREG1_R (*((volatile unsigned long *)0x400FE1E4))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(139): warning: 'FLASH_USERREG2_R' macro redefined [-Wmacro-redefined]
+  139 | #define FLASH_USERREG2_R        (*((volatile uint32 *)0x400FE1E8))
+      |         ^
+./tm4c123gh6pm.h(2018): note: previous definition is here
+ 2018 | #define FLASH_USERREG2_R (*((volatile unsigned long *)0x400FE1E8))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(140): warning: 'FLASH_USERREG3_R' macro redefined [-Wmacro-redefined]
+  140 | #define FLASH_USERREG3_R        (*((volatile uint32 *)0x400FE1EC))
+      |         ^
+./tm4c123gh6pm.h(2019): note: previous definition is here
+ 2019 | #define FLASH_USERREG3_R (*((volatile unsigned long *)0x400FE1EC))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(141): warning: 'FLASH_FMPRE0_R' macro redefined [-Wmacro-redefined]
+  141 | #define FLASH_FMPRE0_R          (*((volatile uint32 *)0x400FE200))
+      |         ^
+./tm4c123gh6pm.h(2020): note: previous definition is here
+ 2020 | #define FLASH_FMPRE0_R (*((volatile unsigned long *)0x400FE200))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(142): warning: 'FLASH_FMPRE1_R' macro redefined [-Wmacro-redefined]
+  142 | #define FLASH_FMPRE1_R          (*((volatile uint32 *)0x400FE204))
+      |         ^
+./tm4c123gh6pm.h(2021): note: previous definition is here
+ 2021 | #define FLASH_FMPRE1_R (*((volatile unsigned long *)0x400FE204))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(143): warning: 'FLASH_FMPRE2_R' macro redefined [-Wmacro-redefined]
+  143 | #define FLASH_FMPRE2_R          (*((volatile uint32 *)0x400FE208))
+      |         ^
+./tm4c123gh6pm.h(2022): note: previous definition is here
+ 2022 | #define FLASH_FMPRE2_R (*((volatile unsigned long *)0x400FE208))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(144): warning: 'FLASH_FMPRE3_R' macro redefined [-Wmacro-redefined]
+  144 | #define FLASH_FMPRE3_R          (*((volatile uint32 *)0x400FE20C))
+      |         ^
+./tm4c123gh6pm.h(2023): note: previous definition is here
+ 2023 | #define FLASH_FMPRE3_R (*((volatile unsigned long *)0x400FE20C))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(145): warning: 'FLASH_FMPPE0_R' macro redefined [-Wmacro-redefined]
+  145 | #define FLASH_FMPPE0_R          (*((volatile uint32 *)0x400FE400))
+      |         ^
+./tm4c123gh6pm.h(2024): note: previous definition is here
+ 2024 | #define FLASH_FMPPE0_R (*((volatile unsigned long *)0x400FE400))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(146): warning: 'FLASH_FMPPE1_R' macro redefined [-Wmacro-redefined]
+  146 | #define FLASH_FMPPE1_R          (*((volatile uint32 *)0x400FE404))
+      |         ^
+./tm4c123gh6pm.h(2025): note: previous definition is here
+ 2025 | #define FLASH_FMPPE1_R (*((volatile unsigned long *)0x400FE404))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(147): warning: 'FLASH_FMPPE2_R' macro redefined [-Wmacro-redefined]
+  147 | #define FLASH_FMPPE2_R          (*((volatile uint32 *)0x400FE408))
+      |         ^
+./tm4c123gh6pm.h(2026): note: previous definition is here
+ 2026 | #define FLASH_FMPPE2_R (*((volatile unsigned long *)0x400FE408))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(148): warning: 'FLASH_FMPPE3_R' macro redefined [-Wmacro-redefined]
+  148 | #define FLASH_FMPPE3_R          (*((volatile uint32 *)0x400FE40C))
+      |         ^
+./tm4c123gh6pm.h(2027): note: previous definition is here
+ 2027 | #define FLASH_FMPPE3_R (*((volatile unsigned long *)0x400FE40C))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(421): warning: 'UART1_DR_R' macro redefined [-Wmacro-redefined]
+  421 | #define UART1_DR_R                                 (*((volatile uint32 *)0x4000D000))
+      |         ^
+./tm4c123gh6pm.h(378): note: previous definition is here
+  378 | #define UART1_DR_R (*((volatile unsigned long *)0x4000D000))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(422): warning: 'UART1_RSR_R' macro redefined [-Wmacro-redefined]
+  422 | #define UART1_RSR_R                                (*((volatile uint32 *)0x4000D004))
+      |         ^
+./tm4c123gh6pm.h(379): note: previous definition is here
+  379 | #define UART1_RSR_R (*((volatile unsigned long *)0x4000D004))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(423): warning: 'UART1_ECR_R' macro redefined [-Wmacro-redefined]
+  423 | #define UART1_ECR_R                                (*((volatile uint32 *)0x4000D004))
+      |         ^
+./tm4c123gh6pm.h(380): note: previous definition is here
+  380 | #define UART1_ECR_R (*((volatile unsigned long *)0x4000D004))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(425): warning: 'UART1_ILPR_R' macro redefined [-Wmacro-redefined]
+  425 | #define UART1_ILPR_R                               (*((volatile uint32 *)0x4000D020))
+      |         ^
+./tm4c123gh6pm.h(382): note: previous definition is here
+  382 | #define UART1_ILPR_R (*((volatile unsigned long *)0x4000D020))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(426): warning: 'UART1_IBRD_R' macro redefined [-Wmacro-redefined]
+  426 | #define UART1_IBRD_R                               (*((volatile uint32 *)0x4000D024))
+      |         ^
+./tm4c123gh6pm.h(383): note: previous definition is here
+  383 | #define UART1_IBRD_R (*((volatile unsigned long *)0x4000D024))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(427): warning: 'UART1_FBRD_R' macro redefined [-Wmacro-redefined]
+  427 | #define UART1_FBRD_R                               (*((volatile uint32 *)0x4000D028))
+      |         ^
+./tm4c123gh6pm.h(384): note: previous definition is here
+  384 | #define UART1_FBRD_R (*((volatile unsigned long *)0x4000D028))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(430): warning: 'UART1_IFLS_R' macro redefined [-Wmacro-redefined]
+  430 | #define UART1_IFLS_R                               (*((volatile uint32 *)0x4000D034))
+      |         ^
+./tm4c123gh6pm.h(387): note: previous definition is here
+  387 | #define UART1_IFLS_R (*((volatile unsigned long *)0x4000D034))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(436): warning: 'UART1_9BITADDR_R' macro redefined [-Wmacro-redefined]
+  436 | #define UART1_9BITADDR_R                           (*((volatile uint32 *)0x4000D0A4))
+      |         ^
+./tm4c123gh6pm.h(393): note: previous definition is here
+  393 | #define UART1_9BITADDR_R (*((volatile unsigned long *)0x4000D0A4))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(437): warning: 'UART1_9BITAMASK_R' macro redefined [-Wmacro-redefined]
+  437 | #define UART1_9BITAMASK_R                          (*((volatile uint32 *)0x4000D0A8))
+      |         ^
+./tm4c123gh6pm.h(394): note: previous definition is here
+  394 | #define UART1_9BITAMASK_R (*((volatile unsigned long *)0x4000D0A8))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(438): warning: 'UART1_PP_R' macro redefined [-Wmacro-redefined]
+  438 | #define UART1_PP_R                                 (*((volatile uint32 *)0x4000DFC0))
+      |         ^
+./tm4c123gh6pm.h(395): note: previous definition is here
+  395 | #define UART1_PP_R (*((volatile unsigned long *)0x4000DFC0))
+      |         ^
+uart_.c(22): warning: In file included from...
+./mcal/mcu_hw.h(439): warning: 'UART1_CC_R' macro redefined [-Wmacro-redefined]
+  439 | #define UART1_CC_R                                 (*((volatile uint32 *)0x4000DFC8))
+      |         ^
+./tm4c123gh6pm.h(396): note: previous definition is here
+  396 | #define UART1_CC_R (*((volatile unsigned long *)0x4000DFC8))
+      |         ^
+uart_.c(39): warning: & has lower precedence than ==; == will be evaluated first [-Wparentheses]
+   39 |     while (GET_BIT(SYSCTL_PRGPIO_R, 0) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
+   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
+      |                                                                                    ^
+uart_.c(39): note: place parentheses around the '==' expression to silence this warning
+   39 |     while (GET_BIT(SYSCTL_PRGPIO_R, 0) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
+   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
+      |                                                                                    ^
+uart_.c(39): note: place parentheses around the & expression to evaluate it first
+   39 |     while (GET_BIT(SYSCTL_PRGPIO_R, 0) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
+   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
+      |                                                                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+uart_.c(95): warning: & has lower precedence than ==; == will be evaluated first [-Wparentheses]
+   95 |     while (GET_BIT(SYSCTL_PRGPIO_R, 1) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
+   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
+      |                                                                                    ^
+uart_.c(95): note: place parentheses around the '==' expression to silence this warning
+   95 |     while (GET_BIT(SYSCTL_PRGPIO_R, 1) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
+   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
+      |                                                                                    ^
+uart_.c(95): note: place parentheses around the & expression to evaluate it first
+   95 |     while (GET_BIT(SYSCTL_PRGPIO_R, 1) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./mcal/../utils/Bit_Math.h(17): note: expanded from macro 'GET_BIT'
+   17 | #define GET_BIT(u32Var,BitNo)                                    (u32Var >> BitNo) & (uint32)0x01
+      |                                                                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+40 warnings generated.
+compiling uart_.c...
 linking...
-Program Size: Code=1264 RO-data=636 RW-data=0 ZI-data=512  
-".\Objects\gps.axf" - 0 Error(s), 125 Warning(s).
+.\Objects\gps.axf: Error: L6218E: Undefined symbol GPS_Tokens (referred from main.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+".\Objects\gps.axf" - 1 Error(s), 157 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -966,9 +1206,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@6.0.0
 
    * Component: Keil::Device:Startup@1.0.1
+      Source file:   Device/Source/ARM/startup_TM4C123.s
       Source file:   Device/Source/system_TM4C123.c
       Include file:  Device/Include/TM4C123/TM4C123.h
-      Source file:   Device/Source/ARM/startup_TM4C123.s
+Target not created.
 Build Time Elapsed:  00:00:04
 </pre>
 </body>
