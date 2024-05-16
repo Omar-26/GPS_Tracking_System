@@ -95,7 +95,8 @@ if (walkedDistance < 101 & k < 50){
 				// View Distance on TFT
 				Int_walkedDistance = (u32)walkedDistance;
 				itoa(Int_walkedDistance, String_walkedDistance, 10);
-				ST7735_drawString(String_walkedDistance,4, 4,0X0000,0Xffff,1);
+				ST7735_drawString("Distance",16, 4,0X0000,0XFFFF,2);
+				ST7735_drawString(String_walkedDistance,28, 60,0X07E0,0XFFFF,7); 
 				}
 				
 			sprintf(text,"Latitude = %f \n",currentLatitude);
