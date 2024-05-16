@@ -5,7 +5,7 @@ This library works with the Adafruit 1.8" TFT Breakout w/SD card
 The 1.8" TFT shield
   ----> https://www.adafruit.com/product/802
 The 1.44" TFT breakout
-  ----> https://www.adafruit.com/product/2088
+  ----> https://www.adafruit.com/product/2088ST7735_drawChar
 as well as Adafruit raw 1.8" TFT display
   ----> http://www.adafruit.com/products/618
   Check out the links above for our tutorials and wiring diagrams

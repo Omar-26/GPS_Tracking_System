@@ -15,9 +15,9 @@ void MCAL_STK_SetReloadValue(uint32_t Copy_ReloadValue){
 	SysTick ->LOAD = Copy_ReloadValue;
 	
 }
-void SysTick_Delay10ms(uint32_t delay){//delay *10ms
+void SysTick_Delay10ms(uint32_t delay){ //delay *10ms
  unsigned long i;
- for(i=0 ;i<delay ; i++){
+ for(i=0 ;i < delay ; i++){
 	 SysTick_Delay(160000);
  }
 }

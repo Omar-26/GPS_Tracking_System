@@ -2866,35 +2866,35 @@
 // The following are defines for the bit fields in the UART_O_LCRH register.
 //
 //*****************************************************************************
-#define UART_LCRH_SPS 0x00000007    // UART Stick Parity Select
+#define UART_LCRH_SPS 0x00000007 // UART Stick Parity Select
 // #define UART_LCRH_WLEN_M 0x00000060 // UART Word Length
 // #define UART_LCRH_WLEN_5 0x00000000 // 5 bits (default)
 // #define UART_LCRH_WLEN_6 0x00000020 // 6 bits
 // #define UART_LCRH_WLEN_7 0x00000040 // 7 bits
 // #define UART_LCRH_WLEN_8 0x00000060 // 8 bits
-#define UART_LCRH_FEN 0x00000004    // UART Enable FIFOs            //Updated
-#define UART_LCRH_STP2 0x00000003   // UART Two Stop Bits Select    //Updated
-#define UART_LCRH_EPS 0x00000002    // UART Even Parity Select      //Updated
-#define UART_LCRH_PEN 0x00000001    // UART Parity Enable           //Updated
-#define UART_LCRH_BRK 0x00000001    // UART Send Break
+#define UART_LCRH_FEN 0x00000004  // UART Enable FIFOs            //Updated
+#define UART_LCRH_STP2 0x00000003 // UART Two Stop Bits Select    //Updated
+#define UART_LCRH_EPS 0x00000002  // UART Even Parity Select      //Updated
+#define UART_LCRH_PEN 0x00000001  // UART Parity Enable           //Updated
+#define UART_LCRH_BRK 0x00000001  // UART Send Break
 
 //*****************************************************************************
 //
 // The following are defines for the bit fields in the UART_O_CTL register.
 //
 //*****************************************************************************
-#define UART_CTL_CTSEN 0x00008000  // Enable Clear To Send
-#define UART_CTL_RTSEN 0x00004000  // Enable Request to Send
-#define UART_CTL_RTS 0x00000800    // Request to Send
-#define UART_CTL_RXE 9             // UART Receive Enable
-#define UART_CTL_TXE 8             // UART Transmit Enable
-#define UART_CTL_LBE 0x00000080    // UART Loop Back Enable
-#define UART_CTL_HSE 0x00000020    // High-Speed Enable
-#define UART_CTL_EOT 0x00000010    // End of Transmission
-#define UART_CTL_SMART 0x00000008  // ISO 7816 Smart Card Support
-#define UART_CTL_SIRLP 0x00000004  // UART SIR Low-Power Mode
-#define UART_CTL_SIREN 0x00000002  // UART SIR Enable
-#define UART_CTL_UARTEN 0x00000000 // UART Enable                  //Updated
+#define UART_CTL_CTSEN 0x00008000 // Enable Clear To Send
+#define UART_CTL_RTSEN 0x00004000 // Enable Request to Send
+#define UART_CTL_RTS 0x00000800   // Request to Send
+#define UART_CTL_RXE 9            // UART Receive Enable
+#define UART_CTL_TXE 8            // UART Transmit Enable
+#define UART_CTL_LBE 0x00000080   // UART Loop Back Enable
+#define UART_CTL_HSE 0x00000020   // High-Speed Enable
+#define UART_CTL_EOT 0x00000010   // End of Transmission
+#define UART_CTL_SMART 0x00000008 // ISO 7816 Smart Card Support
+#define UART_CTL_SIRLP 0x00000004 // UART SIR Low-Power Mode
+#define UART_CTL_SIREN 0x00000002 // UART SIR Enable
+#define UART_CTL_UARTEN 0         // UART Enable                  //Updated
 
 //*****************************************************************************
 //

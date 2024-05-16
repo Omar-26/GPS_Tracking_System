@@ -4,7 +4,6 @@
 #include"../mcal/dio/dio.h"
 #include"../mcal/ssi/ssi.h"
 #include"../Service/Delay_ms/Delay_ms.h"
-
 //*****************************************************************************
 //
 // Screen commands

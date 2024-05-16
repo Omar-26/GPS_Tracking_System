@@ -13,7 +13,7 @@ void reverse(char str[], int length) {
     }
 }
 
-char* itoa(int num, char* str, int base) {
+void itoa(int num, char* str, int base) {
     int i = 0;
     int isNegative = 0;
 
@@ -21,7 +21,6 @@ char* itoa(int num, char* str, int base) {
     if (num == 0) {
         str[i++] = '0';
         str[i] = '\0';
-        return str;
     }
 
     /* Negative numbers are only handled if base is 10 
@@ -46,8 +45,6 @@ char* itoa(int num, char* str, int base) {
 
     /* Reverse the string */
     reverse(str, i);
-
-    return str;
 }
 
 

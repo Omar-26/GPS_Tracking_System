@@ -1,8 +1,8 @@
-
+#include "STD_TYPES.h"
 #ifndef __HAL_GPS_INTERFACE_H__
 #define __HAL_GPS_INTERFACE_H__
 
-f32 Calc_Distance(volatile f32 latitude_1, volatile f32 longitude_1, volatile f32 latitude_2, volatile f32 longitude_2);
+f32 calcDistance(volatile f32 latitude_1, volatile f32 longitude_1, volatile f32 latitude_2, volatile f32 longitude_2);
 
 void GPS_Read();
 

@@ -1,92 +1,90 @@
+/*****<tft *******************/
+#include "mcal/nvic/nvic.h"
+#include "mcal/SysCtr/SysCtr.h"
+#include "mcal/dio/dio_types.h"
+#include "mcal/PortDriver/port.h"
+#include "mcal/dio/dio.h"
+#include "mcal/mcu_hw.h"
+#include "Service/Delay_ms/Delay_ms.h"
+#include "mcal/ssi/ssi.h"
+#include "TFT/ST7735.h"
+#include "Sys_Tick.h"
+/*****<tft *******************/
 #include "UART_Interface.h"
 #include "GPS_interface.h"
 
 #include <string.h>
-#include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 
+#include <math.h>
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
 #include "tm4c123gh6pm.h"
 #define DEG_TO_RAD(DEG) ((DEG * PI / 180))
 
-u8 GPS_Log_Check[] = "$GPRMC,";
-u8 GPS_Formatted[12][20];
+u8 GPS_Counter = 0;
 
-u8 *token;
-u8 GPS[80];
-
-f32 currentLat, currentLong;
+f32 currentLatitude, currentLongitude;
 
 void GPS_Read()
 {
-
-    u8 Received_Char;
+	u8 GPS_Log_Check[] = "$GPRMC,";
+  char GPS[80];
+  char GPS_Tokens[12][20];
+	char *token;
     u8 Local_u8ReceivedChar;
-
-    u8 flag = 0;
-    do
-    {
-        flag = 0;
-        for (u8 i = 0; i < length(GPS_Log_Check); i++)
+    u8 i , flag = 1;
+     do
+    { 
+			  flag = 1 ;
+        for (i = 0; i < 7 ; i++)
         {
-            Local_u8ReceivedChar=UART_u8ReceiveByte(UART0);
-            if (Local_u8ReceivedChar != GPS_Log_Check[i])
-                flag = 1;
-            break;
+					
+           if (UART_u8ReceiveByte(UART1) != GPS_Log_Check[i])
+					 {
+						 flag = 0;
+             break;
+					 }
         }
-    } while (flag);
-
+    } while (flag == 0);
+		
+		ST7735_drawString("after do while 1",4, 4,0X0000,0Xffff,1);
     strcpy(GPS, "");
-
     do
     {
-        u8 GPS_Counter = 0;
-        Local_u8ReceivedChar=UART_u8ReceiveByte(UART0);
-        Received_Char = Local_u8ReceivedChar;
-        GPS[GPS_Counter++] = Received_Char;
-    } while (Received_Char != '*');
-
-    GPS_format();
-}
-
-void GPS_format()
-{
-
+        Local_u8ReceivedChar = UART_u8ReceiveByte(UART1);
+        GPS[GPS_Counter++] = Local_u8ReceivedChar;
+    } while (Local_u8ReceivedChar != '*');
+		ST7735_drawString("before format",4, 4,0X0000,0Xffff,1);
+    
+		token = strtok(GPS, ",");
     u8 No_Of_Token_Strings = 0;
-
-    token = strtok(GPS, ",");
-
-    do
-    {
-        strcpy(GPS_Formatted[No_Of_Token_Strings++], token);
+    
+		while ((token != NULL) && (No_Of_Token_Strings < 7) )
+		{
+        strcpy(GPS_Tokens[No_Of_Token_Strings++], token);
         token = strtok(NULL, ",");
-    } while (token != NULL);
+    } 
 
-    if (strcmp(GPS_Formatted[1], "A") == 0)
-    { // Valid Case
-
-        if (strcmp(GPS_Formatted[3], "N") == 0)
-            currentLat = atof(GPS_Formatted[2]);
+    if (strcmp(GPS_Tokens[1], "A") == 0)
+    { 
+        if (strcmp(GPS_Tokens[3], "N") == 0)
+            currentLatitude = atof(GPS_Tokens[2]);
+						
         else
-            currentLat = -atof(GPS_Formatted[2]);
+            currentLatitude = -atof(GPS_Tokens[2]);
 
-        if (strcmp(GPS_Formatted[5], "E") == 0)
-            currentLong = atof(GPS_Formatted[4]);
+        if (strcmp(GPS_Tokens[5], "E") == 0)
+            currentLongitude = atof(GPS_Tokens[4]);
         else
-            currentLong = -atof(GPS_Formatted[4]);
+            currentLongitude = -atof(GPS_Tokens[4]);
     }
 }
-f32 Value_to_Degree(f32 value) { return value; }
-// double degree = (int)value/100 ;
-// double minutes = value - 	(double)degree*100;
-// return (degree + (minutes/60));
-// }
 
+/*
 f32 calcDistance(volatile f32 latitude_1, volatile f32 longitude_1, volatile f32 latitude_2, volatile f32 longitude_2)
 {
-
     volatile f32 phi1, phi2, delta_phi, delta_lmbda, a, c, d;
 
     phi1 = DEG_TO_RAD(Value_to_Degree(latitude_1));
@@ -101,4 +99,31 @@ f32 calcDistance(volatile f32 latitude_1, volatile f32 longitude_1, volatile f32
     c = 2 * atan2(sqrt(a), sqrt(1 - a));
     d = EARTH_RADIUS * c;
     return d;
+}*/
+
+double distance;
+double todegree(double angle) {
+int    degree = angle / 100;                    // Extracting the degree part
+double minutes = angle - (double)degree * 100; // Extracting the minutes part
+ return (degree + minutes / 60);              // Converting minutes to degrees;
+}
+double torad(double angle) {
+ return angle * M_PI / 180.0;
+}
+
+f32 calcDistance(volatile f32 long1 ,volatile f32 lat1 ,volatile f32 long2 ,volatile f32 lat2){
+double long_diff;
+double lat_diff;
+double a;
+double c;
+long1 = torad (todegree( long1));
+long2 = torad (todegree( long2));
+lat2  = torad (todegree( lat2 ));
+lat1  = torad (todegree( lat1 ));
+long_diff=long1-long2;
+lat_diff= lat1-lat2;
+a= pow(sin(lat_diff/2),2) + cos(lat1) * cos(lat2) * pow(sin(long_diff/2),2);
+c = 2*atan2(sqrt(a), sqrt(1.0 - a));
+distance = EARTH_RADIUS*c;
+return (distance);
 }

@@ -51,5 +51,6 @@
 
 #define GPIO_LOCK_KEY 0x4C4F434B
 
-#define UART_CLK 80000000
+// #define UART_CLK 80000000
+#define UART_CLK 160000000
 #endif /**< _MCAL_UART_PRIVATE_H_ */
