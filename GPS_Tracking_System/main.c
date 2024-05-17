@@ -81,9 +81,9 @@ if (walkedDistance < 101 & k < 50){
 	
 	if (strcmp(GPS_Tokens[1],"A") == 0){ 	//Validation
 				currentLatitude = todegree(atof(GPS_Tokens[2]));
-				latitude_array[j] = currentLatitude ;
+				latitude_array[k] = currentLatitude ;
 				currentLongitude =todegree(atof(GPS_Tokens[4]));
-				longitude_array[j] = currentLongitude ; 
+				longitude_array[k] = currentLongitude ; 
 	
 		if(j!= 0)	//Skip the first point
 				{
