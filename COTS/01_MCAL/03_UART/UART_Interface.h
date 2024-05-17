@@ -4,6 +4,7 @@
 /********** File Name : UART_Interface.h            ***********/
 /********** Version   : 1.0                    		***********/
 /**************************************************************/
+#include "STD_TYPES.h"
 #ifndef _MCAL_UART_INTERFACE_H_
 #define _MCAL_UART_INTERFACE_H_
 
