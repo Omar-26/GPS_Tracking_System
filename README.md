@@ -34,8 +34,7 @@ The GPS subsystem performs the following tasks:
 2. Gets the coordinates of the endpoint and calculates the total distance Between Them.
 3. Provides visual feedback to the user using built-in LEDs based on these criteria:
    - If the distance from the target ~ 0 m    | `Green` LED  Turn on _**(destination is reached)**_.
-   - If the distance from the target <= 5 m | `Yellow` LED Turn on _**(about to be reached)**_.
-   - If the distance from the target > 10 m | `Red` LED Turn on  _**(far away)**_.
+   - If the distance from is saved to EEPROM  | `Blue` LED Turn on _**(Data is Saved)**_.
 
 The trajectory of the distance traveled must satisfy the following criteria:
 
@@ -43,7 +42,7 @@ The trajectory of the distance traveled must satisfy the following criteria:
 2. The path from the start point to the endpoint should form a **non-straight line** similar to the provided baseline path.
 
 > [!note]  
-> The system calculates the distance between the starting point and the endpoint and compares it with the distance obtained from Google Maps. The error margin should be less than or equal to **5%**.
+> The system calculates the distance between the starting point and the endpoint and compares it with the distance obtained from Google Maps.
 
 ## Installation
 
@@ -70,9 +69,8 @@ To use the GPS Tracking System, follow these steps:
 3. Walk or travel to the destination point.
 
 4. The system will provide visual feedback through the built-in LEDs as follows:
-   - ${\textsf{\color[RGB]{3,140,90}Green}}$‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎‎| Target destination is reached.
-   - ${\textsf{\color[RGB]{242,183,5}Yellow}}$ ‏‏‎ | Target destination about to be reached (less than 5 meters away).
-   - ${\textsf{\color[RGB]{166,3,17}Red}}$ ‏‏‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎ ‎‎‎| Target destination is far away (more than 5 meters).
+   - ${\textsf{\color[RGB]{3,140,90}Green}}$‏‏‎ ‎‏‏‎| Target destination is reached.
+   - ${\textsf{\color[RGB]{30,144,255}Blue}}$ ‏‏‎ | Total Distance is Saved.
 
 5. Ensure that the calculated distance is within an error margin of 5% compared to Google Maps.
 
@@ -88,8 +86,8 @@ To successfully run the GPS Tracking System, you will need the following:
 
 ### Software
 
-- Code Composer Studio (CCS)
-- mapping API as a data visualization
+- Keil 5
+- mapping API as a data visualization (Python)
 
 ## Contributing
 
